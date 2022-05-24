@@ -6,7 +6,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to allus-interactive!</title>
+        <title>Welcome to Allus Interactive</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
