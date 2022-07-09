@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ComponentLibrary } from '@allus-interactive/component-library';
 
 const StyledPage = styled.div`
   .page {
@@ -21,6 +22,7 @@ export function Index() {
               Welcome allus-interactive 👋
             </h1>
           </div>
+          <ComponentLibrary />
         </div>
       </div>
     </StyledPage>
