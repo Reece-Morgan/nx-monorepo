@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "--component-library": "libs/component-library",
     "allus-interactive": "apps/allus-interactive",
     "allus-interactive-e2e": "apps/allus-interactive-e2e"
   }
