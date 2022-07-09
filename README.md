@@ -92,3 +92,9 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+## Storybook
+
+Use `npx sb init` to install Storybook
+
+Use `yarn run storybook` ro run storybook on [localhost:6006](http://localhost:6006)
