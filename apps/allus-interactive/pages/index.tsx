@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ColourValues from '../settings/colours';
-import { Header } from '@allus-interactive/component-library';
+import colourValues from '../settings/colours';
+import { Header, Footer } from '@allus-interactive/component-library';
 
 const StyledPage = styled.div`
   .page {
@@ -17,13 +17,13 @@ export function Index() {
   return (
     <StyledPage>
       <div className="wrapper">
-        <Header 
-          bgColour={ColourValues.background}
-          titleColour={ColourValues.title}
-          hoverColour={ColourValues.white}
+        <Header
+          bgColour={colourValues.background}
+          titleColour={colourValues.title}
+          hoverColour={colourValues.white}
           links={linkData}
-          mobileImageUrl='/images/allus-logo.png'
-          desktopImageUrl='/images/allus-banner.png'
+          mobileImageUrl="/images/allus-logo.png"
+          desktopImageUrl="/images/allus-banner.png"
         />
         <div className="container">
           <div id="welcome">
@@ -33,6 +33,10 @@ export function Index() {
             </h1>
           </div>
         </div>
+        <Footer
+          bgColour={colourValues.background}
+          textColour={colourValues.white}
+        />
       </div>
     </StyledPage>
   );
