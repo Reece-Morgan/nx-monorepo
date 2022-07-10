@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 
-const StyledPage = styled.div``;
-
 const Wrapper = styled.div`
   width: 100%;
 `;
@@ -37,16 +35,14 @@ const Span = styled.span`
 
 export function Index() {
   return (
-    <StyledPage>
-      <Wrapper>
-        <Container>
-            <H1>
-              <Span> Hello there, </Span>
-              Welcome allus-interactive 👋
-            </H1>
-        </Container>
-      </Wrapper>
-    </StyledPage>
+    <Wrapper>
+      <Container>
+          <H1>
+            <Span> Hello there, </Span>
+            Welcome allus-interactive 👋
+          </H1>
+      </Container>
+    </Wrapper>
   );
 }
 
