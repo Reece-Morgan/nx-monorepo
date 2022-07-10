@@ -119,8 +119,9 @@ export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desk
           <HeaderLogo mobileImageUrl={mobileImageUrl} desktopImageUrl={desktopImageUrl} />
         </LogoLink>
         <DesktopLinkContainer>
-          {links && links.map((link) => 
+          {links && links.map((link, key) => 
             <HeaderLink
+              key={link.url}
               titleColour={titleColour}
               hoverColour={hoverColour}
               url={link.url}
