@@ -17,17 +17,30 @@ const Container = styled.div`
   width: 100%;
 `
 
+const H1 = styled.h1`
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1;
+`;
+
+const Span = styled.span`
+  display: block;
+  font-size: 1.875rem;
+  font-weight: 300;
+  line-height: 2.25rem;
+  margin-bottom: 0.5rem;
+`;
+
 export function Index() {
   return (
     <StyledPage>
       <Wrapper>
         <Container>
-          <div id="welcome">
-            <h1>
-              <span> Hello there, </span>
+            <H1>
+              <Span> Hello there, </Span>
               Welcome allus-interactive 👋
-            </h1>
-          </div>
+            </H1>
         </Container>
       </Wrapper>
     </StyledPage>
