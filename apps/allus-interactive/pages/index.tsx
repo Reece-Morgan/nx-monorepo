@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { ComponentLibrary } from '@allus-interactive/component-library';
+import ColourValues from '../settings/colours';
+import { Header } from '@allus-interactive/component-library';
 
 const StyledPage = styled.div`
   .page {
@@ -7,14 +8,23 @@ const StyledPage = styled.div`
 `;
 
 export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.styled-components file.
-   */
+  const linkData = [
+    { url: '/rpgs', text: 'RPGs' },
+    { url: '/platformers', text: 'Platformers' },
+    { url: '/demos-and-prototypes', text: 'Demos/Prototype' },
+  ];
+
   return (
     <StyledPage>
       <div className="wrapper">
+        <Header 
+          bgColour={ColourValues.background}
+          titleColour={ColourValues.title}
+          hoverColour={ColourValues.white}
+          links={linkData}
+          mobileImageUrl='/images/allus-logo.png'
+          desktopImageUrl='/images/allus-banner.png'
+        />
         <div className="container">
           <div id="welcome">
             <h1>
@@ -22,7 +32,6 @@ export function Index() {
               Welcome allus-interactive 👋
             </h1>
           </div>
-          <ComponentLibrary />
         </div>
       </div>
     </StyledPage>
