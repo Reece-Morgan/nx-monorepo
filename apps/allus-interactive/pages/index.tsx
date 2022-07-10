@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpointValues from '../settings/breakpoints';
 
 const StyledPage = styled.div``;
 
@@ -9,13 +10,15 @@ const Wrapper = styled.div`
 const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 768px;
+  max-width: 1200px;
   padding-bottom: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   color: rgba(55, 65, 81, 1);
   width: 100%;
-`
+  @media (max-width: ${breakpointValues.lg}) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+`;
 
 const H1 = styled.h1`
   font-size: 3rem;
