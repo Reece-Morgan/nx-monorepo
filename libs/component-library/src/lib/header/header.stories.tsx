@@ -6,6 +6,12 @@ export default {
   component: Header,
 } as ComponentMeta<typeof Header>;
 
+const linkData = [
+  { url: '/rpgs', text: 'RPGs' },
+  { url: '/platformers', text: 'Platformers' },
+  { url: '/demos-and-prototypes', text: 'Demos/Prototype' },
+];
+
 export const AllusInteractiveHeader: ComponentStory<typeof Header> = () => {
   return (
     <Header 
@@ -14,6 +20,7 @@ export const AllusInteractiveHeader: ComponentStory<typeof Header> = () => {
       hoverColour='#fff' 
       mobileImageUrl='../../../../apps/allus-interactive/public/images/allus-logo.png' 
       desktopImageUrl='../../../../apps/allus-interactive/public/images/allus-banner.png'
+      links={linkData}
     />
   )
 }

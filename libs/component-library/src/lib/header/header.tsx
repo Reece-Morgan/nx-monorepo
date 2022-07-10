@@ -10,6 +10,10 @@ interface Props {
   hoverColour: string;
   mobileImageUrl: string;
   desktopImageUrl: string;
+  links: {
+    url: string;
+    text: string;
+  }[];
 }
 
 const HeaderContainer = styled.header<{colour: string}>`
@@ -101,7 +105,7 @@ const Overlay = styled.div`
   z-index: 5;
 `;
 
-export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desktopImageUrl}: Props): JSX.Element => {
+export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desktopImageUrl, links}: Props): JSX.Element => {
   const [MenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = (): void => {
@@ -115,27 +119,15 @@ export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desk
           <HeaderLogo mobileImageUrl={mobileImageUrl} desktopImageUrl={desktopImageUrl} />
         </LogoLink>
         <DesktopLinkContainer>
-          <HeaderLink
-            titleColour={titleColour}
-            hoverColour={hoverColour}
-            url="/rpgs"
-          >
-            RPGs
-          </HeaderLink>
-          <HeaderLink
-            titleColour={titleColour}
-            hoverColour={hoverColour}
-            url="/platformers"
-          >
-            Platformers
-          </HeaderLink>
-          <HeaderLink
-            titleColour={titleColour}
-            hoverColour={hoverColour}
-            url="/demos-and-prototypes"
-          >
-            Demos/Prototypes
-          </HeaderLink>
+          {links && links.map((link) => 
+            <HeaderLink
+              titleColour={titleColour}
+              hoverColour={hoverColour}
+              url={link.url}
+            >
+              {link.text}
+            </HeaderLink>  
+          )}
         </DesktopLinkContainer>
         <MobileLinkContainer>
           <BurgerMenuContainer onClick={() => toggleMenu()}>
