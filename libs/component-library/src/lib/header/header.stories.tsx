@@ -18,8 +18,8 @@ export const AllusInteractiveHeader: ComponentStory<typeof Header> = () => {
       bgColour='#1f1f1f' 
       titleColour='#dd0207' 
       hoverColour='#fff' 
-      mobileImageUrl='../../../../apps/allus-interactive/public/images/allus-logo.png' 
-      desktopImageUrl='../../../../apps/allus-interactive/public/images/allus-banner.png'
+      mobileImageUrl='/images/allus-logo.png' 
+      desktopImageUrl='/images/allus-banner.png'
       links={linkData}
     />
   )
