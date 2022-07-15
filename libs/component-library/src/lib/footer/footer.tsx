@@ -19,10 +19,39 @@ const CopyrightText = styled.p<{ colour: string }>`
   padding-top: 10px;
 `;
 
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const LinkSeparator = styled.p<{ colour: string }>`
+  color: ${(props) => props.colour};
+  font-size: 1em;
+  margin: 0;
+  text-align: center;
+  padding-top: 10px;
+`;
+
+const Link = styled.a<{ colour: string }>`
+  color: ${(props) => props.colour};
+  font-size: 1em;
+  margin: 0;
+  text-align: center;
+  padding: 10px 10px 0 10px;
+`;
+
 export const Footer = ({ bgColour, textColour }: Props) => (
   <FooterContainer colour={bgColour}>
     <CopyrightText colour={textColour}>
       Copyright Allus Interactive 2022
     </CopyrightText>
+    <LinkWrapper>
+      <Link colour={textColour} href='/static/about-allus'>About Allus</Link>
+      <LinkSeparator colour={textColour}> | </LinkSeparator>
+      <Link colour={textColour} href='/static/privacy-policy'>Privacy Policy</Link>
+    </LinkWrapper>
   </FooterContainer>
 );
