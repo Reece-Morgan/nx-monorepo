@@ -10,7 +10,7 @@ const Container = styled.div`
     padding: 0;
     @media(min-width: ${breakpointValues.tablet}) {
         width: 90vw;
-        max-height: 265px;
+        max-height: 300px;
     }
     @media(min-width: ${breakpointValues.lg}) {
         max-width: 1200px;
