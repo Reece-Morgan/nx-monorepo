@@ -5,10 +5,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const Container = styled.div`
-    width: 85vw;
+    width: 100vw;
     margin: auto;
     padding: 0;
-    @media(min-width: ${breakpointValues.sm}) {
+    @media(min-width: ${breakpointValues.tablet}) {
         width: 90vw;
         max-height: 265px;
     }
@@ -19,8 +19,8 @@ const Container = styled.div`
 `;
 
 const CarouselContainer = styled(Slider)`
-    max-width: 1360px;
-    max-height: 265px;
+    max-width: 1200px;
+    max-height: 300px;
     margin-bottom: 30px;
     & > button {
         z-index: 1;
@@ -36,15 +36,15 @@ const CarouselContainer = styled(Slider)`
         }
     }
     .slick-prev {
-        left: -40px;
-        @media(min-width: ${breakpointValues.md}) {
-            left: -60px;
+        left: 0px;
+        @media(min-width: ${breakpointValues.tablet}) {
+            left: -40px;
         }
     }
     .slick-next {
-        right: -40px;
-        @media(min-width: ${breakpointValues.md}) {
-            right: -60px;
+        right: 0px;
+        @media(min-width: ${breakpointValues.tablet}) {
+            right: -40px;
         }
     }
     .slick-list {
