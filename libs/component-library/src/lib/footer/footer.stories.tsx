@@ -7,5 +7,5 @@ export default {
 } as ComponentMeta<typeof Footer>;
 
 export const AllusInteractiveFooter: ComponentStory<typeof Footer> = () => {
-  return <Footer bgColour="#1f1f1f" textColour='#fff' />;
+  return <Footer bgColour="#1f1f1f" textColour='#fff' hoverColour='#dd0207' />;
 }

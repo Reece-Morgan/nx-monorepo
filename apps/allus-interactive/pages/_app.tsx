@@ -28,6 +28,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Footer
         bgColour={colourValues.background}
         textColour={colourValues.white}
+        hoverColour={colourValues.title}
       />
     </>
   );

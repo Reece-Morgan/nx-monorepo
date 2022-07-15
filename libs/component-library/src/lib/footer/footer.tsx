@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface Props {
   bgColour: string;
   textColour: string;
+  hoverColour: string;
 }
 
 const FooterContainer = styled.footer<{ colour: string }>`
@@ -35,23 +36,29 @@ const LinkSeparator = styled.p<{ colour: string }>`
   padding-top: 10px;
 `;
 
-const Link = styled.a<{ colour: string }>`
+const Link = styled.a<{ 
+  colour: string,
+  hover: string
+}>`
   color: ${(props) => props.colour};
   font-size: 1em;
   margin: 0;
   text-align: center;
   padding: 10px 10px 0 10px;
+  &:hover {
+    color: ${(props) => props.hover};
+  }
 `;
 
-export const Footer = ({ bgColour, textColour }: Props) => (
+export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
   <FooterContainer colour={bgColour}>
     <CopyrightText colour={textColour}>
       Copyright Allus Interactive 2022
     </CopyrightText>
     <LinkWrapper>
-      <Link colour={textColour} href='/static/about-allus'>About Allus</Link>
+      <Link colour={textColour} hover={hoverColour} href='/static/about-allus'>About Allus</Link>
       <LinkSeparator colour={textColour}> | </LinkSeparator>
-      <Link colour={textColour} href='/static/privacy-policy'>Privacy Policy</Link>
+      <Link colour={textColour} hover={hoverColour} href='/static/privacy-policy'>Privacy Policy</Link>
     </LinkWrapper>
   </FooterContainer>
 );
