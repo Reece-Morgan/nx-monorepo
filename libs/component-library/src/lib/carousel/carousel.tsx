@@ -54,22 +54,24 @@ const CarouselContainer = styled(Slider)`
 
 interface Props {
     children: React.ReactNode;
+    autoplay: boolean;
+    autoplaySpeed: number;
     dots: boolean;
     draggable: boolean;
     infinite: boolean;
-    autoplay: boolean;
-    autoplaySpeed: number;
+    swipe: boolean;
 }
 
-export const Carousel = ({ children, dots, draggable, infinite, autoplay, autoplaySpeed }: Props): JSX.Element => {
+export const Carousel = ({ children, autoplay, autoplaySpeed, dots, draggable, infinite, swipe }: Props): JSX.Element => {
     const settings = {
+        autoplay: autoplay,
+        autoplaySpeed: autoplaySpeed,
         dots: dots,
         infinite: infinite,
         draggable: draggable,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: autoplay,
-        autoplaySpeed: autoplaySpeed,
+        swipe: swipe,
     };
     return (
         <Container>

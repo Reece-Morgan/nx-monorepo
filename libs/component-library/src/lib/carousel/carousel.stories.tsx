@@ -10,11 +10,12 @@ export default {
 export const SingleTileCarousel: ComponentStory<typeof Carousel> = () => {
     return (
         <Carousel 
+            autoplay={true}
+            autoplaySpeed={5000}
             dots={true}
             draggable={true}
             infinite={true}
-            autoplay={true}
-            autoplaySpeed={5000}
+            swipe={true}
         >
             <SingleTile imageUrl='/images/carousel-placeholder.png' />
             <SingleTile imageUrl='/images/carousel-placeholder.png' />
