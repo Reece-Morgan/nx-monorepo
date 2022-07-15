@@ -3,7 +3,6 @@ import breakpointValues from '../../../settings/breakpoints';
 
 interface Props {
     imageUrl: string;
-    url: string;
 }
 
 const Container = styled.div`
@@ -31,7 +30,7 @@ const Image = styled.div<{ imageUrl: string }>`
     aspect-ratio: 16/9;
 `;
 
-export const SingleTile = ({ imageUrl, url }: Props): JSX.Element => {
+export const SingleTile = ({ imageUrl }: Props): JSX.Element => {
     return (
         <Container>
             <Image imageUrl={imageUrl} />
