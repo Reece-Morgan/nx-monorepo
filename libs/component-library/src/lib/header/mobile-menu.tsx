@@ -56,7 +56,7 @@ export const MobileMenu = ({bgColour, titleColour}: Props): JSX.Element => (
       <MenuLink colour={titleColour} href="/about">
         About Allus
       </MenuLink>
-      <MenuLink colour={titleColour} href="/rpgs">
+      <MenuLink colour={titleColour} href="/static/privacy-policy">
         Privacy Policy
       </MenuLink>
     </FlexContainer>
