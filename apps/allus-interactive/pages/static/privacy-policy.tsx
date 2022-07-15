@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 10px 0;
+  padding: 10px 0 0 0;
 `;
 
 const Title = styled.h1`
@@ -35,6 +35,7 @@ const SectionTitle = styled(Title)`
 
 const Subtitle = styled.h5`
   font-weight: 800;
+  margin: 0;
 `;
 
 const Date = styled.p`
@@ -85,6 +86,58 @@ export function PrivacyPolicy() {
         </Section>
         <Section>
             <SectionTitle>1. WHAT INFORMATION DO WE COLLECT?</SectionTitle>
+            <Paragraph>
+                We automatically collect certain information when you visit, use or navigate the Services. This information does not reveal 
+                your specific identity (like your name or contact information) but may include device and usage information, such as your IP 
+                address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, 
+                location, information about who and when you use our Services and other technical information. This information is primarily 
+                needed to maintain the security and operation of our Services, and for our internal analytics and reporting purposes. The 
+                information we collect includes: 
+            </Paragraph>
+            <Subtitle></Subtitle>
+            <Paragraph>
+                Log and usage data is service-related, diagnostic usage and performance information our servers automatically collect when 
+                you access or use our Services and which we record in log files. Depending on how you interact with us, this log data may 
+                include your IP address, device information, browser type and settings and information about your activity in the Services 
+                (such as the date/time stamps associated with your usage, pages and files viewed, searches and other actions you take such 
+                as which features you use), device event information (such as system activity, error reports (sometimes called &#39;crash 
+                dumps&#39;) and hardware settings). 
+            </Paragraph>
+            <Subtitle>Device Data:</Subtitle>
+            <Paragraph>
+                We collect device data such as information about your computer, phone, tablet or other device you use to access the Services. 
+                Depending on the device used, this device data may include information such as your IP address (or proxy server), device application 
+                identification numbers, location, browser type, hardware model Internet service provider and/or mobile carrier, operating system 
+                configuration information. 
+            </Paragraph>
+            <Subtitle>Location Data:</Subtitle>
+            <Paragraph>
+                We collect information data such as information about your device&#39;s location, which can be either precise or imprecise. 
+                How much information we collect depends on the type of settings of the device you use to access the Services. For example, 
+                we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP 
+                address). You can opt out of allowing us to collect this information either by refusing access to the information or by 
+                disabling your Locations settings on your device. Note however, if you choose to opt out, you may not be able to use certain 
+                aspects of the Services. 
+            </Paragraph>
+            <Subtitle>Information collected through our App:</Subtitle>
+            <Paragraph>
+                If you use our App, we also collect the following information:
+            </Paragraph>
+            <Subtitle>Geo-Location Information:</Subtitle>
+            <Paragraph>
+                We may request access or permission to and track location-based information from your mobile device, either continuously or while 
+                you are using our App, to provide certain location-based services. If you wish to change our access or permissions, you may do so 
+                in your device&#39;s settings. 
+            </Paragraph>
+            <Subtitle>Mobile Device Access:</Subtitle>
+            <Paragraph>
+                We may request access or permission to certain features from your mobile device, including your mobile device&#39;s camera, 
+                location and other features. If you wish to change our access or permissions, you may do so in your device&#39;s settings.
+            </Paragraph>
+            <Paragraph>
+                The information is primarily needed to maintain the security and operation of our App, for troubleshooting and for our internal 
+                analytics and reporting purposes. 
+            </Paragraph>
         </Section>
         <Section>
             <SectionTitle>2. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</SectionTitle>
