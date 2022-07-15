@@ -6,9 +6,9 @@ import colourValues from '../settings/colours'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const linkData = [
-    { url: '/rpgs', text: 'RPGs' },
-    { url: '/platformers', text: 'Platformers' },
-    { url: '/demos-and-prototypes', text: 'Demos/Prototype' },
+    { url: '/games/rpgs', text: 'RPGs' },
+    { url: '/games/platformers', text: 'Platformers' },
+    { url: '/games/demos-and-prototypes', text: 'Demos/Prototype' },
   ];
 
   return (
