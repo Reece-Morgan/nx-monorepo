@@ -37,14 +37,18 @@ const CarouselContainer = styled(Slider)`
     }
     .slick-prev {
         left: 0px;
+        display: none !important;
         @media(min-width: ${breakpointValues.tablet}) {
-            left: -40px;
+            left: -50px;
+            display: block !important;
         }
     }
     .slick-next {
         right: 0px;
+        display: none !important;
         @media(min-width: ${breakpointValues.tablet}) {
-            right: -40px;
+            right: -50px;
+            display: block !important;
         }
     }
     .slick-list {
