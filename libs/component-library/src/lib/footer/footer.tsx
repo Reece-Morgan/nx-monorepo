@@ -24,7 +24,7 @@ const LinkWrapper = styled.div`
   flex-direction: row;
   max-width: 300px;
   margin: 0 auto;
-  text-align: center;
+  justify-content: center;
 `;
 
 const LinkSeparator = styled.p<{ colour: string }>`
