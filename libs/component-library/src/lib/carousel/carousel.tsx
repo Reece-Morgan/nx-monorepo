@@ -39,7 +39,7 @@ const CarouselContainer = styled(Slider)`
         left: 0px;
         display: none !important;
         @media(min-width: ${breakpointValues.tablet}) {
-            left: -50px;
+            left: -1vw;
             display: block !important;
         }
     }
@@ -47,7 +47,7 @@ const CarouselContainer = styled(Slider)`
         right: 0px;
         display: none !important;
         @media(min-width: ${breakpointValues.tablet}) {
-            right: -50px;
+            right: -1vw;
             display: block !important;
         }
     }
