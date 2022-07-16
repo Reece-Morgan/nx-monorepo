@@ -17,9 +17,9 @@ export const SingleTileCarousel: ComponentStory<typeof Carousel> = () => {
             infinite={true}
             swipe={true}
         >
-            <SingleTile imageUrl='/images/carousel-placeholder.png' />
-            <SingleTile imageUrl='/images/carousel-placeholder.png' />
-            <SingleTile imageUrl='/images/carousel-placeholder.png' />
+            <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='https://allusinteractive.itch.io' />
+            <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='https://allusinteractive.itch.io' />
+            <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='https://allusinteractive.itch.io' />
         </Carousel>
     )
 }

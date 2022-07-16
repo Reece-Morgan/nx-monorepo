@@ -3,6 +3,8 @@ import breakpointValues from '../../../settings/breakpoints';
 
 interface Props {
     imageUrl: string;
+    altText: string;
+    url: string;
 }
 
 const Container = styled.div`
@@ -21,19 +23,18 @@ const Container = styled.div`
     }
 `;
 
-const Image = styled.div<{ imageUrl: string }>`
+const ImageLink = styled.a``;
+
+const Image = styled.img`
     width: 100%;
-    background: url('${props => props.imageUrl}');
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-size: cover !important;
-    aspect-ratio: 16/9;
 `;
 
-export const SingleTile = ({ imageUrl }: Props): JSX.Element => {
+export const SingleTile = ({ imageUrl, altText, url }: Props): JSX.Element => {
     return (
         <Container>
-            <Image imageUrl={imageUrl} />
+            <ImageLink href={url}>
+                <Image src={imageUrl} alt={altText} />
+            </ImageLink>
         </Container>
     );
 };

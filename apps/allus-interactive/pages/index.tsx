@@ -31,9 +31,9 @@ export function Index() {
         infinite={true}
         swipe={true}
       >
-        <SingleTile imageUrl='/images/carousel-placeholder.png' />
-        <SingleTile imageUrl='/images/carousel-placeholder.png' />
-        <SingleTile imageUrl='/images/carousel-placeholder.png' />
+        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/rpgs' />
+        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/platformers' />
+        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/demos-and-prototypes' />
       </Carousel>
       <Container>
         <p>Container content goes here</p>
