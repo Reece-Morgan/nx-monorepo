@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
-import colourValues from 'apps/allus-interactive/settings/colours';
+import colourValues from '../settings/colours';
 
 const Wrapper = styled.div`
   width: 100%;
