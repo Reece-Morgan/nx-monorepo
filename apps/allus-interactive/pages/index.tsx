@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
-import { Carousel, SingleTile } from '@allus-interactive/component-library';
+import colourValues from '../settings/colours';
+import { Carousel, SingleTile, GameTile } from '@allus-interactive/component-library';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,6 +21,20 @@ const Container = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  margin: 10px 0 0 0;
+  color: ${colourValues.title};
+`;
+
+const FlexContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 0;
+`;
+
 export function Index() {
   return (
     <Wrapper>
@@ -36,7 +51,27 @@ export function Index() {
         <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/demos-and-prototypes' />
       </Carousel>
       <Container>
-        <p>Container content goes here</p>
+        <Title>Welcome to Allus Interactive</Title>
+        <p>
+          Allus Interactive is an indie game developer designing, developing and publishing games across PC and Android.
+        </p>
+        <Title>Featured Games</Title>
+        <FlexContainer>
+          <GameTile
+            imageUrl='/images/games/TrialsOfKhione.jpg'
+            altText='The Trials of Khione'
+            url='https://allusinteractive.itch.io/the-trials-of-khione'
+            lineOne='Play as the Greek Goddess of Snow, Khione.'
+            lineTwo='Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders.'
+          />
+          <GameTile
+            imageUrl='/images/games/BeardedBeatdown.png'
+            altText='Bearded Beatdown'
+            url='https://allusinteractive.itch.io/bearded-beatdown'
+            lineOne='Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3.'
+            lineTwo='I have plans to rebuild this game in another engine, and develop it further than this prototype.'
+          />
+        </FlexContainer>
       </Container>
     </Wrapper>
   );
