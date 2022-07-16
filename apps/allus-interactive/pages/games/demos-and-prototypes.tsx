@@ -42,14 +42,14 @@ const RpgGamePage = () => {
                 <Title>Demos and Prototypes</Title>
                 <FlexContainer>
                     <GameTile
-                        imageUrl='/images/game-tile-placeholder.png'
+                        imageUrl='/images/games/BeardedBeatdown.png'
                         altText='Bearded Beatdown'
                         url='https://allusinteractive.itch.io/bearded-beatdown'
                         lineOne='Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3.'
                         lineTwo='I have plans to rebuild this game in another engine, and develop it further than this prototype.'
                     />
                     <GameTile
-                        imageUrl='/images/game-tile-placeholder.png'
+                        imageUrl='/images/games/TargetPractice.jpg'
                         altText='Target Practice'
                         url='https://allusinteractive.itch.io/target-practice'
                         lineOne='Target Practice is a prototype game I developed whilst following tutorials and a udemy course on how to create a bow and arrow/archery mechanic in Unity. '
