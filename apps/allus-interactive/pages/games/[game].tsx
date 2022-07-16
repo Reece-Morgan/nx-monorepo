@@ -2,6 +2,18 @@ import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import { GameTile } from '@allus-interactive/component-library';
 import { useRouter } from 'next/router';
+import { PlatformerData, PrototypesData, RpgData } from '../../static';
+
+interface Props {
+    gameTile: {
+        gameName: string;
+        imageUrl: string;
+        altText: string;
+        url: string;
+        lineOne: string;
+        lineTwo: string;
+    }[];
+}
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,29 +41,33 @@ const FlexContainer = styled.div`
   justify-content: space-between;
 `;
 
-const GamePage = () => {
+const GamePage = ({gameTile}: Props) => {
     const router = useRouter();
     const { game } = router.query;
+
+    if (game === 'platformers') {
+        gameTile = PlatformerData;
+    } else if (game === 'demos-and-prototypes') {
+        gameTile = PrototypesData;
+    } else if (game === 'rpgs') {
+        gameTile = RpgData;
+    } 
 
     return (
         <Wrapper>
             <Container>
                 <p>{game} games</p>
                 <FlexContainer>
-                    <GameTile 
-                        imageUrl='/images/game-tile-placeholder.png'
-                        altText='Game Tile Placeholder'
-                        url='https://allusinteractive.itch.io'
-                        lineOne='Game Tile Component - Line One. A short sentence talking about the game.'
-                        lineTwo='Game Tile Component - Line Two. A short sentence talking about the game.'
-                    />
-                    <GameTile 
-                        imageUrl='/images/game-tile-placeholder.png'
-                        altText='Game Tile Placeholder'
-                        url='https://allusinteractive.itch.io'
-                        lineOne='Game Tile Component - Line One. A short sentence talking about the game.'
-                        lineTwo='Game Tile Component - Line Two. A short sentence talking about the game.'
-                    />
+                    {gameTile && gameTile.map((tile, key) =>
+                        <GameTile
+                            key={tile.gameName}
+                            imageUrl={tile.imageUrl}
+                            altText={tile.altText}
+                            url={tile.url}
+                            lineOne={tile.lineOne}
+                            lineTwo={tile.lineTwo}
+                        />
+                    )}
                 </FlexContainer>
             </Container>
         </Wrapper>
