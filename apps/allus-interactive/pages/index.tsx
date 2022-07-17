@@ -58,14 +58,14 @@ export function Index() {
         <Title>Featured Games</Title>
         <FlexContainer>
           <GameTile
-            imageUrl='/images/games/TrialsOfKhione.jpg'
+            imageUrl='/images/game-tile/Khione.png'
             altText='The Trials of Khione'
             url='https://allusinteractive.itch.io/the-trials-of-khione'
             lineOne='Play as the Greek Goddess of Snow, Khione.'
             lineTwo='Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders.'
           />
           <GameTile
-            imageUrl='/images/games/BeardedBeatdown.png'
+            imageUrl='/images/game-tile/BeardedBeatdown.png'
             altText='Bearded Beatdown'
             url='https://allusinteractive.itch.io/bearded-beatdown'
             lineOne='Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3.'

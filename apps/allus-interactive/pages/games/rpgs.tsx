@@ -42,21 +42,21 @@ const RpgGamePage = () => {
                 <Title>RPG Games</Title>
                 <FlexContainer>
                     <GameTile
-                        imageUrl='/images/games/FightForValhalla.png'
+                        imageUrl='/images/game-tile/Valhalla.png'
                         altText='The Fight for Valhalla'
                         url='https://allusinteractive.itch.io/the-fight-for-valhalla'
                         lineOne='Play as the norse warrior Ingirun, as she fights alongside her brothers for the glory of Valhalla.'
                         lineTwo=''
                     />
                     <GameTile
-                        imageUrl='/images/games/TrialsOfKhione.jpg'
+                        imageUrl='/images/game-tile/Khione.png'
                         altText='The Trials of Khione'
                         url='https://allusinteractive.itch.io/the-trials-of-khione'
                         lineOne='Play as the Greek Goddess of Snow, Khione.'
                         lineTwo='Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders.'
                     />
                     <GameTile
-                        imageUrl='/images/games/LaboursOfHeracles.png'
+                        imageUrl='/images/game-tile/Heracles.png'
                         altText='The Labours of Heracles'
                         url='https://allusinteractive.itch.io/the-labours-of-heracles'
                         lineOne='Assume the role of legendary Greek Hero Heracles.'
