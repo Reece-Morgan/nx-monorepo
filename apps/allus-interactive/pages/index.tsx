@@ -46,9 +46,9 @@ export function Index() {
         infinite={true}
         swipe={true}
       >
-        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/rpgs' />
-        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/platformers' />
-        <SingleTile imageUrl='/images/carousel-placeholder.png' altText='Placeholder banner' url='/games/demos-and-prototypes' />
+        <SingleTile imageUrl='/images/carousel/Rpgs.png' altText='RPG Games Banner' url='/games/rpgs' />
+        <SingleTile imageUrl='/images/carousel/Platformers.png' altText='Platformers Banner' url='/games/platformers' />
+        <SingleTile imageUrl='/images/carousel/Prototypes.png' altText='Demos and Prototypes Banner' url='/games/demos-and-prototypes' />
       </Carousel>
       <Container>
         <Title>Welcome to Allus Interactive</Title>
