@@ -26,6 +26,10 @@
         ],
         "accessToken": "M2NmMzAxMmItZTMxNS00NThkLTkxY2ItMGY3ZjcxOTJiMTQyfHJlYWQtd3JpdGU="
       }
+    },
+    "no-cloud": {
+      "runner": "@nrwl/workspace/src/tasks-runner/default-tasks-runner",
+      "options": {}
     }
   },
   "targetDependencies": {
