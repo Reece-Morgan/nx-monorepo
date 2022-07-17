@@ -14,7 +14,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to Allus Interactive</title>
+        <title>Allus Interactive</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header
         bgColour={colourValues.background}
