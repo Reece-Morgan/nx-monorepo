@@ -43,13 +43,13 @@ export const MobileMenu = ({bgColour, titleColour}: Props): JSX.Element => (
         Home
       </MenuLink>
       <HR colour={titleColour} />
-      <MenuLink colour={titleColour} href="/rpgs">
+      <MenuLink colour={titleColour} href="/games/rpgs">
         RPGs
       </MenuLink>
-      <MenuLink colour={titleColour} href="/platformers">
+      <MenuLink colour={titleColour} href="/games/platformers">
         Platformers
       </MenuLink>
-      <MenuLink colour={titleColour} href="/demos-and-prototypes">
+      <MenuLink colour={titleColour} href="/games/demos-and-prototypes">
         Demos/Prototypes
       </MenuLink>
       <HR colour={titleColour} />
