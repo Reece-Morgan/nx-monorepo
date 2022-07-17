@@ -10,6 +10,9 @@ const FooterContainer = styled.footer<{ colour: string }>`
   width: 100%;
   height: 100px;
   background-color: ${(props) => props.colour};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const CopyrightText = styled.p<{ colour: string }>`
@@ -52,13 +55,13 @@ const Link = styled.a<{
 
 export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
   <FooterContainer colour={bgColour}>
-    <CopyrightText colour={textColour}>
-      Copyright Allus Interactive 2022
-    </CopyrightText>
     <LinkWrapper>
       <Link colour={textColour} hover={hoverColour} href='/static/about-allus'>About Allus</Link>
       <LinkSeparator colour={textColour}> | </LinkSeparator>
       <Link colour={textColour} hover={hoverColour} href='/static/privacy-policy'>Privacy Policy</Link>
     </LinkWrapper>
+    <CopyrightText colour={textColour}>
+      Copyright Allus Interactive 2017-2022
+    </CopyrightText>
   </FooterContainer>
 );
