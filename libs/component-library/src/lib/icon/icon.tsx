@@ -11,6 +11,7 @@ const SocialMediaLink = styled.a``;
 const SocialMediaIcon = styled.img`
     width: 50px;
     height: 50px;
+    padding: 10px;
 `;
 
 export const Icon = ({ iconUrl, altText, url }: Props) => {
