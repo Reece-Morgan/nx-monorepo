@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Icon } from "../icon/icon";
 
 interface Props {
   bgColour: string;
@@ -8,7 +9,7 @@ interface Props {
 
 const FooterContainer = styled.footer<{ colour: string }>`
   width: 100%;
-  height: 100px;
+  height: 120px;
   background-color: ${(props) => props.colour};
   display: flex;
   flex-direction: column;
@@ -53,6 +54,12 @@ const Link = styled.a<{
   }
 `;
 
+const SocialMediaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
 export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
   <FooterContainer colour={bgColour}>
     <LinkWrapper>
@@ -63,5 +70,12 @@ export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
     <CopyrightText colour={textColour}>
       Copyright Allus Interactive 2017-2022
     </CopyrightText>
+    <SocialMediaWrapper>
+      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Facebook" url="https://www.facebook.com/AllusInteractive/" />
+      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Twitter" url="https://twitter.com/AllusGameDev" />
+      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Instagram" url="https://www.instagram.com/allusinteractive/" />
+      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="itch.io" url="https://allusinteractive.itch.io/" />
+      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="LinkedIn" url="https://www.linkedin.com/in/reece-morgan-dev/" />
+    </SocialMediaWrapper>
   </FooterContainer>
 );
