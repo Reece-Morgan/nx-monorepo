@@ -9,7 +9,7 @@ interface Props {
 
 const Container = styled.div`
     width: 100%;
-    max-height: 30vw;
+    max-height: 25vw;
     background-color: transparent;
     box-shadow: rgb(0 0 0 / 40%) 3px 5px 6px 1px;
     display: flex;
@@ -26,7 +26,7 @@ const Container = styled.div`
 const ImageLink = styled.a``;
 
 const Image = styled.img`
-    width: 100%;
+    width: 100vw;
 `;
 
 export const SingleTile = ({ imageUrl, altText, url }: Props): JSX.Element => {
