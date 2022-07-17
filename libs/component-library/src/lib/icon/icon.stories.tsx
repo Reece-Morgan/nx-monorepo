@@ -16,16 +16,6 @@ export const FacebookIcon: ComponentStory<typeof Icon> = () => {
     )
 }
 
-export const TwitterIcon: ComponentStory<typeof Icon> = () => {
-    return (
-        <Icon
-            iconUrl='/images/icon-placeholder.png'
-            altText='Twitter Icon'
-            url='https://twitter.com/AllusGameDev'
-        />
-    )
-}
-
 export const InstagramIcon: ComponentStory<typeof Icon> = () => {
     return (
         <Icon
@@ -42,6 +32,26 @@ export const ItchIcon: ComponentStory<typeof Icon> = () => {
             iconUrl='/images/icon-placeholder.png'
             altText='itch.io Icon'
             url='https://allusinteractive.itch.io/'
+        />
+    )
+}
+
+export const LinkedInIcon: ComponentStory<typeof Icon> = () => {
+    return (
+        <Icon
+            iconUrl='/images/icon-placeholder.png'
+            altText='LinkedIn Icon'
+            url='https://www.linkedin.com/in/reece-morgan-dev/'
+        />
+    )
+}
+
+export const TwitterIcon: ComponentStory<typeof Icon> = () => {
+    return (
+        <Icon
+            iconUrl='/images/icon-placeholder.png'
+            altText='Twitter Icon'
+            url='https://twitter.com/AllusGameDev'
         />
     )
 }
