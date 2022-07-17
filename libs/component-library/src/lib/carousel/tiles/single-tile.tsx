@@ -16,10 +16,11 @@ const Container = styled.div`
     aspect-ratio: 16/9;
     cursor: pointer;
     @media(min-width: ${breakpointValues.tablet}) {
-        height: 300px;
+        height: 22vw;
     }
     @media(min-width: ${breakpointValues.lg}) {
         width: 1200px;
+        height: 300px;
     }
 `;
 
