@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const Container = styled.div`
+    min-width: 100%vw;
     margin: auto;
     padding: 0;
     @media(min-width: ${breakpointValues.tablet}) {
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const CarouselContainer = styled(Slider)`
+    width: 100%;
     max-width: 1200px;
     max-height: 300px;
     margin-bottom: 30px;
@@ -51,7 +53,7 @@ const CarouselContainer = styled(Slider)`
         }
     }
     .slick-list {
-        'overflow: hidden;';
+        overflow: hidden;
     }
 `;
 
