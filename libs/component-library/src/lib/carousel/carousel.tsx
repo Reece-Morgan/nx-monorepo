@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const Container = styled.div`
-    width: 100vw;
+    width: 100%;
     margin: auto;
     padding: 0;
     @media(min-width: ${breakpointValues.tablet}) {
