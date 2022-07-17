@@ -60,6 +60,23 @@ const SocialMediaWrapper = styled.div`
   justify-content: center;
 `;
 
+const Span = styled.p<{ colour: string }>`
+  font-size: 12px;
+  color: ${(props) => props.colour};
+  margin: -5px 0 10px 0;
+  text-align: center;
+`;
+
+const SpanLink = styled.a<{ 
+  colour: string,
+  hover: string
+}>`
+  color: ${(props) => props.colour};
+  &:hover {
+    color: ${(props) => props.hover};
+  }
+`;
+
 export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
   <FooterContainer colour={bgColour}>
     <LinkWrapper>
@@ -71,11 +88,22 @@ export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
       Copyright Allus Interactive 2017-2022
     </CopyrightText>
     <SocialMediaWrapper>
-      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Facebook" url="https://www.facebook.com/AllusInteractive/" />
-      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Twitter" url="https://twitter.com/AllusGameDev" />
-      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="Instagram" url="https://www.instagram.com/allusinteractive/" />
-      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="itch.io" url="https://allusinteractive.itch.io/" />
-      <Icon iconUrl="/images/icons/icon-placeholder.png" altText="LinkedIn" url="https://www.linkedin.com/in/reece-morgan-dev/" />
+      <Icon iconUrl="/images/icons/facebook.svg" altText="Facebook" url="https://www.facebook.com/AllusInteractive/" />
+      <Icon iconUrl="/images/icons/instagram.svg" altText="Instagram" url="https://www.instagram.com/allusinteractive/" />
+      <Icon iconUrl="/images/icons/twitter.svg" altText="Twitter" url="https://twitter.com/AllusGameDev" />
+      <Icon iconUrl="/images/icons/itch-io.svg" altText="itch.io" url="https://allusinteractive.itch.io/" />
+      <Icon iconUrl="/images/icons/linkedin.svg" altText="LinkedIn" url="https://www.linkedin.com/in/reece-morgan-dev/" />
     </SocialMediaWrapper>
+    <Span colour={textColour}>
+      Icons by  
+      <SpanLink 
+        colour={textColour} 
+        hover={hoverColour} 
+        href="https://icons8.com" 
+        target="_blank" 
+        rel="noreferrer"
+      > Icons8 
+      </SpanLink>
+    </Span>
   </FooterContainer>
 );
