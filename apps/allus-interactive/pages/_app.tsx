@@ -16,6 +16,17 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Allus Interactive</title>
         <link rel="icon" href="/favicon.png" />
+        {/* Global site tag (gtag.js) - Google Analytics */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146785635-2"></script>
+        <script dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-146785635-2');`,
+          }}
+        />
       </Head>
       <Header
         bgColour={colourValues.background}
