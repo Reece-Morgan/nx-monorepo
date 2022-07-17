@@ -54,11 +54,11 @@ export function AboutAllus() {
         <Section>
             <SectionTitle></SectionTitle>
             <Paragraph>
-                Allus Interactive is a one man indie game development studio run by me, Reece. Since starting out in the summer of 2017, I have 
-                designed, developed and released a number of different games for a wide range of platforms, including Android, Windows and MacOS. 
-                All my PC games can be downloaded from/played on my <Link href="" target="_blank">itch.io</Link> page. My Android games can be 
-                downloaded from the <Link href="https://play.google.com/store/apps/developer?id=Allus+Interactive" target="_blank">Google Play 
-                Store</Link>.
+                Allus Interactive is a one man indie game development studio run by me, Reece. Starting out in the summer of 2017 under the name 
+                RM Games, I rebranded as Allus Interactive several months later. I have since designed, developed and released a number of different 
+                games for a wide range of platforms, including Android, Windows and MacOS. All my PC games can be downloaded from/played on my 
+                <Link href="" target="_blank">itch.io</Link> page. My Android games can be downloaded from the 
+                <Link href="https://play.google.com/store/apps/developer?id=Allus+Interactive" target="_blank">Google Play Store</Link>.
             </Paragraph>
             <Paragraph>
                 During the course of my journey as an indie game developer, I have explored and used many different game engines to develop my 
