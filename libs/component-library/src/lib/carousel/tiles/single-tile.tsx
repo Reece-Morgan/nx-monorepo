@@ -28,6 +28,9 @@ const ImageLink = styled.a``;
 
 const Image = styled.img`
     width: 100vw;
+    @media (min-width: ${breakpointValues.tablet}) {
+        width: 100%;
+    }
 `;
 
 export const SingleTile = ({ imageUrl, altText, url }: Props): JSX.Element => {
