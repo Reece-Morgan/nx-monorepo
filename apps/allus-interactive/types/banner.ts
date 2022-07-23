@@ -1,8 +1,8 @@
 export type Banner = {
   altText: string;
-  title: string;
   image: {
     url: string;
   };
+  title: string;
   url: string;
-}
+};
