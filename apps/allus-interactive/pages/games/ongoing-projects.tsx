@@ -51,7 +51,7 @@ const RpgGamePage = () => {
             <GameTile
               imageUrl="/images/game-tile/RPGMakerJam5.png"
               altText="RPG Maker Jam #5"
-              url="https://allusinteractive.itch.io/the-trials-of-khione"
+              url="https://itch.io/jam/30-day-rpg-maker-themed-game-jam-5"
               lineOne="I'm currently developing a new game in RPG Maker for the 30 Day RPG Maker Themed Game Jam #5"
               lineTwo="This Game Jam runs for 30 days, so my entry should be availble to download towards the end of August"
             />
