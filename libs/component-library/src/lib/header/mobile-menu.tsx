@@ -13,6 +13,7 @@ const MenuContainer = styled.div<{ colour: string }>`
   bottom: 0;
   z-index: 6;
   width: 320px;
+  font-size: 12px;
 `;
 
 const FlexContainer = styled.div`
@@ -36,7 +37,7 @@ const HR = styled.hr<{ colour: string }>`
   border: 1px solid ${(props) => props.colour};
 `;
 
-export const MobileMenu = ({bgColour, titleColour}: Props): JSX.Element => (
+export const MobileMenu = ({ bgColour, titleColour }: Props): JSX.Element => (
   <MenuContainer colour={bgColour}>
     <FlexContainer>
       <MenuLink colour={titleColour} href="/">
@@ -51,6 +52,9 @@ export const MobileMenu = ({bgColour, titleColour}: Props): JSX.Element => (
       </MenuLink>
       <MenuLink colour={titleColour} href="/games/demos-and-prototypes">
         Demos/Prototypes
+      </MenuLink>
+      <MenuLink colour={titleColour} href="/games/ongoing-projects">
+        Ongoing Projects
       </MenuLink>
       <HR colour={titleColour} />
       <MenuLink colour={titleColour} href="/static/about-allus">

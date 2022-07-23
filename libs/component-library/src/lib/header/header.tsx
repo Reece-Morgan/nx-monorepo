@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import breakpointValues from "../../settings/breakpoints";
-import { HeaderLink } from "./header-link";
-import { useState } from "react";
-import { MobileMenu } from "./mobile-menu";
+import styled from 'styled-components';
+import breakpointValues from '../../settings/breakpoints';
+import { HeaderLink } from './header-link';
+import { useState } from 'react';
+import { MobileMenu } from './mobile-menu';
 
 interface Props {
   bgColour: string;
@@ -16,7 +16,7 @@ interface Props {
   }[];
 }
 
-const HeaderContainer = styled.header<{colour: string}>`
+const HeaderContainer = styled.header<{ colour: string }>`
   width: 100%;
   height: 70px;
   background-color: ${(props) => props.colour};
@@ -25,6 +25,7 @@ const HeaderContainer = styled.header<{colour: string}>`
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `;
 
 const DesktopLinkContainer = styled.div`
@@ -32,9 +33,13 @@ const DesktopLinkContainer = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   width: calc(100% - 60px);
-  @media (min-width: ${breakpointValues.tablet}) {
+  @media (min-width: ${breakpointValues.md}) {
     display: flex;
-    width: calc(100% - 450px);
+    width: 50%;
+  }
+  @media (min-width: ${breakpointValues.tablet}) and (max-width: ${breakpointValues.md}) {
+    display: flex;
+    width: 60%;
   }
 `;
 
@@ -47,12 +52,16 @@ const MobileLinkContainer = styled.div`
     display: none;
   }
   @media (min-width: ${breakpointValues.sm}) {
-    width: calc(100% - 450px);
+    width: 50%;
   }
 `;
 
 const LogoLink = styled.a`
   cursor: pointer;
+  width: 50%;
+  @media (max-width: ${breakpointValues.md}) {
+    width: 40%;
+  }
 `;
 
 const HeaderLogo = styled.div<{
@@ -62,12 +71,13 @@ const HeaderLogo = styled.div<{
   background-image: url(${(props) => props.mobileImageUrl});
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   height: 60px;
   width: 70px;
   margin: 5px;
   @media (min-width: ${breakpointValues.sm}) {
     background-image: url(${(props) => props.desktopImageUrl});
-    width: 450px;
+    width: 100%;
   }
 `;
 
@@ -105,7 +115,14 @@ const Overlay = styled.div`
   z-index: 5;
 `;
 
-export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desktopImageUrl, links}: Props): JSX.Element => {
+export const Header = ({
+  bgColour,
+  titleColour,
+  hoverColour,
+  mobileImageUrl,
+  desktopImageUrl,
+  links,
+}: Props): JSX.Element => {
   const [MenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = (): void => {
@@ -116,19 +133,23 @@ export const Header = ({bgColour, titleColour, hoverColour, mobileImageUrl, desk
     <HeaderContainer colour={bgColour}>
       <FlexContainer>
         <LogoLink href="/">
-          <HeaderLogo mobileImageUrl={mobileImageUrl} desktopImageUrl={desktopImageUrl} />
+          <HeaderLogo
+            mobileImageUrl={mobileImageUrl}
+            desktopImageUrl={desktopImageUrl}
+          />
         </LogoLink>
         <DesktopLinkContainer>
-          {links && links.map((link, key) => 
-            <HeaderLink
-              key={link.url}
-              titleColour={titleColour}
-              hoverColour={hoverColour}
-              url={link.url}
-            >
-              {link.text}
-            </HeaderLink>  
-          )}
+          {links &&
+            links.map((link, key) => (
+              <HeaderLink
+                key={link.url}
+                titleColour={titleColour}
+                hoverColour={hoverColour}
+                url={link.url}
+              >
+                {link.text}
+              </HeaderLink>
+            ))}
         </DesktopLinkContainer>
         <MobileLinkContainer>
           <BurgerMenuContainer onClick={() => toggleMenu()}>

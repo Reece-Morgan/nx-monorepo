@@ -9,6 +9,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
     { url: '/games/rpgs', text: 'RPGs' },
     { url: '/games/platformers', text: 'Platformers' },
     { url: '/games/demos-and-prototypes', text: 'Demos/Prototype' },
+    { url: '/games/ongoing-projects', text: 'Ongoing Projects' },
   ];
 
   return (

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpointValues from '../../settings/breakpoints';
 
 interface Props {
   url: string;
@@ -21,6 +22,9 @@ const StyledLink = styled.a<{
   &:hover {
     color: ${(props) => props.hoverColour};
     cursor: pointer;
+  }
+  @media (max-width: ${breakpointValues.md}) {
+    font-size: 14px;
   }
 `;
 
