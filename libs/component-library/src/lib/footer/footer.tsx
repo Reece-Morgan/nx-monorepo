@@ -78,32 +78,71 @@ const SpanLink = styled.a<{
 `;
 
 export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
-  <FooterContainer colour={bgColour}>
-    <LinkWrapper>
-      <Link colour={textColour} hover={hoverColour} href='/static/about-allus'>About Allus</Link>
-      <LinkSeparator colour={textColour}> | </LinkSeparator>
-      <Link colour={textColour} hover={hoverColour} href='/static/privacy-policy'>Privacy Policy</Link>
-    </LinkWrapper>
-    <CopyrightText colour={textColour}>
-      Copyright Allus Interactive 2017-2022
-    </CopyrightText>
-    <SocialMediaWrapper>
-      <Icon iconUrl="/images/icons/facebook.svg" altText="Facebook" url="https://www.facebook.com/AllusInteractive/" />
-      <Icon iconUrl="/images/icons/instagram.svg" altText="Instagram" url="https://www.instagram.com/allusinteractive/" />
-      <Icon iconUrl="/images/icons/twitter.svg" altText="Twitter" url="https://twitter.com/AllusGameDev" />
-      <Icon iconUrl="/images/icons/itch-io.svg" altText="itch.io" url="https://allusinteractive.itch.io/" />
-      <Icon iconUrl="/images/icons/linkedin.svg" altText="LinkedIn" url="https://www.linkedin.com/in/reece-morgan-dev/" />
-    </SocialMediaWrapper>
-    <Span colour={textColour}>
-      Icons by  
-      <SpanLink 
-        colour={textColour} 
-        hover={hoverColour} 
-        href="https://icons8.com" 
-        target="_blank" 
-        rel="noreferrer"
-      > Icons8 
-      </SpanLink>
-    </Span>
-  </FooterContainer>
-);
+         <FooterContainer colour={bgColour}>
+           <LinkWrapper>
+             <Link
+               colour={textColour}
+               hover={hoverColour}
+               href="/static/about-allus"
+             >
+               About Allus
+             </Link>
+             <LinkSeparator colour={textColour}> | </LinkSeparator>
+             <Link
+               colour={textColour}
+               hover={hoverColour}
+               href="/static/privacy-policy"
+             >
+               Privacy Policy
+             </Link>
+           </LinkWrapper>
+           <CopyrightText colour={textColour}>
+             Copyright Allus Interactive 2017-2022
+           </CopyrightText>
+           <SocialMediaWrapper>
+             <Icon
+               iconUrl="/images/icons/facebook.svg"
+               altText="Facebook"
+               url="https://www.facebook.com/AllusInteractive/"
+             />
+             <Icon
+               iconUrl="/images/icons/instagram.svg"
+               altText="Instagram"
+               url="https://www.instagram.com/allusinteractive/"
+             />
+             <Icon
+               iconUrl="/images/icons/twitter.svg"
+               altText="Twitter"
+               url="https://twitter.com/AllusGameDev"
+             />
+             <Icon
+               iconUrl="/images/icons/itch-io.svg"
+               altText="itch.io"
+               url="https://allusinteractive.itch.io/"
+             />
+             <Icon
+               iconUrl="/images/icons/linkedin.svg"
+               altText="LinkedIn"
+               url="https://www.linkedin.com/in/reece-morgan-dev/"
+             />
+             <Icon
+               iconUrl="/images/icons/github.svg"
+               altText="Github"
+               url="https://github.com/AllusInteractive"
+             />
+           </SocialMediaWrapper>
+           <Span colour={textColour}>
+             Icons by
+             <SpanLink
+               colour={textColour}
+               hover={hoverColour}
+               href="https://icons8.com"
+               target="_blank"
+               rel="noreferrer"
+             >
+               {' '}
+               Icons8
+             </SpanLink>
+           </Span>
+         </FooterContainer>
+       );
