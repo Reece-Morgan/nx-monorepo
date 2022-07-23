@@ -37,14 +37,28 @@ const Title = styled.h1`
 
 const RpgGamePage = () => {
     return (
-        <Wrapper>
-            <Container>
-                <Title>Ongoing Projects</Title>
-                <FlexContainer>
-                </FlexContainer>
-            </Container>
-        </Wrapper>
-    )
+      <Wrapper>
+        <Container>
+          <Title>Ongoing Projects</Title>
+          <FlexContainer>
+            <GameTile
+              imageUrl="/images/game-tile/MobileRPG.png"
+              altText="Mobile RPG"
+              url="https://allusinteractive.itch.io"
+              lineOne="I'm currently developing the mechanics of a pixel art RPG uing Godot"
+              lineTwo="I'm planning to incorporate these mechanics into a text adventure game, for a small, linear adventure game"
+            />
+            <GameTile
+              imageUrl="/images/game-tile/RPGMakerJam5.png"
+              altText="RPG Maker Jam #5"
+              url="https://allusinteractive.itch.io/the-trials-of-khione"
+              lineOne="I'm currently developing a new game in RPG Maker for the 30 Day RPG Maker Themed Game Jam #5"
+              lineTwo="This Game Jam runs for 30 days, so my entry should be availble to download towards the end of August"
+            />
+          </FlexContainer>
+        </Container>
+      </Wrapper>
+    );
 }
 
 export default RpgGamePage;
