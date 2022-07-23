@@ -13,6 +13,7 @@ const MenuContainer = styled.div<{ colour: string }>`
   bottom: 0;
   z-index: 6;
   width: 320px;
+  font-size: 12px;
 `;
 
 const FlexContainer = styled.div`
