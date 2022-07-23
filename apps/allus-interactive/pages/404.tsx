@@ -54,6 +54,7 @@ export function PageNotFound() {
                     <li><Link href="/games/rpgs">RPG Games</Link></li>
                     <li><Link href="/games/platformers">Platformer Games</Link></li>
                     <li><Link href="/games/demos-and-prototypes">Demos and Prototypes</Link></li>
+                    <li><Link href="/games/ongoing-projects">Ongoing Projects</Link></li>
                 </ul>
             </Container>
         </Wrapper>
