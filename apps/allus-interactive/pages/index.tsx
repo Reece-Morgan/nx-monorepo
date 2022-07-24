@@ -7,8 +7,8 @@ import {
   GameTile,
 } from '@allus-interactive/component-library';
 import { GetStaticProps } from 'next';
-import { gql } from 'graphql-request';
-import { graphQLClient } from './api/graphQLClient';
+import { gql } from '@apollo/client';
+import client from './api/apolloClient';
 import { Banner } from '../types/banner';
 import { useState, useEffect } from 'react';
 
@@ -58,10 +58,10 @@ const query = gql`
 `;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await graphQLClient.request(query);
+  const { data } = await client.query({query});
   return {
     props: {
-      banners: data || [],
+      banners: data.banners || [],
     },
     revalidate: 90,
   };
@@ -75,9 +75,8 @@ const Home = ({ banners }: HomePageProps) => {
   const [carouselBanners, setCarouselBanners] = useState<Banner[]>([]);
 
   useEffect(() => {
-    console.log('banners: ' + banners);
     setCarouselBanners(banners);
-    console.log('carousel bannera: ' + carouselBanners);
+    console.log('carousel banners: ' + JSON.stringify(carouselBanners));
   }, [banners]);
 
   return (
@@ -90,14 +89,19 @@ const Home = ({ banners }: HomePageProps) => {
         infinite={true}
         swipe={true}
       >
-        {banners && banners.map((i, key) => {
-          <SingleTile
-            key={i.title}
-            imageUrl={i.image.url}
-            altText={i.altText}
-            url={i.url}
-          />
-        })}
+        {carouselBanners && (
+          <p>Carousel Banners Exist!</p>
+        )}
+        {/* {carouselBanners && (
+          carouselBanners.map((tile, index) => {
+            <SingleTile
+              key={index}
+              imageUrl={tile.image.url}
+              altText={tile.altText}
+              url={tile.url}
+            />
+          })
+        )} */}
       </Carousel>
       <Container>
         <Title>Welcome to Allus Interactive</Title>
