@@ -90,18 +90,15 @@ const Home = ({ banners }: HomePageProps) => {
         swipe={true}
       >
         {carouselBanners && (
-          <p>Carousel Banners Exist!</p>
-        )}
-        {/* {carouselBanners && (
-          carouselBanners.map((tile, index) => {
+          carouselBanners.map((tile, index) => (
             <SingleTile
               key={index}
               imageUrl={tile.image.url}
               altText={tile.altText}
               url={tile.url}
             />
-          })
-        )} */}
+          ))
+        )}
       </Carousel>
       <Container>
         <Title>Welcome to Allus Interactive</Title>
