@@ -61,6 +61,7 @@ const query = gql`
       description {
         text
       }
+      featuredGame
       image {
         url
       }
@@ -91,7 +92,11 @@ const Home = ({ banners, games }: HomePageProps) => {
 
   useEffect(() => {
     setCarouselBanners(banners);
-    setFeaturedGames(games);
+    setFeaturedGames(
+      games.filter(
+        (game) => game.featuredGame === true
+      )
+    );
   }, [banners, games]);
 
   return (

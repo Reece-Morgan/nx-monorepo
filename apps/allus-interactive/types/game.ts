@@ -4,6 +4,7 @@ export type Game = {
   description: {
     text: string;
   };
+  featuredGame: boolean;
   image: {
     url: string;
   };
