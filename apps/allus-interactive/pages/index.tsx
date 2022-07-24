@@ -10,6 +10,7 @@ import { GetStaticProps } from 'next';
 import { gql } from '@apollo/client';
 import client from './api/apolloClient';
 import { Banner } from '../types/banner';
+import { Game } from '../types/game';
 import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
@@ -54,6 +55,18 @@ const query = gql`
       title
       url
     }
+    games {
+      title
+      altText
+      description {
+        text
+      }
+      featuredGame
+      image {
+        url
+      }
+      url
+    }
   }
 `;
 
@@ -62,6 +75,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       banners: data.banners || [],
+      games: data.games || []
     },
     revalidate: 90,
   };
@@ -69,15 +83,21 @@ export const getStaticProps: GetStaticProps = async () => {
 
 type HomePageProps = {
   banners: Banner[];
+  games: Game[];
 };
 
-const Home = ({ banners }: HomePageProps) => {
+const Home = ({ banners, games }: HomePageProps) => {
   const [carouselBanners, setCarouselBanners] = useState<Banner[]>([]);
+  const [featuredGames, setFeaturedGames] = useState<Game[]>([]);
 
   useEffect(() => {
     setCarouselBanners(banners);
-    console.log('carousel banners: ' + JSON.stringify(carouselBanners));
-  }, [banners]);
+    setFeaturedGames(
+      games.filter(
+        (game) => game.featuredGame === true
+      )
+    );
+  }, [banners, games]);
 
   return (
     <Wrapper>
@@ -108,20 +128,16 @@ const Home = ({ banners }: HomePageProps) => {
         </p>
         <Title>Featured Games</Title>
         <FlexContainer>
-          <GameTile
-            imageUrl="/images/game-tile/Khione.png"
-            altText="The Trials of Khione"
-            url="https://allusinteractive.itch.io/the-trials-of-khione"
-            lineOne="Play as the Greek Goddess of Snow, Khione."
-            lineTwo="Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders."
-          />
-          <GameTile
-            imageUrl="/images/game-tile/BeardedBeatdown.png"
-            altText="Bearded Beatdown"
-            url="https://allusinteractive.itch.io/bearded-beatdown"
-            lineOne="Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3."
-            lineTwo="I have plans to rebuild this game in another engine, and develop it further than this prototype."
-          />
+          {featuredGames && featuredGames.map((tile, index) => (
+            <GameTile
+              key={index}
+              imageUrl={tile.image.url}
+              altText={tile.altText}
+              url={tile.image.url}
+              lineOne={tile.description.text}
+              lineTwo=""
+            />
+          ))}
         </FlexContainer>
       </Container>
     </Wrapper>
