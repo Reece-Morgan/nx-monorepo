@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import colourValues from '../../settings/colours';
 import { GameTile } from '@allus-interactive/component-library';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../api/apolloClient';
+import { Game } from '../../types/game';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,33 +40,63 @@ const Title = styled.h1`
   color: ${colourValues.title};
 `;
 
-const RpgGamePage = () => {
+const query = gql`
+  query {
+    games {
+      title
+      altText
+      category
+      description {
+        text
+      }
+      image {
+        url
+      }
+      url
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      games: data.games || []
+    },
+    revalidate: 90,
+  };
+};
+
+type GamePageProps = {
+  games: Game[];
+};
+
+const RpgGamePage = ({ games }: GamePageProps) => {
+  const [rpgGames, setRpgGames] = useState<Game[]>([]);
+
+  useEffect(() => {
+    setRpgGames(
+      games.filter(
+        (game) => game.category === 'rpgs'
+      )
+    );
+  }, [games]);
+
     return (
         <Wrapper>
             <Container>
                 <Title>RPG Games</Title>
                 <FlexContainer>
+                  {rpgGames && rpgGames.map((tile, index) => (
                     <GameTile
-                        imageUrl='/images/game-tile/Valhalla.png'
-                        altText='The Fight for Valhalla'
-                        url='https://allusinteractive.itch.io/the-fight-for-valhalla'
-                        lineOne='Play as the norse warrior Ingirun, as she fights alongside her brothers for the glory of Valhalla.'
-                        lineTwo=''
+                      key={index}
+                      imageUrl={tile.image.url}
+                      altText={tile.altText}
+                      url={tile.image.url}
+                      lineOne={tile.description.text}
+                      lineTwo=""
                     />
-                    <GameTile
-                        imageUrl='/images/game-tile/Khione.png'
-                        altText='The Trials of Khione'
-                        url='https://allusinteractive.itch.io/the-trials-of-khione'
-                        lineOne='Play as the Greek Goddess of Snow, Khione.'
-                        lineTwo='Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders.'
-                    />
-                    <GameTile
-                        imageUrl='/images/game-tile/Heracles.png'
-                        altText='The Labours of Heracles'
-                        url='https://allusinteractive.itch.io/the-labours-of-heracles'
-                        lineOne='Assume the role of legendary Greek Hero Heracles.'
-                        lineTwo='Complete the fabled Labours for King Eurystheus, as penance for severe crimes.'
-                    />
+                  ))}
                 </FlexContainer>
             </Container>
         </Wrapper>
