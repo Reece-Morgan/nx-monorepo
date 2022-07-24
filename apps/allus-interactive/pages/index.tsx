@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
-import { Carousel, SingleTile, GameTile } from '@allus-interactive/component-library';
+import {
+  Carousel,
+  SingleTile,
+  GameTile,
+} from '@allus-interactive/component-library';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from './api/apolloClient';
+import { Banner } from '../types/banner';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,7 +44,41 @@ const FlexContainer = styled.div`
   padding: 10px 0;
 `;
 
-export function Index() {
+const query = gql`
+  query {
+    banners {
+      altText
+      image {
+        url
+      }
+      title
+      url
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      banners: data.banners || [],
+    },
+    revalidate: 90,
+  };
+};
+
+type HomePageProps = {
+  banners: Banner[];
+};
+
+const Home = ({ banners }: HomePageProps) => {
+  const [carouselBanners, setCarouselBanners] = useState<Banner[]>([]);
+
+  useEffect(() => {
+    setCarouselBanners(banners);
+    console.log('carousel banners: ' + JSON.stringify(carouselBanners));
+  }, [banners]);
+
   return (
     <Wrapper>
       <Carousel
@@ -46,30 +89,38 @@ export function Index() {
         infinite={true}
         swipe={true}
       >
-        <SingleTile imageUrl='/images/carousel/Rpgs.png' altText='RPG Games Banner' url='/games/rpgs' />
-        <SingleTile imageUrl='/images/carousel/Platformers.png' altText='Platformers Banner' url='/games/platformers' />
-        <SingleTile imageUrl='/images/carousel/Prototypes.png' altText='Demos and Prototypes Banner' url='/games/demos-and-prototypes' />
+        {carouselBanners && (
+          carouselBanners.map((tile, index) => (
+            <SingleTile
+              key={index}
+              imageUrl={tile.image.url}
+              altText={tile.altText}
+              url={tile.url}
+            />
+          ))
+        )}
       </Carousel>
       <Container>
         <Title>Welcome to Allus Interactive</Title>
         <p>
-          Allus Interactive is an indie game developer designing, developing and publishing games across PC and Android.
+          Allus Interactive is an indie game developer designing, developing and
+          publishing games across PC and Android.
         </p>
         <Title>Featured Games</Title>
         <FlexContainer>
           <GameTile
-            imageUrl='/images/game-tile/Khione.png'
-            altText='The Trials of Khione'
-            url='https://allusinteractive.itch.io/the-trials-of-khione'
-            lineOne='Play as the Greek Goddess of Snow, Khione.'
-            lineTwo='Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders.'
+            imageUrl="/images/game-tile/Khione.png"
+            altText="The Trials of Khione"
+            url="https://allusinteractive.itch.io/the-trials-of-khione"
+            lineOne="Play as the Greek Goddess of Snow, Khione."
+            lineTwo="Stripped of your immortality by your father Boreas and sent to the mortal world, you find yourself in a small village suspicious of outsiders."
           />
           <GameTile
-            imageUrl='/images/game-tile/BeardedBeatdown.png'
-            altText='Bearded Beatdown'
-            url='https://allusinteractive.itch.io/bearded-beatdown'
-            lineOne='Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3.'
-            lineTwo='I have plans to rebuild this game in another engine, and develop it further than this prototype.'
+            imageUrl="/images/game-tile/BeardedBeatdown.png"
+            altText="Bearded Beatdown"
+            url="https://allusinteractive.itch.io/bearded-beatdown"
+            lineOne="Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3."
+            lineTwo="I have plans to rebuild this game in another engine, and develop it further than this prototype."
           />
         </FlexContainer>
       </Container>
@@ -77,4 +128,4 @@ export function Index() {
   );
 }
 
-export default Index;
+export default Home;
