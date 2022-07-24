@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import colourValues from '../../settings/colours';
 import { GameTile } from '@allus-interactive/component-library';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../api/apolloClient';
+import { Game } from '../../types/game';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,30 +40,67 @@ const Title = styled.h1`
   color: ${colourValues.title};
 `;
 
-const RpgGamePage = () => {
+const query = gql`
+  query {
+    games {
+      title
+      altText
+      category
+      description {
+        text
+      }
+      image {
+        url
+      }
+      url
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      games: data.games || []
+    },
+    revalidate: 90,
+  };
+};
+
+type GamePageProps = {
+  games: Game[];
+};
+
+const OngoingProjectsGamePage = ({ games }: GamePageProps) => {
+  const [ongoingProjects, setOngoingProjects] = useState<Game[]>([]);
+
+  useEffect(() => {
+    setOngoingProjects(
+      games.filter(
+        (game) => game.category === 'ongoing'
+      )
+    );
+  }, [games]);
+
     return (
       <Wrapper>
         <Container>
           <Title>Ongoing Projects</Title>
           <FlexContainer>
-            <GameTile
-              imageUrl="/images/game-tile/MobileRPG.png"
-              altText="Mobile RPG"
-              url="https://allusinteractive.itch.io"
-              lineOne="I'm currently developing the mechanics of a pixel art RPG uing Godot"
-              lineTwo="I'm planning to incorporate these mechanics into a text adventure game, for a small, linear adventure game"
-            />
-            <GameTile
-              imageUrl="/images/game-tile/RPGMakerJam5.png"
-              altText="RPG Maker Jam #5"
-              url="https://itch.io/jam/30-day-rpg-maker-themed-game-jam-5"
-              lineOne="I'm currently developing a new game in RPG Maker for the 30 Day RPG Maker Themed Game Jam #5"
-              lineTwo="This Game Jam runs for 30 days, so my entry should be availble to download towards the end of August"
-            />
+            {ongoingProjects && ongoingProjects.map((tile, index) => (
+              <GameTile
+                key={index}
+                imageUrl={tile.image.url}
+                altText={tile.altText}
+                url={tile.image.url}
+                lineOne={tile.description.text}
+                lineTwo=""
+              />
+            ))}
           </FlexContainer>
         </Container>
       </Wrapper>
     );
 }
 
-export default RpgGamePage;
+export default OngoingProjectsGamePage;

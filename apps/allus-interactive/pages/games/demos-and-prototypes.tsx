@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import colourValues from '../../settings/colours';
 import { GameTile } from '@allus-interactive/component-library';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../api/apolloClient';
+import { Game } from '../../types/game';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,30 +40,67 @@ const Title = styled.h1`
   color: ${colourValues.title};
 `;
 
-const RpgGamePage = () => {
+const query = gql`
+  query {
+    games {
+      title
+      altText
+      category
+      description {
+        text
+      }
+      image {
+        url
+      }
+      url
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      games: data.games || []
+    },
+    revalidate: 90,
+  };
+};
+
+type GamePageProps = {
+  games: Game[];
+};
+
+const PrototypesGamePage = ({ games }: GamePageProps) => {
+  const [prototypeGames, setPrototypeGames] = useState<Game[]>([]);
+
+  useEffect(() => {
+    setPrototypeGames(
+      games.filter(
+        (game) => game.category === 'prototypes'
+      )
+    );
+  }, [games]);
+
     return (
         <Wrapper>
             <Container>
                 <Title>Demos and Prototypes</Title>
                 <FlexContainer>
+                  {prototypeGames && prototypeGames.map((tile, index) => (
                     <GameTile
-                        imageUrl='/images/game-tile/BeardedBeatdown.png'
-                        altText='Bearded Beatdown'
-                        url='https://allusinteractive.itch.io/bearded-beatdown'
-                        lineOne='Bearded Beatdown is a pixel art side scrolling beat em up  game I was developing in Construct 3.'
-                        lineTwo='I have plans to rebuild this game in another engine, and develop it further than this prototype.'
+                      key={index}
+                      imageUrl={tile.image.url}
+                      altText={tile.altText}
+                      url={tile.image.url}
+                      lineOne={tile.description.text}
+                      lineTwo=""
                     />
-                    <GameTile
-                        imageUrl='/images/game-tile/TargetPractice.png'
-                        altText='Target Practice'
-                        url='https://allusinteractive.itch.io/target-practice'
-                        lineOne='Target Practice is a prototype game I developed whilst following tutorials and a udemy course on how to create a bow and arrow/archery mechanic in Unity. '
-                        lineTwo='I plan to one day take this mechanic and integrate it into a first person archery game.'
-                    />
+                  ))}
                 </FlexContainer>
             </Container>
         </Wrapper>
     )
 }
 
-export default RpgGamePage;
+export default PrototypesGamePage;

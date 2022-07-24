@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import colourValues from '../../settings/colours';
 import { GameTile } from '@allus-interactive/component-library';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../api/apolloClient';
+import { Game } from '../../types/game';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,37 +40,67 @@ const Title = styled.h1`
   color: ${colourValues.title};
 `;
 
-const RpgGamePage = () => {
+const query = gql`
+  query {
+    games {
+      title
+      altText
+      category
+      description {
+        text
+      }
+      image {
+        url
+      }
+      url
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      games: data.games || []
+    },
+    revalidate: 90,
+  };
+};
+
+type GamePageProps = {
+  games: Game[];
+};
+
+const PlatformerGamePage = ({ games }: GamePageProps) => {
+  const [platformerGames, setPlatformerGames] = useState<Game[]>([]);
+
+  useEffect(() => {
+    setPlatformerGames(
+      games.filter(
+        (game) => game.category === 'platformers'
+      )
+    );
+  }, [games]);
+
     return (
         <Wrapper>
             <Container>
                 <Title>Platformer Games</Title>
                 <FlexContainer>
+                  {platformerGames && platformerGames.map((tile, index) => (
                     <GameTile
-                        imageUrl='/images/game-tile/Kiwi.png'
-                        altText='Kiwi the Koala'
-                        url='hhttps://allusinteractive.itch.io/kiwi-the-koala'
-                        lineOne='Play as Kiwi the Koala as she sets out to find her missing family. But watch out!'
-                        lineTwo='There is danger at every turn. Hungry predators have begun to prowl the land, and a little koala would make a nice snack!'
+                      key={index}
+                      imageUrl={tile.image.url}
+                      altText={tile.altText}
+                      url={tile.image.url}
+                      lineOne={tile.description.text}
+                      lineTwo=""
                     />
-                    <GameTile
-                        imageUrl='/images/game-tile/Kiwi2.png'
-                        altText='Kiwi the Koala 2'
-                        url='https://allusinteractive.itch.io/kiwi-the-koala-2'
-                        lineOne='Play as Karl the Koala as he sets out to find his little sister Kiwi. But be careful!'
-                        lineTwo='There is bound to be danger at every turn. Enemy creatures prowl the land.'
-                    />
-                    <GameTile
-                        imageUrl='/images/game-tile/OneChance.png'
-                        altText='One Chance'
-                        url='https://allusinteractive.itch.io/one-chance'
-                        lineOne='Run and jump your way through this 2d platformer, evading the zombies and trying not to die! One touch from a zombie and it is game over.'
-                        lineTwo='Navigate the different levels, through the wastelands into a city, and find a means of escape. '
-                    />
+                  ))}
                 </FlexContainer>
             </Container>
         </Wrapper>
     )
 }
 
-export default RpgGamePage;
+export default PlatformerGamePage;
