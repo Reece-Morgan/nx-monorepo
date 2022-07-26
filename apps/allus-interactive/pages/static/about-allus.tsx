@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import colourValues from '../../settings/colours';
+import { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from '../api/apolloClient';
+import { About } from '../../types/about';
+import { useState, useEffect } from 'react';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -44,7 +49,42 @@ const Link = styled.a`
   }
 `;
 
-export function AboutAllus() {
+const query = gql`
+  query {
+    about(where: {title: "About Allus Interactive"}) {
+      aboutTitle
+      aboutMeContent {
+        text
+      }
+      content {
+        text
+      }
+      title
+    }
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({query});
+  return {
+    props: {
+      aboutData: data.about || []
+    },
+    revalidate: 90,
+  };
+};
+
+type AboutPageProps = {
+  aboutData: About;
+};
+
+const AboutAllus = ({ aboutData }: AboutPageProps) => {
+  // const [about, setAbout] = useState<About>();
+
+  // useEffect(() => {
+  //   setAbout(aboutData);
+  // }, [aboutData]);
+
   return (
     <Wrapper>
       <Container>
@@ -52,13 +92,12 @@ export function AboutAllus() {
             <Title>About Allus Interactive</Title>
         </Section>
         <Section>
-            <SectionTitle></SectionTitle>
             <Paragraph>
                 Allus Interactive is a one man indie game development studio run by me, Reece. Starting out in the summer of 2017 under the name 
                 RM Games, I rebranded as Allus Interactive several months later. I have since designed, developed and released a number of different 
                 games for a wide range of platforms, including Android, Windows and MacOS. All my PC games can be downloaded from/played on my 
-                <Link href="" target="_blank">itch.io</Link> page. My Android games can be downloaded from the 
-                <Link href="https://play.google.com/store/apps/developer?id=Allus+Interactive" target="_blank">Google Play Store</Link>.
+                <Link href="" target="_blank"> itch.io</Link> page. My Android games can be downloaded from the 
+                <Link href="https://play.google.com/store/apps/developer?id=Allus+Interactive" target="_blank"> Google Play Store</Link>.
             </Paragraph>
             <Paragraph>
                 During the course of my journey as an indie game developer, I have explored and used many different game engines to develop my 
