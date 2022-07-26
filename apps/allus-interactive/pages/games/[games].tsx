@@ -7,6 +7,7 @@ import { gql } from '@apollo/client';
 import client from '../api/apolloClient';
 import { Game } from '../../types/game';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -57,6 +58,15 @@ const query = gql`
   }
 `;
 
+const gamePages = ['rpgs', 'platformers', 'demos-and-prototypes', 'ongoing-projects'];
+
+export const getStaticPaths = async () => {
+  return {
+    paths: gamePages.map((games) => ({ params: { games } })),
+    fallback: false,
+  };
+};
+
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({query});
   return {
@@ -71,36 +81,39 @@ type GamePageProps = {
   games: Game[];
 };
 
-const OngoingProjectsGamePage = ({ games }: GamePageProps) => {
-  const [ongoingProjects, setOngoingProjects] = useState<Game[]>([]);
+const GamesPage = ({ games }: GamePageProps) => {
+  const router = useRouter();
+  const [allGames, setAllGames] = useState<Game[]>([]);
+
+  const gameType = router.asPath.substring(7);
 
   useEffect(() => {
-    setOngoingProjects(
+    setAllGames(
       games.filter(
-        (game) => game.category === 'ongoing'
+        (game) => game.category === gameType
       )
     );
-  }, [games]);
+  }, [games, gameType]);
 
     return (
-      <Wrapper>
-        <Container>
-          <Title>Ongoing Projects</Title>
-          <FlexContainer>
-            {ongoingProjects && ongoingProjects.map((tile, index) => (
-              <GameTile
-                key={index}
-                imageUrl={tile.image.url}
-                altText={tile.altText}
-                url={tile.image.url}
-                lineOne={tile.description.text}
-                lineTwo=""
-              />
-            ))}
-          </FlexContainer>
-        </Container>
-      </Wrapper>
-    );
+        <Wrapper>
+            <Container>
+                <Title>Games</Title>
+                <FlexContainer>
+                  {allGames && allGames.map((tile, index) => (
+                    <GameTile
+                      key={index}
+                      imageUrl={tile.image.url}
+                      altText={tile.altText}
+                      url={tile.image.url}
+                      lineOne={tile.description.text}
+                      lineTwo=""
+                    />
+                  ))}
+                </FlexContainer>
+            </Container>
+        </Wrapper>
+    )
 }
 
-export default OngoingProjectsGamePage;
+export default GamesPage;
