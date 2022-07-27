@@ -133,7 +133,7 @@ const Home = ({ banners, games }: HomePageProps) => {
               key={index}
               imageUrl={tile.image.url}
               altText={tile.altText}
-              url={tile.image.url}
+              url={tile.url}
               lineOne={tile.description.text}
               lineTwo=""
             />
