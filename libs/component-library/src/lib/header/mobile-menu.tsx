@@ -22,6 +22,7 @@ const FlexContainer = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 `;
 
 const MenuLink = styled.a<{ colour: string }>`
