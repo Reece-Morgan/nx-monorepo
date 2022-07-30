@@ -127,6 +127,8 @@ export const Header = ({
 
   const toggleMenu = (): void => {
     setMenuOpen(!MenuOpen);
+    const overflow = MenuOpen ? 'auto' : 'hidden';
+    document.body.style.overflow = overflow;
   };
 
   return (
