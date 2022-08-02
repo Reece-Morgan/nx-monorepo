@@ -14,7 +14,7 @@ const Title = styled.h1`
 const HomePage = () => {
   return(
     <Wrapper>
-      <Title>My portfolio</Title>
+      {/* <Title>My Portfolio</Title> */}
     </Wrapper>
   )
 }
