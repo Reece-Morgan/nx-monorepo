@@ -20,16 +20,16 @@
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "--portfolio:build",
+        "buildTarget": "portfolio:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "--portfolio:build:development",
+          "buildTarget": "portfolio:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "--portfolio:build:production",
+          "buildTarget": "portfolio:build:production",
           "dev": false
         }
       }
@@ -37,7 +37,7 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "--portfolio:build:production"
+        "buildTarget": "portfolio:build:production"
       }
     },
     "test": {

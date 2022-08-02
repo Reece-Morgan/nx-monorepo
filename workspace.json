@@ -3,8 +3,8 @@
   "version": 2,
   "projects": {
     "--component-library": "libs/component-library",
-    "--portfolio": "apps/portfolio",
-    "--portfolio-e2e": "apps/portfolio-e2e",
+    "portfolio": "apps/portfolio",
+    "portfolio-e2e": "apps/portfolio-e2e",
     "allus-interactive": "apps/allus-interactive",
     "allus-interactive-e2e": "apps/allus-interactive-e2e"
   }
