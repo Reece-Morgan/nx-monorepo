@@ -1,5 +1,6 @@
 const colourValues = {
-  background: "#1f1f1f",
+  background: "#0f0724",
+  body: "#0a0517",
   title: "#dd0207", //#c31014
   primary: "#1F3CA6",
   secondary: "#ffffff",
