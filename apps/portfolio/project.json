@@ -8,7 +8,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/portfolio",
+        "root": "",
         "outputPath": "dist/apps/portfolio"
       },
       "configurations": {
