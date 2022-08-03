@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import breakpointValues from '../settings/breakpoints';
+// import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 
 const Wrapper = styled.div`
@@ -14,7 +14,7 @@ const Title = styled.h1`
 const HomePage = () => {
   return(
     <Wrapper>
-      {/* <Title>My Portfolio</Title> */}
+      <Title>My Portfolio</Title>
     </Wrapper>
   )
 }
