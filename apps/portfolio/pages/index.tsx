@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
+import { StickyNav } from '@allus-interactive/component-library'
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -68,6 +69,10 @@ const HomePage = () => {
           <WelcomeSubMessage>I&#39;m a <Bold>Front End Developer</Bold>.</WelcomeSubMessage>
         </WelcomeWrapper>
       </Welcome>
+      <StickyNav 
+        bgColour={colourValues.navigation}
+        linkColour={colourValues.white}
+      />
       <About>
         <InnerWrapper>
           <Title>About Me</Title>

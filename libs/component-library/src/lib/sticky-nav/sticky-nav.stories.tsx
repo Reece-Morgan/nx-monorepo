@@ -7,5 +7,10 @@ export default {
 } as ComponentMeta<typeof StickyNav>;
 
 export const AllusInteractiveFooter: ComponentStory<typeof StickyNav> = () => {
-  return <StickyNav />;
+  return (
+    <StickyNav 
+        bgColour='#000d68'
+        linkColour='#ffffff'
+    />
+  );
 }
