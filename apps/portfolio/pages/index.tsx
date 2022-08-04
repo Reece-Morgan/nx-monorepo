@@ -65,7 +65,7 @@ const HomePage = () => {
       <Welcome>
         <WelcomeWrapper>
           <WelcomeMessage>Hi, I&#39;m <Bold>Reece</Bold>.</WelcomeMessage>
-          <WelcomeSubMessage>I&#39;m a <Bold>Front End Engineer</Bold>.</WelcomeSubMessage>
+          <WelcomeSubMessage>I&#39;m a <Bold>Front End Developer</Bold>.</WelcomeSubMessage>
         </WelcomeWrapper>
       </Welcome>
       <About>
