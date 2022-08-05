@@ -147,22 +147,17 @@ const HomePage = () => {
              <Icon
                iconUrl="/images/icons/facebook.svg"
                altText="Facebook"
-               url="https://www.facebook.com/AllusInteractive/"
-             />
-             <Icon
-               iconUrl="/images/icons/instagram.svg"
-               altText="Instagram"
-               url="https://www.instagram.com/allusinteractive/"
+               url="https://www.facebook.com/reece.morgan.1996/"
              />
              <Icon
                iconUrl="/images/icons/twitter.svg"
                altText="Twitter"
-               url="https://twitter.com/AllusGameDev"
+               url="https://twitter.com/reecemorgandev"
              />
              <Icon
-               iconUrl="/images/icons/itch-io.svg"
-               altText="itch.io"
-               url="https://allusinteractive.itch.io/"
+               iconUrl="/images/icons/instagram.svg"
+               altText="Instagram"
+               url="https://www.instagram.com/reecemorgandev/"
              />
              <Icon
                iconUrl="/images/icons/linkedin.svg"
