@@ -18,6 +18,7 @@ const WelcomeWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 `;
 
 const InnerWrapper = styled(Wrapper)``;
@@ -27,27 +28,30 @@ const Section = styled.div`
 `;
 
 const Welcome = styled(Section)`
-  background-color: ${colourValues.welcome};
+  background-color: ${colourValues.primary};
+  color: ${colourValues.white};
   min-height: auto;
   height: 100vh;
 `;
 
 const About = styled(Section)`
-  background-color: ${colourValues.about};
+  background-color: ${colourValues.secondary};
+  color: ${colourValues.black};
 `;
 
 const Projects = styled(Section)`
-  background-color: ${colourValues.projects};
+  background-color: ${colourValues.primary};
+  color: ${colourValues.white};
 `;
 
 const Experience = styled(Section)`
-  background-color: ${colourValues.experience};
+  background-color: ${colourValues.secondary};
+  color: ${colourValues.black};
 `;
 
 const WelcomeMessage = styled.h1`
   font-size: 10vw;
   margin: 0;
-  color: ${colourValues.white};
 `;
 
 const WelcomeSubMessage = styled(WelcomeMessage)`
@@ -59,7 +63,6 @@ const Bold = styled.span`
 `;
 
 const Title = styled.h1`
-  color: ${colourValues.white};
   font-size: 3vw;
 `;
 
@@ -136,7 +139,7 @@ const HomePage = () => {
           <Title>Experience</Title>
         </InnerWrapper>
       </Experience>
-      <FooterContainer colour={colourValues.welcome}>
+      <FooterContainer colour={colourValues.primary}>
            <CopyrightText colour={colourValues.white}>
              Copyright Allus Interactive 2017-2022
            </CopyrightText>
