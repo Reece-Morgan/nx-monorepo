@@ -52,6 +52,7 @@ const Experience = styled(Section)`
 const WelcomeMessage = styled.h1`
   font-size: 10vw;
   margin: 0;
+  font-family: 'Kanit', 'Verdana', sans-serif;
 `;
 
 const WelcomeSubMessage = styled(WelcomeMessage)`
@@ -64,6 +65,7 @@ const Bold = styled.span`
 
 const Title = styled.h1`
   font-size: 3vw;
+  font-family: 'Kanit', 'Verdana', sans-serif;
 `;
 
 const FooterContainer = styled.footer<{ colour: string }>`
@@ -81,6 +83,7 @@ const CopyrightText = styled.p<{ colour: string }>`
   margin: 0;
   text-align: center;
   padding-top: 10px;
+  font-family: 'Kanit', 'Verdana', sans-serif;
 `;
 
 const SocialMediaWrapper = styled.div`
