@@ -127,8 +127,13 @@ const HomePage = () => {
         <InnerWrapper>
           <Title>About Me</Title>
           <p>
-            I&#39;m a Front End Developer based in Moray, Scotland. I enjoy designing websites and then building them with React and TypeScript.
-            I&#39;m passionate about writing clean, efficient code and I&#39;m interested in exploring new technologies.
+            I&#39;m a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
+          </p>
+          <p>
+            I have 4+ years working as a professional developer/engineer, and I&#39;m passionate about writing clean, efficient code.
+          </p>
+          <p>
+            I&#39;m also very interested in exploring new technologies.
           </p>
         </InnerWrapper>
       </About>
