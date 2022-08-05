@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
-import { StickyNav } from '@allus-interactive/component-library'
+import { Icon, StickyNav } from '@allus-interactive/component-library'
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -63,6 +63,46 @@ const Title = styled.h1`
   font-size: 3vw;
 `;
 
+const FooterContainer = styled.footer<{ colour: string }>`
+  width: 100%;
+  height: 120px;
+  background-color: ${(props) => props.colour};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const CopyrightText = styled.p<{ colour: string }>`
+  color: ${(props) => props.colour};
+  font-size: 1em;
+  margin: 0;
+  text-align: center;
+  padding-top: 10px;
+`;
+
+const SocialMediaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const Span = styled.p<{ colour: string }>`
+  font-size: 12px;
+  color: ${(props) => props.colour};
+  margin: -5px 0 10px 0;
+  text-align: center;
+`;
+
+const SpanLink = styled.a<{ 
+  colour: string,
+  hover: string
+}>`
+  color: ${(props) => props.colour};
+  &:hover {
+    color: ${(props) => props.hover};
+  }
+`;
+
 const HomePage = () => {
   return(
     <PageWrapper>
@@ -96,6 +136,56 @@ const HomePage = () => {
           <Title>Experience</Title>
         </InnerWrapper>
       </Experience>
+      <FooterContainer colour={colourValues.welcome}>
+           <CopyrightText colour={colourValues.white}>
+             Copyright Allus Interactive 2017-2022
+           </CopyrightText>
+           <SocialMediaWrapper>
+             <Icon
+               iconUrl="/images/icons/facebook.svg"
+               altText="Facebook"
+               url="https://www.facebook.com/AllusInteractive/"
+             />
+             <Icon
+               iconUrl="/images/icons/instagram.svg"
+               altText="Instagram"
+               url="https://www.instagram.com/allusinteractive/"
+             />
+             <Icon
+               iconUrl="/images/icons/twitter.svg"
+               altText="Twitter"
+               url="https://twitter.com/AllusGameDev"
+             />
+             <Icon
+               iconUrl="/images/icons/itch-io.svg"
+               altText="itch.io"
+               url="https://allusinteractive.itch.io/"
+             />
+             <Icon
+               iconUrl="/images/icons/linkedin.svg"
+               altText="LinkedIn"
+               url="https://www.linkedin.com/in/reece-morgan-dev/"
+             />
+             <Icon
+               iconUrl="/images/icons/github.svg"
+               altText="Github"
+               url="https://github.com/AllusInteractive"
+             />
+           </SocialMediaWrapper>
+           <Span colour={colourValues.white}>
+             Icons by
+             <SpanLink
+               colour={colourValues.white}
+               hover={colourValues.hover}
+               href="https://icons8.com"
+               target="_blank"
+               rel="noreferrer"
+             >
+               {' '}
+               Icons8
+             </SpanLink>
+           </Span>
+         </FooterContainer>
     </PageWrapper>
   )
 }

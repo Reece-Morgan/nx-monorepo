@@ -4,6 +4,7 @@ const colourValues = {
   projects: "#0f0724",
   experience: "#1f1f1f",
   navigation: "#000d68",
+  footer: "#1f1f1f",
   background: "#0f0724",
   body: "#0a0517",
   title: "#dd0207", //#c31014
