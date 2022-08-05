@@ -4,6 +4,8 @@ import { StickyNav } from '@allus-interactive/component-library'
 
 const PageWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Wrapper = styled.div`
@@ -44,6 +46,7 @@ const Experience = styled(Section)`
 
 const WelcomeMessage = styled.h1`
   font-size: 10vw;
+  margin: 0;
   color: ${colourValues.white};
 `;
 
@@ -63,7 +66,7 @@ const Title = styled.h1`
 const HomePage = () => {
   return(
     <PageWrapper>
-      <Welcome>
+      <Welcome id='welcome'>
         <WelcomeWrapper>
           <WelcomeMessage>Hi, I&#39;m <Bold>Reece</Bold>.</WelcomeMessage>
           <WelcomeSubMessage>I&#39;m a <Bold>Front End Developer</Bold>.</WelcomeSubMessage>
@@ -72,8 +75,9 @@ const HomePage = () => {
       <StickyNav 
         bgColour={colourValues.navigation}
         linkColour={colourValues.white}
+        hoverColour={colourValues.hover}
       />
-      <About>
+      <About id='about'>
         <InnerWrapper>
           <Title>About Me</Title>
           <p>
@@ -82,12 +86,12 @@ const HomePage = () => {
           </p>
         </InnerWrapper>
       </About>
-      <Projects>
+      <Projects id='projects'>
         <InnerWrapper>
           <Title>My Projects</Title>
         </InnerWrapper>
       </Projects>
-      <Experience>
+      <Experience id='experience'>
         <InnerWrapper>
           <Title>Experience</Title>
         </InnerWrapper>
