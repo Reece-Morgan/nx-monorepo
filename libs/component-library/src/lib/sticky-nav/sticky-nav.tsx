@@ -46,8 +46,8 @@ export const StickyNav = ( {bgColour, linkColour, hoverColour}: Props ) => {
                 <Link href='#projects' passHref>
                     <StyledLink colour={linkColour} hover={hoverColour}>Projects</StyledLink>
                 </Link>
-                <Link href='#experience' passHref>
-                    <StyledLink colour={linkColour} hover={hoverColour}>Experience</StyledLink>
+                <Link href='#journey' passHref>
+                    <StyledLink colour={linkColour} hover={hoverColour}>My Journey</StyledLink>
                 </Link>
             </LinkContainer>
         </NavContainer>

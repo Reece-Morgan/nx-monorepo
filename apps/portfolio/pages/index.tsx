@@ -167,9 +167,9 @@ const HomePage = () => {
           <Title>My Projects</Title>
         </InnerWrapper>
       </Projects>
-      <Experience id='experience'>
+      <Experience id='journey'>
         <InnerWrapper>
-          <Title>Experience</Title>
+          <Title>My Journey</Title>
         </InnerWrapper>
       </Experience>
       <FooterContainer colour={colourValues.primary}>
