@@ -1,11 +1,7 @@
 const colourValues = {
   primary: "#0a0517",
-  secondary: "#1F3CA6",
-  welcome: "#0a0517",
-  about: "#1F3CA6",
-  projects: "#0f0724",
-  experience: "#1f1f1f",
-  navigation: "#000d68",
+  secondary: "#12092a",
+  navigation: "#000033",
   footer: "#1f1f1f",
   background: "#0f0724",
   body: "#0a0517",

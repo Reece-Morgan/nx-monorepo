@@ -36,7 +36,7 @@ const Welcome = styled(Section)`
 
 const About = styled(Section)`
   background-color: ${colourValues.secondary};
-  color: ${colourValues.black};
+  color: ${colourValues.white};
 `;
 
 const Projects = styled(Section)`
@@ -46,7 +46,7 @@ const Projects = styled(Section)`
 
 const Experience = styled(Section)`
   background-color: ${colourValues.secondary};
-  color: ${colourValues.black};
+  color: ${colourValues.white};
 `;
 
 const WelcomeMessage = styled.h1`
