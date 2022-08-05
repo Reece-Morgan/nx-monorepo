@@ -141,7 +141,7 @@ const HomePage = () => {
       </Experience>
       <FooterContainer colour={colourValues.primary}>
            <CopyrightText colour={colourValues.white}>
-             Copyright Allus Interactive 2017-2022
+             &copy; Reece Morgan 2022
            </CopyrightText>
            <SocialMediaWrapper>
              <Icon
@@ -171,16 +171,14 @@ const HomePage = () => {
              />
            </SocialMediaWrapper>
            <Span colour={colourValues.white}>
-             Icons by
              <SpanLink
                colour={colourValues.white}
                hover={colourValues.hover}
                href="https://icons8.com"
                target="_blank"
                rel="noreferrer"
-             >
-               {' '}
-               Icons8
+             > 
+              Icons by Icons8
              </SpanLink>
            </Span>
          </FooterContainer>
