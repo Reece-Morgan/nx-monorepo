@@ -140,20 +140,20 @@ const HomePage = () => {
         <InnerWrapper>
           <Title>About Me</Title>
           <p>
-            I&#39;m a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
+            I am a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
           </p>
           <p>
             I started out my journey as a Front End Engineer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
-            jump up to using Angular in late 2018/early 2019. I spent a few years working with this framework, but moving on to React, 
-            NextJS and Typescript. I have been building sites with NextJS and Typescript since the summer of 2021.
+            jump to using Angular in late 2018/early 2019. I spent a few years working with this framework, before moving on to React and 
+            Typescript. I have been developing my React skills and building sites with NextJS and Typescript since the summer of 2021.
           </p>
           <p>
-          I&#39;m passionate about writing clean, efficient code and I&#39;m also very interested in exploring new technologies.
+            I am passionate about writing clean, efficient code and I&#39;m also very interested in exploring new technologies.
           </p>
           <Subtitle>Experience</Subtitle>
           <p>
-            I have 4+ years working as a professional developer/engineer, and a further 4+ years as a hobbyist. Below is a breakdown of 
-            how long I have been working with different languages and frameworks, in both a personal and professional capacity.
+            I have 4+ years working as a professional developer/engineer, and a further 4+ years prior to this as a hobbyist/student. Below 
+            is a breakdown of how long I have been working with different languages and frameworks, in both a personal and professional capacity.
           </p>
           <ul>
             <li>HTML, CSS and JS - 8+ years</li>
