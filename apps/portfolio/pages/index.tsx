@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { Icon, StickyNav } from '@allus-interactive/component-library'
 
@@ -12,6 +13,7 @@ const Wrapper = styled.div`
   max-width: 1270px;
   margin: 0 auto;
   height: 100%;
+  padding: 0 20px;
 `;
 
 const WelcomeWrapper = styled(Wrapper)`
@@ -64,8 +66,19 @@ const Bold = styled.span`
 `;
 
 const Title = styled.h1`
-  font-size: 3vw;
+  font-size: 2em;
   font-family: 'Kanit', 'Verdana', sans-serif;
+  @media (min-width: ${breakpointValues.tablet}) {
+    font-size: 3vw;
+  }
+`;
+
+const Subtitle = styled.h3`
+  font-size: 1em;
+  font-family: 'Kanit', 'Verdana', sans-serif;
+  @media (min-width: ${breakpointValues.tablet}) {
+    font-size: 2vw;
+  }
 `;
 
 const FooterContainer = styled.footer<{ colour: string }>`
@@ -115,7 +128,7 @@ const HomePage = () => {
       <Welcome id='welcome'>
         <WelcomeWrapper>
           <WelcomeMessage>Hi, I&#39;m <Bold>Reece</Bold>.</WelcomeMessage>
-          <WelcomeSubMessage>I&#39;m a <Bold>Front End Developer</Bold>.</WelcomeSubMessage>
+          <WelcomeSubMessage>I&#39;m a <Bold>Front End<br/>Developer</Bold>.</WelcomeSubMessage>
         </WelcomeWrapper>
       </Welcome>
       <StickyNav 
@@ -130,11 +143,23 @@ const HomePage = () => {
             I&#39;m a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
           </p>
           <p>
-            I have 4+ years working as a professional developer/engineer, and I&#39;m passionate about writing clean, efficient code.
+            I started out my journey as a Front End Engineer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
+            jump up to using Angular in late 2018/early 2019. I spent a few years working with this framework, but moving on to React, 
+            NextJS and Typescript. I have been building sites with NextJS and Typescript since the summer of 2021.
           </p>
           <p>
-            I&#39;m also very interested in exploring new technologies.
+          I&#39;m passionate about writing clean, efficient code and I&#39;m also very interested in exploring new technologies.
           </p>
+          <Subtitle>Experience</Subtitle>
+          <p>
+            I have 4+ years working as a professional developer/engineer, and a further 4+ years as a hobbyist. Below is a breakdown of 
+            how long I have been working with different languages and frameworks, in both a personal and professional capacity.
+          </p>
+          <ul>
+            <li>HTML, CSS and JS - 8+ years</li>
+            <li>Angular - 3+ years</li>
+            <li>React/NextJS - 1+ years</li>
+          </ul>
         </InnerWrapper>
       </About>
       <Projects id='projects'>
