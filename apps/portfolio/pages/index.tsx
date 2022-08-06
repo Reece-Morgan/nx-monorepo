@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
-import { Footer, Icon, StickyNav } from '@allus-interactive/component-library'
+import { Footer, StickyNav } from '@allus-interactive/component-library';
+import { stickyNavData, socialMediaData } from '../data';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -82,47 +83,6 @@ const Subtitle = styled.h3`
   }
 `;
 
-const FooterContainer = styled.footer<{ colour: string }>`
-  width: 100%;
-  height: 120px;
-  background-color: ${(props) => props.colour};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const CopyrightText = styled.p<{ colour: string }>`
-  color: ${(props) => props.colour};
-  font-size: 1em;
-  margin: 0;
-  text-align: center;
-  padding-top: 10px;
-  font-family: 'Kanit', 'Verdana', sans-serif;
-`;
-
-const SocialMediaWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const Span = styled.p<{ colour: string }>`
-  font-size: 12px;
-  color: ${(props) => props.colour};
-  margin: -5px 0 10px 0;
-  text-align: center;
-`;
-
-const SpanLink = styled.a<{ 
-  colour: string,
-  hover: string
-}>`
-  color: ${(props) => props.colour};
-  &:hover {
-    color: ${(props) => props.hover};
-  }
-`;
-
 const Anchor = styled.div`
   width: 100%;
   height: 50px;
@@ -133,20 +93,6 @@ const Anchor = styled.div`
 const TopAnchor = styled(Anchor)`
   bottom: -50px;
 `;
-
-const linkData = [
-  { url: '#about', text: 'About' },
-  { url: '#projects', text: 'Projects' },
-  { url: '#journey', text: 'My Journey' },
-];
-
-const iconData = [
-  { imageUrl: "/images/icons/facebook.svg", altText: "Facebook", url: "https://www.facebook.com/reece.morgan.1996/" },
-  { imageUrl: "/images/icons/twitter.svg", altText: "Twitter", url: "https://twitter.com/reecemorgandev" },
-  { imageUrl: "/images/icons/instagram.svg", altText: "Instagram", url: "https://www.instagram.com/reecemorgandev/" },
-  { imageUrl: "/images/icons/linkedin.svg", altText: "LinkedIn", url: "https://www.linkedin.com/in/reece-morgan-dev/" },
-  { imageUrl: "/images/icons/github.svg", altText: "Github",  url: "https://github.com/AllusInteractive"},
-];
 
 const HomePage = () => {
   return(
@@ -161,7 +107,7 @@ const HomePage = () => {
         bgColour={colourValues.navigation}
         linkColour={colourValues.white}
         hoverColour={colourValues.hover}
-        links={linkData}
+        links={stickyNavData}
       />
       <TopAnchor id='about' />
       <About>
@@ -208,7 +154,7 @@ const HomePage = () => {
         hoverColour={colourValues.hover}
         hasLinks={false}
         copyrightText='&copy; Reece Morgan 2022'
-        socialMediaLinks={iconData}
+        socialMediaLinks={socialMediaData}
       />
     </PageWrapper>
   )
