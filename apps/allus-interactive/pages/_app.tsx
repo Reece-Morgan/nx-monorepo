@@ -12,6 +12,15 @@ function CustomApp({ Component, pageProps }: AppProps) {
     { url: '/games/ongoing-projects', text: 'Ongoing Projects' },
   ];
 
+  const iconData = [
+    { imageUrl: "/images/icons/facebook.svg", altText: "Facebook", url: "https://www.facebook.com/AllusInteractive/" },
+    { imageUrl: "/images/icons/instagram.svg", altText: "Instagram", url: "https://www.instagram.com/allusinteractive/" },
+    { imageUrl: "/images/icons/twitter.svg", altText: "Twitter", url: "https://twitter.com/AllusGameDev" },
+    { imageUrl: "/images/icons/itch-io.svg", altText: "itch.io", url: "https://allusinteractive.itch.io/" },
+    { imageUrl: "/images/icons/linkedin.svg", altText: "LinkedIn", url: "https://www.linkedin.com/in/reece-morgan-dev/" },
+    { imageUrl: "/images/icons/github.svg", altText: "Github",  url: "https://github.com/AllusInteractive"},
+  ];
+
   return (
     <>
       <Head>
@@ -42,6 +51,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
         bgColour={colourValues.background}
         textColour={colourValues.white}
         hoverColour={colourValues.title}
+        hasLinks={true}
+        copyrightText='Copyright Allus Interactive 2017-2022'
+        socialMediaLinks={iconData}
       />
     </>
   );
