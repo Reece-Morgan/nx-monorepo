@@ -34,7 +34,7 @@ const Message = styled.h1`
 `;
 
 const SubMessage = styled(Message)`
-  font-size: 2.5vw;
+  font-size: 3vw;
 `;
 
 const Link = styled.a`
