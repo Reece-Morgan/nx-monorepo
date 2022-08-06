@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { Footer, StickyNav } from '@allus-interactive/component-library';
 import { stickyNavData, socialMediaData } from '../data';
@@ -9,33 +8,6 @@ const PageWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-const Wrapper = styled.div`
-  max-width: 1270px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 20px;
-`;
-
-const InnerWrapper = styled(Wrapper)``;
-
-const Section = styled.div`
-  min-height: 100vh;
-  position: relative;
-`;
-
-const Experience = styled(Section)`
-  background-color: ${colourValues.secondary};
-  color: ${colourValues.white};
-`;
-
-const Title = styled.h1`
-  font-size: 2em;
-  font-family: 'Kanit', 'Verdana', sans-serif;
-  @media (min-width: ${breakpointValues.tablet}) {
-    font-size: 3vw;
-  }
 `;
 
 const Anchor = styled.div`
@@ -58,11 +30,7 @@ const HomePage = () => {
       <Anchor id='about' />
       <About />
       <Projects />
-      <Experience>
-        <InnerWrapper>
-          <Title>My Journey</Title>
-        </InnerWrapper>
-      </Experience>
+      <Journey />
       <Footer
         bgColour={colourValues.primary}
         textColour={colourValues.white}
