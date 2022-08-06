@@ -122,6 +122,12 @@ const SpanLink = styled.a<{
   }
 `;
 
+const linkData = [
+  { url: '#about', text: 'About' },
+  { url: '#projects', text: 'Projects' },
+  { url: '#journey', text: 'Journey' },
+];
+
 const HomePage = () => {
   return(
     <PageWrapper>
@@ -135,6 +141,7 @@ const HomePage = () => {
         bgColour={colourValues.navigation}
         linkColour={colourValues.white}
         hoverColour={colourValues.hover}
+        links={linkData}
       />
       <About id='about'>
         <InnerWrapper>
