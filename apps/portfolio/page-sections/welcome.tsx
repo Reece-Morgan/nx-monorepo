@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
 
-const WelcomeContainer = styled.div`
+const Container = styled.div`
   background-color: ${colourValues.primary};
   color: ${colourValues.white};
   min-height: auto;
@@ -10,7 +10,7 @@ const WelcomeContainer = styled.div`
   position: relative;
 `;
 
-const WelcomeWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,13 +21,13 @@ const WelcomeWrapper = styled.div`
   padding: 0 20px;
 `;
 
-const WelcomeMessage = styled.h1`
+const Message = styled.h1`
   font-size: 10vw;
   margin: 0;
   font-family: 'Kanit', 'Verdana', sans-serif;
 `;
 
-const WelcomeSubMessage = styled(WelcomeMessage)`
+const SubMessage = styled(Message)`
   font-size: 7.5vw;
 `;
 
@@ -37,11 +37,11 @@ const Bold = styled.span`
 
 export const Welcome = () => {
     return (
-        <WelcomeContainer id='welcome'>
-          <WelcomeWrapper>
-            <WelcomeMessage>Hi, I&#39;m <Bold>Reece</Bold>.</WelcomeMessage>
-            <WelcomeSubMessage>I&#39;m a <Bold>Front End<br/>Developer</Bold>.</WelcomeSubMessage>
-          </WelcomeWrapper>
-        </WelcomeContainer>
+        <Container id='welcome'>
+          <Wrapper>
+            <Message>Hi, I&#39;m <Bold>Reece</Bold>.</Message>
+            <SubMessage>I&#39;m a <Bold>Front End<br/>Developer</Bold>.</SubMessage>
+          </Wrapper>
+        </Container>
     )
 };
