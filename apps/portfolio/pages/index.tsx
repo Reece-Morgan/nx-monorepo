@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
-import { Icon, StickyNav } from '@allus-interactive/component-library'
+import { Footer, Icon, StickyNav } from '@allus-interactive/component-library'
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -140,6 +140,14 @@ const linkData = [
   { url: '#journey', text: 'My Journey' },
 ];
 
+const iconData = [
+  { imageUrl: "/images/icons/facebook.svg", altText: "Facebook", url: "https://www.facebook.com/reece.morgan.1996/" },
+  { imageUrl: "/images/icons/twitter.svg", altText: "Twitter", url: "https://twitter.com/reecemorgandev" },
+  { imageUrl: "/images/icons/instagram.svg", altText: "Instagram", url: "https://www.instagram.com/reecemorgandev/" },
+  { imageUrl: "/images/icons/linkedin.svg", altText: "LinkedIn", url: "https://www.linkedin.com/in/reece-morgan-dev/" },
+  { imageUrl: "/images/icons/github.svg", altText: "Github",  url: "https://github.com/AllusInteractive"},
+];
+
 const HomePage = () => {
   return(
     <PageWrapper>
@@ -194,49 +202,14 @@ const HomePage = () => {
           <Title>My Journey</Title>
         </InnerWrapper>
       </Experience>
-      <FooterContainer colour={colourValues.primary}>
-           <CopyrightText colour={colourValues.white}>
-             &copy; Reece Morgan 2022
-           </CopyrightText>
-           <SocialMediaWrapper>
-             <Icon
-               iconUrl="/images/icons/facebook.svg"
-               altText="Facebook"
-               url="https://www.facebook.com/reece.morgan.1996/"
-             />
-             <Icon
-               iconUrl="/images/icons/twitter.svg"
-               altText="Twitter"
-               url="https://twitter.com/reecemorgandev"
-             />
-             <Icon
-               iconUrl="/images/icons/instagram.svg"
-               altText="Instagram"
-               url="https://www.instagram.com/reecemorgandev/"
-             />
-             <Icon
-               iconUrl="/images/icons/linkedin.svg"
-               altText="LinkedIn"
-               url="https://www.linkedin.com/in/reece-morgan-dev/"
-             />
-             <Icon
-               iconUrl="/images/icons/github.svg"
-               altText="Github"
-               url="https://github.com/AllusInteractive"
-             />
-           </SocialMediaWrapper>
-           <Span colour={colourValues.white}>
-             <SpanLink
-               colour={colourValues.white}
-               hover={colourValues.hover}
-               href="https://icons8.com"
-               target="_blank"
-               rel="noreferrer"
-             > 
-              Icons by Icons8
-             </SpanLink>
-           </Span>
-         </FooterContainer>
+      <Footer
+        bgColour={colourValues.primary}
+        textColour={colourValues.white}
+        hoverColour={colourValues.hover}
+        hasLinks={false}
+        copyrightText='&copy; Reece Morgan 2022'
+        socialMediaLinks={iconData}
+      />
     </PageWrapper>
   )
 }
