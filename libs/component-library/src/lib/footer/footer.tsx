@@ -5,6 +5,13 @@ interface Props {
   bgColour: string;
   textColour: string;
   hoverColour: string;
+  hasLinks: boolean;
+  copyrightText: string;
+  socialMediaLinks: {
+    imageUrl: string;
+    url: string;
+    altText: string;
+  }[];
 }
 
 const FooterContainer = styled.footer<{ colour: string }>`
@@ -77,9 +84,9 @@ const SpanLink = styled.a<{
   }
 `;
 
-export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
+export const Footer = ({ bgColour, textColour, hoverColour, hasLinks, copyrightText, socialMediaLinks }: Props) => (
          <FooterContainer colour={bgColour}>
-           <LinkWrapper>
+           {hasLinks && (<LinkWrapper>
              <Link
                colour={textColour}
                hover={hoverColour}
@@ -95,41 +102,19 @@ export const Footer = ({ bgColour, textColour, hoverColour }: Props) => (
              >
                Privacy Policy
              </Link>
-           </LinkWrapper>
+           </LinkWrapper>)}
            <CopyrightText colour={textColour}>
-             Copyright Allus Interactive 2017-2022
+             {copyrightText}
            </CopyrightText>
            <SocialMediaWrapper>
-             <Icon
-               iconUrl="/images/icons/facebook.svg"
-               altText="Facebook"
-               url="https://www.facebook.com/AllusInteractive/"
-             />
-             <Icon
-               iconUrl="/images/icons/instagram.svg"
-               altText="Instagram"
-               url="https://www.instagram.com/allusinteractive/"
-             />
-             <Icon
-               iconUrl="/images/icons/twitter.svg"
-               altText="Twitter"
-               url="https://twitter.com/AllusGameDev"
-             />
-             <Icon
-               iconUrl="/images/icons/itch-io.svg"
-               altText="itch.io"
-               url="https://allusinteractive.itch.io/"
-             />
-             <Icon
-               iconUrl="/images/icons/linkedin.svg"
-               altText="LinkedIn"
-               url="https://www.linkedin.com/in/reece-morgan-dev/"
-             />
-             <Icon
-               iconUrl="/images/icons/github.svg"
-               altText="Github"
-               url="https://github.com/AllusInteractive"
-             />
+              {socialMediaLinks && socialMediaLinks.map((sm, i) => (
+                <Icon
+                  key={i}
+                  iconUrl={sm.imageUrl}
+                  altText={sm.altText}
+                  url={sm.url}
+                />
+              ))}
            </SocialMediaWrapper>
            <Span colour={textColour}>
              Icons by
