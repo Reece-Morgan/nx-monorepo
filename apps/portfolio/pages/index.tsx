@@ -27,6 +27,7 @@ const InnerWrapper = styled(Wrapper)``;
 
 const Section = styled.div`
   min-height: 100vh;
+  position: relative;
 `;
 
 const Welcome = styled(Section)`
@@ -122,10 +123,21 @@ const SpanLink = styled.a<{
   }
 `;
 
+const Anchor = styled.div`
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+`;
+
+const TopAnchor = styled(Anchor)`
+  bottom: -50px;
+`;
+
 const linkData = [
   { url: '#about', text: 'About' },
   { url: '#projects', text: 'Projects' },
-  { url: '#journey', text: 'Journey' },
+  { url: '#journey', text: 'My Journey' },
 ];
 
 const HomePage = () => {
@@ -143,14 +155,15 @@ const HomePage = () => {
         hoverColour={colourValues.hover}
         links={linkData}
       />
-      <About id='about'>
+      <TopAnchor id='about' />
+      <About>
         <InnerWrapper>
           <Title>About Me</Title>
           <p>
             I am a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
           </p>
           <p>
-            I started out my journey as a Front End Engineer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
+            I started out my journey as a Front End Developer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
             jump to using Angular in late 2018/early 2019. I spent a few years working with this framework, before moving on to React and 
             Typescript. I have been developing my React skills and building sites with NextJS and Typescript since the summer of 2021.
           </p>
@@ -168,13 +181,15 @@ const HomePage = () => {
             <li>React/NextJS - 1+ years</li>
           </ul>
         </InnerWrapper>
+        <Anchor id='projects' />
       </About>
-      <Projects id='projects'>
+      <Projects>
         <InnerWrapper>
           <Title>My Projects</Title>
         </InnerWrapper>
+        <Anchor id='journey' />
       </Projects>
-      <Experience id='journey'>
+      <Experience>
         <InnerWrapper>
           <Title>My Journey</Title>
         </InnerWrapper>

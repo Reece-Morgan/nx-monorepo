@@ -17,6 +17,7 @@ const NavContainer = styled.nav<{ colour: string }>`
     background-color: ${(props) => props.colour};
     position: sticky;
     top: 0;
+    z-index: 10;
 `;
 
 const LinkContainer = styled.div`
