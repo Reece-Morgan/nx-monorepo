@@ -3,7 +3,7 @@ import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { Footer, StickyNav } from '@allus-interactive/component-library';
 import { stickyNavData, socialMediaData } from '../data';
-import { Welcome } from '../page-sections';
+import { About, Welcome } from '../page-sections';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -23,11 +23,6 @@ const InnerWrapper = styled(Wrapper)``;
 const Section = styled.div`
   min-height: 100vh;
   position: relative;
-`;
-
-const About = styled(Section)`
-  background-color: ${colourValues.secondary};
-  color: ${colourValues.white};
 `;
 
 const Projects = styled(Section)`
@@ -78,33 +73,7 @@ const HomePage = () => {
         links={stickyNavData}
       />
       <TopAnchor id='about' />
-      <About>
-        <InnerWrapper>
-          <Title>About Me</Title>
-          <p>
-            I am a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
-          </p>
-          <p>
-            I started out my journey as a Front End Developer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
-            jump to using Angular in late 2018/early 2019. I spent a few years working with this framework, before moving on to React and 
-            Typescript. I have been developing my React skills and building sites with NextJS and Typescript since the summer of 2021.
-          </p>
-          <p>
-            I am passionate about writing clean, efficient code and I&#39;m also very interested in exploring new technologies.
-          </p>
-          <Subtitle>Experience</Subtitle>
-          <p>
-            I have 4+ years working as a professional developer/engineer, and a further 4+ years prior to this as a hobbyist/student. Below 
-            is a breakdown of how long I have been working with different languages and frameworks, in both a personal and professional capacity.
-          </p>
-          <ul>
-            <li>HTML, CSS and JS - 8+ years</li>
-            <li>Angular - 3+ years</li>
-            <li>React/NextJS - 1+ years</li>
-          </ul>
-        </InnerWrapper>
-        <Anchor id='projects' />
-      </About>
+      <About />
       <Projects>
         <InnerWrapper>
           <Title>My Projects</Title>
