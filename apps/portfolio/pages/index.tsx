@@ -3,6 +3,7 @@ import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { Footer, StickyNav } from '@allus-interactive/component-library';
 import { stickyNavData, socialMediaData } from '../data';
+import { Welcome } from '../page-sections';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -17,25 +18,11 @@ const Wrapper = styled.div`
   padding: 0 20px;
 `;
 
-const WelcomeWrapper = styled(Wrapper)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-`;
-
 const InnerWrapper = styled(Wrapper)``;
 
 const Section = styled.div`
   min-height: 100vh;
   position: relative;
-`;
-
-const Welcome = styled(Section)`
-  background-color: ${colourValues.primary};
-  color: ${colourValues.white};
-  min-height: auto;
-  height: 100vh;
 `;
 
 const About = styled(Section)`
@@ -51,20 +38,6 @@ const Projects = styled(Section)`
 const Experience = styled(Section)`
   background-color: ${colourValues.secondary};
   color: ${colourValues.white};
-`;
-
-const WelcomeMessage = styled.h1`
-  font-size: 10vw;
-  margin: 0;
-  font-family: 'Kanit', 'Verdana', sans-serif;
-`;
-
-const WelcomeSubMessage = styled(WelcomeMessage)`
-  font-size: 7.5vw;
-`;
-
-const Bold = styled.span`
-  font-weight: 800;
 `;
 
 const Title = styled.h1`
@@ -97,12 +70,7 @@ const TopAnchor = styled(Anchor)`
 const HomePage = () => {
   return(
     <PageWrapper>
-      <Welcome id='welcome'>
-        <WelcomeWrapper>
-          <WelcomeMessage>Hi, I&#39;m <Bold>Reece</Bold>.</WelcomeMessage>
-          <WelcomeSubMessage>I&#39;m a <Bold>Front End<br/>Developer</Bold>.</WelcomeSubMessage>
-        </WelcomeWrapper>
-      </Welcome>
+      <Welcome />
       <StickyNav 
         bgColour={colourValues.navigation}
         linkColour={colourValues.white}
