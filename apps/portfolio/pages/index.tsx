@@ -14,7 +14,7 @@ const Anchor = styled.div`
   width: 100%;
   height: 50px;
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
 `;
 
 const HomePage = () => {
