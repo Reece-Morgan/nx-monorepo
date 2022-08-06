@@ -5,6 +5,10 @@ interface Props {
     bgColour: string;
     linkColour: string;
     hoverColour: string;
+    links: {
+        url: string;
+        text: string;
+    }[];
 }
 
 const NavContainer = styled.nav<{ colour: string }>`
@@ -13,6 +17,7 @@ const NavContainer = styled.nav<{ colour: string }>`
     background-color: ${(props) => props.colour};
     position: sticky;
     top: 0;
+    z-index: 10;
 `;
 
 const LinkContainer = styled.div`
@@ -36,19 +41,15 @@ const StyledLink = styled.a<{ colour: string, hover: string }>`
     }
 `;
 
-export const StickyNav = ( {bgColour, linkColour, hoverColour}: Props ) => {
+export const StickyNav = ( {bgColour, linkColour, hoverColour, links}: Props ) => {
     return (
         <NavContainer colour={bgColour}>
             <LinkContainer>
-                <Link href='#about' passHref>
-                    <StyledLink colour={linkColour} hover={hoverColour}>About</StyledLink>
-                </Link>
-                <Link href='#projects' passHref>
-                    <StyledLink colour={linkColour} hover={hoverColour}>Projects</StyledLink>
-                </Link>
-                <Link href='#journey' passHref>
-                    <StyledLink colour={linkColour} hover={hoverColour}>My Journey</StyledLink>
-                </Link>
+                {links && links.map((link, i) => (
+                    <Link key={i} href={link.url} passHref>
+                        <StyledLink colour={linkColour} hover={hoverColour}>{link.text}</StyledLink>
+                    </Link>
+                ))}
             </LinkContainer>
         </NavContainer>
     )
