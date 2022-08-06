@@ -3,7 +3,7 @@ import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { Footer, StickyNav } from '@allus-interactive/component-library';
 import { stickyNavData, socialMediaData } from '../data';
-import { About, Welcome } from '../page-sections';
+import { About, Journey, Projects, Welcome } from '../page-sections';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -25,11 +25,6 @@ const Section = styled.div`
   position: relative;
 `;
 
-const Projects = styled(Section)`
-  background-color: ${colourValues.primary};
-  color: ${colourValues.white};
-`;
-
 const Experience = styled(Section)`
   background-color: ${colourValues.secondary};
   color: ${colourValues.white};
@@ -43,23 +38,11 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.h3`
-  font-size: 1em;
-  font-family: 'Kanit', 'Verdana', sans-serif;
-  @media (min-width: ${breakpointValues.tablet}) {
-    font-size: 2vw;
-  }
-`;
-
 const Anchor = styled.div`
   width: 100%;
   height: 50px;
   position: absolute;
   bottom: 0;
-`;
-
-const TopAnchor = styled(Anchor)`
-  bottom: -50px;
 `;
 
 const HomePage = () => {
@@ -72,14 +55,9 @@ const HomePage = () => {
         hoverColour={colourValues.hover}
         links={stickyNavData}
       />
-      <TopAnchor id='about' />
+      <Anchor id='about' />
       <About />
-      <Projects>
-        <InnerWrapper>
-          <Title>My Projects</Title>
-        </InnerWrapper>
-        <Anchor id='journey' />
-      </Projects>
+      <Projects />
       <Experience>
         <InnerWrapper>
           <Title>My Journey</Title>
