@@ -117,10 +117,16 @@ export const timeLineData = [
 export const projectData =  [
     {
         imageUrl: '/images/projects/allus-interactive.png',
-        altText: 'Allus Interactive'
+        altText: 'Allus Interactive',
+        description: 'I built this website as part of my Game Development. This site showcases all games I have created.',
+        url: 'https://www.allusinteractive.com',
+        urlText: 'View Website'
     },
     {
         imageUrl: '/images/projects/allus-interactive.png',
-        altText: 'Allus Interactive'
+        altText: 'Alba Cruises',
+        description: 'Alba Cruises was built in Angular during my studies at college. I have rebuilt it in NextJS as a portfolio piece',
+        url: 'https://albacruises.reecemorgan.co.uk',
+        urlText: 'View Project'
     },
 ];

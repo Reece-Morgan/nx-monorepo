@@ -1,6 +1,5 @@
 import { ProjectTile } from './project-tile';
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import styled from 'styled-components';
 
 export default {
     title: "Components/ProjectTile",
@@ -12,31 +11,9 @@ export const PortfolioProjectTile: ComponentStory<typeof ProjectTile> = ()=> {
         <ProjectTile 
             imageUrl='/images/game-tile-placeholder.png'
             altText='Placeholder Image'
+            description='This is a placeholder tile created for storybook'
+            url='https://www.reecemorgan.co.uk'
+            urlText='View Website'
         />
-    )
-};
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-`;
-
-export const PortfolioProjectTiles: ComponentStory<typeof ProjectTile> = ()=> {
-    return (
-        <Wrapper>
-            <ProjectTile 
-                imageUrl='/images/game-tile-placeholder.png'
-                altText='Placeholder Image'
-            />
-            <ProjectTile 
-                imageUrl='/images/game-tile-placeholder.png'
-                altText='Placeholder Image'
-            />
-            <ProjectTile 
-                imageUrl='/images/game-tile-placeholder.png'
-                altText='Placeholder Image'
-            />
-        </Wrapper>
     )
 };

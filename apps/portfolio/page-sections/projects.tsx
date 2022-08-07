@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
+import { projectData } from '../data';
+import { ProjectTile } from '@allus-interactive/component-library';
 
 const Container = styled.div`
   background-color: ${colourValues.primary};
@@ -31,6 +33,12 @@ const Anchor = styled.div`
   bottom: 0;
 `;
 
+const TileWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+`;
+
 export const Projects = () => {
     return (
         <Container>
@@ -38,6 +46,18 @@ export const Projects = () => {
                 <Title>My Projects</Title>
             </Wrapper>
             <Anchor id='journey' />
+            <TileWrapper>
+              {projectData && projectData.map((project, i) => (
+                <ProjectTile
+                  key={i}
+                  imageUrl={project.imageUrl}
+                  altText={project.altText}
+                  description={project.description}
+                  url={project.url}
+                  urlText={project.urlText}
+                />
+              ))}
+            </TileWrapper>
         </Container>
     )
 };
