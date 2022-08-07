@@ -26,12 +26,20 @@ const Title = styled.h1`
   }
 `;
 
+const Paragraph = styled.div`
+  margin-top: -20px;
+`;
+
 export const Journey = () => {
     return (
         <Container>
             <Wrapper>
                 <Title>My Journey</Title>
-              <Timeline data={timeLineData} />
+                <Paragraph>
+                  This timeline charts my course through the world of web development. From starting out as a casual hobbyist, to undertaking a degree at my local college, 
+                  to finding employment as a professional  developer. This is a complete timeline of my journey as a Front End Developer... so far.
+                </Paragraph>
+                <Timeline data={timeLineData} />
             </Wrapper>
         </Container>
     )
