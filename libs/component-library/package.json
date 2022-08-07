@@ -11,6 +11,7 @@
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@types/react-vertical-timeline-component": "^3.3.3",
     "babel-loader": "^8.2.5"
   },
   "dependencies": {

@@ -12,6 +12,7 @@
     "@apollo/client": "^3.6.9",
     "@nrwl/next": "14.1.8",
     "@types/react-slick": "^0.23.10",
+    "@types/react-vertical-timeline-component": "^3.3.3",
     "core-js": "^3.6.5",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
