@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
+import { timeLineData } from '../data';
+
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { Timeline } from '@allus-interactive/component-library';
 
 const Container = styled.div`
   background-color: ${colourValues.secondary};
@@ -29,6 +34,7 @@ export const Journey = () => {
         <Container>
             <Wrapper>
                 <Title>My Journey</Title>
+              <Timeline data={timeLineData} />
             </Wrapper>
         </Container>
     )
