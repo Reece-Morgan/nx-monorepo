@@ -43,7 +43,8 @@ export const Timeline = ({ data }: Props) => {
                         contentStyle={{ background: `${timeline.colour}`, color: '#fff' }}
                         contentArrowStyle={{ borderRight: `7px solid  ${timeline.colour}` }}
                         date={timeline.date}
-                        iconStyle={{ background: `${timeline.colour}`, color: '#fff' }}
+                        iconStyle={{ background: `${timeline.colour}`, color: '#fff'}}
+                        icon={<img src={timeline.icon} alt='Timeline Icon' style={{ width: '100%', padding: '15px' }} />}
                     >
                         <Title>{timeline.title}</Title>
                         <Subtitle colour={timeline.colour}>{timeline.subtitle}</Subtitle>
