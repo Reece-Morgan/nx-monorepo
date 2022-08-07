@@ -57,14 +57,18 @@ export const About = () => {
             </p>
             <Subtitle>Experience</Subtitle>
             <p>
-              I have 4+ years working as a professional developer/engineer, and a further 4+ years prior to this as a hobbyist/student. Below 
+              I have 4+ years working as a professional developer/engineer, and a further 6+ years prior to this as a hobbyist/student. Below 
               is a breakdown of how long I have been working with different languages and frameworks, in both a personal and professional capacity.
             </p>
             <ul>
-              <li>HTML, CSS and JS - 8+ years</li>
+              <li>HTML, CSS and JS - 10+ years</li>
               <li>Angular - 3+ years</li>
               <li>React/NextJS - 1+ years</li>
             </ul>
+            <p>
+              I also have experience with different Content Managment Systems (CMS). Mostly my experience is with Squidex (as part of my job as a 
+              Software Engineer) but I have also explored Builder.io and have started integrating Hygraph into one of my personal projects.
+            </p>
           </Wrapper>
           <Anchor id='projects' />
         </Container>
