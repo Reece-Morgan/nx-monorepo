@@ -21,6 +21,7 @@
     "react-dom": "18.1.0",
     "react-is": "18.1.0",
     "react-slick": "^0.29.0",
+    "react-vertical-timeline-component": "^3.5.2",
     "regenerator-runtime": "0.13.7",
     "slick-carousel": "^1.8.1",
     "styled-components": "5.3.5",
