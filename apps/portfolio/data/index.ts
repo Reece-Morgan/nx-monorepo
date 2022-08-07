@@ -33,7 +33,7 @@ export const timeLineData = [
     },
     {
         title: 'HNC Computing',
-        date: 'Setp 2014 - June 2015',
+        date: 'Sept 2014 - June 2015',
         text: 'Some description text goes here.',
         category: {
             tag: 'Student',
@@ -42,7 +42,7 @@ export const timeLineData = [
     },
     {
         title: 'HND Computing',
-        date: 'Setp 2015 - June 2016',
+        date: 'Sept 2015 - June 2016',
         text: 'Some description text goes here.',
         category: {
             tag: 'Student',
