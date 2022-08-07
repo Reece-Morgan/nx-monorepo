@@ -113,3 +113,14 @@ export const timeLineData = [
         icon: '/images/icons/work.png',
     },
 ]
+
+export const projectData =  [
+    {
+        imageUrl: '/images/projects/allus-interactive.png',
+        altText: 'Allus Interactive'
+    },
+    {
+        imageUrl: '/images/projects/allus-interactive.png',
+        altText: 'Allus Interactive'
+    },
+];
