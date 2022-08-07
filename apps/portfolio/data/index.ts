@@ -19,13 +19,15 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: '2012',
         colour: '#008000',
+        icon: '/images/icons/code.png',
     },
     {
-        title: 'Web Development Hobbyist',
+        title: 'Casual Developer',
         subtitle: 'Hobbyist',
         description: 'Some description text goes here.',
         date: '2012-2014',
         colour: '#008000',
+        icon: '/images/icons/code.png',
     },
     {
         title: 'HNC Computing',
@@ -33,6 +35,7 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: 'Sept 2014 - June 2015',
         colour: '#e91e63',
+        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Computing',
@@ -40,6 +43,7 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: 'Sept 2015 - June 2016',
         colour: '#e91e63',
+        icon: '/images/icons/student.png',
     },
     {
         title: 'HNC Interactive Media',
@@ -47,6 +51,7 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: 'Sept 2016 - June 2017',
         colour: '#e91e63',
+        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Interactive Media',
@@ -54,13 +59,15 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: 'Sept 2017 - June 2018',
         colour: '#e91e63',
+        icon: '/images/icons/student.png',
     },
     {
-        title: 'The Football Pools - Graduate Developer',
-        subtitle: 'Employment',
+        title: 'The Football Pools',
+        subtitle: 'Graduate Developer',
         description: 'Some description text goes here.',
         date: 'June 2018 - Sept 2020',
         colour: '#000d68',
+        icon: '/images/icons/work.png',
     },
     {
         title: 'BSc Interactive Media',
@@ -68,12 +75,14 @@ export const timeLineData = [
         description: 'Some description text goes here.',
         date: 'Sept 2018 - June 2019',
         colour: '#e91e63',
+        icon: '/images/icons/student.png',
     },
     {
-        title: 'The Football Pools - Software Engineer',
-        subtitle: 'Employment',
+        title: 'The Football Pools',
+        subtitle: 'Software Engineer',
         description: 'Some description text goes here.',
         date: 'Sept 2020 - Present',
         colour: '#000d68',
+        icon: '/images/icons/work.png',
     },
 ]
