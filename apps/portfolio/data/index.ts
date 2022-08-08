@@ -118,14 +118,14 @@ export const projectData =  [
     {
         imageUrl: '/images/projects/allus-interactive.png',
         altText: 'Allus Interactive',
-        description: 'I built this website as part of my Game Development. This site showcases all games I have created.',
+        description: 'I built this website to showcase my work as an Indie Game Developer. I recently updgraed this site from Angular to NextJS.',
         url: 'https://www.allusinteractive.com',
         urlText: 'View Website'
     },
     {
-        imageUrl: '/images/projects/allus-interactive.png',
+        imageUrl: '/images/projects/alba-cruises.png',
         altText: 'Alba Cruises',
-        description: 'Alba Cruises was built in Angular during my studies at college. I have rebuilt it in NextJS as a portfolio piece',
+        description: 'Alba Cruises was built in HTML/PHP during my studies at college. I am currently rebuilding it in NextJS to have it as a portfolio piece.',
         url: 'https://albacruises.reecemorgan.co.uk',
         urlText: 'View Project'
     },
