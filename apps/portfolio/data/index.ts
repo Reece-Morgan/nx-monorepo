@@ -21,7 +21,6 @@ export const timeLineData = [
             design class with a few mates, and that was when I discovered my passion for web development.`,
         date: '2012',
         colour: '#008000',
-        icon: '/images/icons/code.png',
     },
     {
         title: 'Casual Developer',
@@ -31,7 +30,6 @@ export const timeLineData = [
             building my skills in HTML and CSS. I also started to dabble in JavaScript during this time.`,
         date: '2012-2014',
         colour: '#008000',
-        icon: '/images/icons/code.png',
     },
     {
         title: 'HNC Computing',
@@ -41,7 +39,6 @@ export const timeLineData = [
             of HTML, CSS and JS. I also took various other classes, where I learnt the basics with Python, Java and SQL.`,
         date: 'Sept 2014 - June 2015',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Computing',
@@ -52,7 +49,6 @@ export const timeLineData = [
             the following year as a HNC Interactive Media student.`,
         date: 'Sept 2015 - June 2016',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HNC Interactive Media',
@@ -63,7 +59,6 @@ export const timeLineData = [
             time with Adobe Illustrator and Photoshop, and was able to develop some basic skills there.`,
         date: 'Sept 2016 - June 2017',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Interactive Media',
@@ -74,7 +69,6 @@ export const timeLineData = [
             and was introduced to 3D animation and Video Editing techniques.`,
         date: 'Sept 2017 - June 2018',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'The Football Pools',
@@ -86,7 +80,6 @@ export const timeLineData = [
             working with Angular in a professional capacity for a while, before moving on and spending a few months learning React.`,
         date: 'June 2018 - Sept 2020',
         colour: '#000d68',
-        icon: '/images/icons/work.png',
     },
     {
         title: 'BSc Interactive Media',
@@ -98,7 +91,6 @@ export const timeLineData = [
             in Adobe Premiere Pro.`,
         date: 'Sept 2018 - June 2019',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'The Football Pools',
@@ -110,7 +102,6 @@ export const timeLineData = [
         sites with C#, Angular and now React.`,
         date: 'Sept 2020 - Present',
         colour: '#000d68',
-        icon: '/images/icons/work.png',
     },
 ]
 
