@@ -93,8 +93,8 @@ export const timeLineData = [
         subtitle: 'Student',
         description: `
             The culmination of my education at Moray College was my BSc course in IM. It was during this year that I came across Angular for the first time, and started 
-            using that for my studies rather than HTML and CSS. Also during this year that I built Alba Cruises, an Angular site for a fictional company that I have 
-            since rebuilt in NextJS as part of my Portfolio. I also continued my work in Illustrator and Photoshop, along with 3D animation and video editing techniques
+            using that for my studies rather than HTML and CSS. Also during this year that I built Alba Cruises, a site for a fictional company that I am currently rebuilding 
+            in NextJS as part of my Portfolio. I also continued my work in Illustrator and Photoshop, along with 3D animation and video editing techniques
             in Adobe Premiere Pro.`,
         date: 'Sept 2018 - June 2019',
         colour: '#e91e63',
