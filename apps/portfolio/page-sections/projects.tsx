@@ -12,10 +12,10 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-max-width: 1270px;
-margin: 0 auto;
-height: 100%;
-padding: 0 20px;
+  max-width: 1270px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 20px;
 `;
 
 const Title = styled.h1`
@@ -34,9 +34,11 @@ const Anchor = styled.div`
 `;
 
 const TileWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1270px;
+  margin: 0 auto;
 `;
 
 export const Projects = () => {

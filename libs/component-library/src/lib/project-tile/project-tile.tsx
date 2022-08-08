@@ -11,13 +11,9 @@ interface Props {
 
 const Wrapper = styled.div`
     width: 100%;
-    @media (min-width: ${breakpointValues.sm})
-    {
-        width: 50%;
-    }
     @media (min-width: ${breakpointValues.md})
     {
-        width: 33.3%;
+        width: 50%;
     }
 `;
 
@@ -48,14 +44,35 @@ const FigCaption = styled.figcaption`
     }
 `;
 
+const Description = styled.p`
+    font-size: 0.875em;
+    @media (min-width: ${breakpointValues.md})
+    {
+        font-size: 1em;
+    }
+    
+    @media (min-width: ${breakpointValues.lg})
+    {
+        font-size: 1.125em;
+    }
+`;
+
+const Link = styled.a`
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    max-width: fit-content;
+    margin: 0 auto;
+    border-radius: 20px;
+`;
+
 export const ProjectTile = ({ imageUrl, altText, description, url, urlText }: Props) => {
     return (
         <Wrapper>
             <Figure>
                 <Image src={imageUrl} alt={altText} />
                 <FigCaption>
-                    <p>{description}</p>
-                    <a href={url}>{urlText}</a>
+                    <Description>{description}</Description>
+                    <Link href={url} target='_blank' rel='noreferrer'>{urlText}</Link>
                 </FigCaption>
             </Figure>
         </Wrapper>
