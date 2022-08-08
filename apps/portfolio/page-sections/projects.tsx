@@ -7,7 +7,6 @@ import { ProjectTile } from '@allus-interactive/component-library';
 const Container = styled.div`
   background-color: ${colourValues.primary};
   color: ${colourValues.white};
-  min-height: 100vh;
   position: relative;
 `;
 
