@@ -21,7 +21,6 @@ export const timeLineData = [
             design class with a few mates, and that was when I discovered my passion for web development.`,
         date: '2012',
         colour: '#008000',
-        icon: '/images/icons/code.png',
     },
     {
         title: 'Casual Developer',
@@ -31,7 +30,6 @@ export const timeLineData = [
             building my skills in HTML and CSS. I also started to dabble in JavaScript during this time.`,
         date: '2012-2014',
         colour: '#008000',
-        icon: '/images/icons/code.png',
     },
     {
         title: 'HNC Computing',
@@ -41,7 +39,6 @@ export const timeLineData = [
             of HTML, CSS and JS. I also took various other classes, where I learnt the basics with Python, Java and SQL.`,
         date: 'Sept 2014 - June 2015',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Computing',
@@ -52,7 +49,6 @@ export const timeLineData = [
             the following year as a HNC Interactive Media student.`,
         date: 'Sept 2015 - June 2016',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HNC Interactive Media',
@@ -63,7 +59,6 @@ export const timeLineData = [
             time with Adobe Illustrator and Photoshop, and was able to develop some basic skills there.`,
         date: 'Sept 2016 - June 2017',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'HND Interactive Media',
@@ -74,7 +69,6 @@ export const timeLineData = [
             and was introduced to 3D animation and Video Editing techniques.`,
         date: 'Sept 2017 - June 2018',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'The Football Pools',
@@ -86,19 +80,17 @@ export const timeLineData = [
             working with Angular in a professional capacity for a while, before moving on and spending a few months learning React.`,
         date: 'June 2018 - Sept 2020',
         colour: '#000d68',
-        icon: '/images/icons/work.png',
     },
     {
         title: 'BSc Interactive Media',
         subtitle: 'Student',
         description: `
             The culmination of my education at Moray College was my BSc course in IM. It was during this year that I came across Angular for the first time, and started 
-            using that for my studies rather than HTML and CSS. Also during this year that I built Alba Cruises, an Angular site for a fictional company that I have 
-            since rebuilt in NextJS as part of my Portfolio. I also continued my work in Illustrator and Photoshop, along with 3D animation and video editing techniques
+            using that for my studies rather than HTML and CSS. Also during this year that I built Alba Cruises, a site for a fictional company that I am currently rebuilding 
+            in NextJS as part of my Portfolio. I also continued my work in Illustrator and Photoshop, along with 3D animation and video editing techniques
             in Adobe Premiere Pro.`,
         date: 'Sept 2018 - June 2019',
         colour: '#e91e63',
-        icon: '/images/icons/student.png',
     },
     {
         title: 'The Football Pools',
@@ -110,6 +102,22 @@ export const timeLineData = [
         sites with C#, Angular and now React.`,
         date: 'Sept 2020 - Present',
         colour: '#000d68',
-        icon: '/images/icons/work.png',
     },
 ]
+
+export const projectData =  [
+    {
+        imageUrl: '/images/projects/allus-interactive.png',
+        altText: 'Allus Interactive',
+        description: 'I built this website to showcase my work as an Indie Game Developer. I recently updgraed this site from Angular to NextJS.',
+        url: 'https://www.allusinteractive.com',
+        urlText: 'View Website'
+    },
+    {
+        imageUrl: '/images/projects/alba-cruises.png',
+        altText: 'Alba Cruises',
+        description: 'Alba Cruises was built in HTML/PHP during my studies at college. I am currently rebuilding it in NextJS to have it as a portfolio piece.',
+        url: 'https://albacruises.reecemorgan.co.uk',
+        urlText: 'View Project'
+    },
+];

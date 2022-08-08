@@ -5,7 +5,6 @@ import colourValues from '../settings/colours';
 const Container = styled.div`
   background-color: ${colourValues.secondary};
   color: ${colourValues.white};
-  min-height: 100vh;
   position: relative;
 `;
 
