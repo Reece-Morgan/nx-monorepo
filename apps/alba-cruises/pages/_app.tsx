@@ -7,6 +7,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>RM | Portfolio | Alba Cruises</title>
+        <link rel="icon" href="/favicon.ico" type="image/icon" />
       </Head>
       <main className="app">
         <Component {...pageProps} />
