@@ -34,9 +34,15 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
 
-  const getMovieRequest = async () => {
+  const setSearchValues = (value: string) => {
+    setSearchValue(value);
+  }
+
+  const getMovieRequest = async (searchValue) => {
     const apiKey = '5fd15d12';
-    const url = `http://www.omdbapi.com/?s=star wars&apiKey=${apiKey}`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
+
+    console.log('Search Value: ' + searchValue);
 
     const data = await fetch(url);
     const response = await data.json();
@@ -47,15 +53,15 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    getMovieRequest();
-  }, []);
+    getMovieRequest(searchValue);
+  }, [searchValue]);
 
   return (
     <PageWrapper>
       <Container>
         <div>
           <MovieListHeading />
-          <SearchBox value={searchValue} onChange={setSearchValue} />
+          <SearchBox value={searchValue} onChange={setSearchValues} />
         </div>
         <Wrapper>
           <MovieList movies={movies} />
