@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 interface Props {
     movies: {
         Title: string;
@@ -8,13 +10,20 @@ interface Props {
     }[];
 }
 
+const Wrapper = styled.div``;
+
+const Image = styled.img`
+    height: 450px;
+    width: 300px;
+`;
+
 export const MovieList = ({ movies }: Props) => {
     return (
         <>
             {movies && movies.map((movie, i) => (
-                <div key={i}>
-                    <img src={movie.Poster} alt='Movie Poster' />
-                </div>
+                <Wrapper key={i}>
+                    <Image src={movie.Poster} alt='Movie Poster' />
+                </Wrapper>
             ))}
         </>
     )
