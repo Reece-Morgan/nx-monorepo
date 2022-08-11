@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
 import { MovieList } from '../src/components/movie-list';
+import { MovieListHeading } from '../src/components/movie-list-heading';
+import { SearchBox } from '../src/components/search-box';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -30,6 +32,7 @@ const Wrapper = styled.div`
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
+	const [searchValue, setSearchValue] = useState('');
 
   const getMovieRequest = async () => {
     const apiKey = '5fd15d12';
@@ -50,6 +53,10 @@ const HomePage = () => {
   return (
     <PageWrapper>
       <Container>
+        <div>
+          <MovieListHeading />
+          <SearchBox value={searchValue} onChange={setSearchValue} />
+        </div>
         <Wrapper>
           <MovieList movies={movies} />
         </Wrapper>
