@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   height: 100%;
   padding: 0 20px;
+  flex-wrap: wrap;
 `;
 
 const HomePage = () => {
