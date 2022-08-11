@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
+
 interface Props {
     value: string;
-    onChange: () => void;
+    onChange: Dispatch<SetStateAction<string>>;
 }
 
 export const SearchBox = ({ value, onChange }: Props) => {
@@ -8,7 +10,7 @@ export const SearchBox = ({ value, onChange }: Props) => {
         <div>
             <input 
                 value={value}
-                onChange={onChange}
+                onChange={() => onChange}
                 placeholder='Start typing to search...'
             />
         </div>
