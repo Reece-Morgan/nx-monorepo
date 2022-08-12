@@ -1,5 +1,6 @@
 import colourValues from "apps/movie-search/settings/colours";
 import styled from "styled-components";
+import { AddFavourite } from "./add-favourite";
 
 interface Props {
     movies: {
@@ -52,8 +53,9 @@ export const MovieList = ({ movies }: Props) => {
             {movies && movies.map((movie, i) => (
                 <Wrapper key={i}>
                     <Image src={movie.Poster} alt='Movie Poster' />
-                    
-                    <Overlay>Add to Favourites</Overlay>
+                    <Overlay>
+                        <AddFavourite />
+                    </Overlay>
                 </Wrapper>
             ))}
         </>
