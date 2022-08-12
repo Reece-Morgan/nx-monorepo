@@ -5,6 +5,7 @@ import colourValues from '../settings/colours';
 import { AddFavourite } from '../src/components/add-favourite';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
+import { Popup } from '../src/components/popup';
 import { RemoveFavourite } from '../src/components/remove-favourite';
 import { SearchBox } from '../src/components/search-box';
 
@@ -74,6 +75,11 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState([]);
+  const [popupDisplay, setPopupDisplay] = useState<'none' | 'block'>('none');
+
+  const togglePopup = () => {
+    setPopupDisplay(popupDisplay === 'none' ? 'block' : 'none');
+  }
 
   const setSearchValues = (value: string) => {
     setSearchValue(value);
@@ -141,7 +147,7 @@ const HomePage = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <SearchBox value={searchValue} onChange={setSearchValues} />
+            <SearchBox value={searchValue} onChange={setSearchValues} onClick={togglePopup} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
@@ -164,6 +170,7 @@ const HomePage = () => {
             </MovieWrapper>
           )}
         </Wrapper>
+        <Popup display={popupDisplay} onClick={togglePopup}/>
       </Container>
     </PageWrapper>
   )
