@@ -10,6 +10,7 @@ interface Props {
         Type: string;
         Poster: string;
     }[];
+    onClick: (movie: string) => void;
 }
 
 const Overlay = styled.div`
@@ -47,13 +48,13 @@ const Image = styled.img`
     cursor: auto;
 `;
 
-export const MovieList = ({ movies }: Props) => {
+export const MovieList = ({ movies, onClick }: Props) => {
     return (
         <>
             {movies && movies.map((movie, i) => (
                 <Wrapper key={i}>
                     <Image src={movie.Poster} alt='Movie Poster' />
-                    <Overlay>
+                    <Overlay onClick={() => onClick(movie.Title)}>
                         <AddFavourite />
                     </Overlay>
                 </Wrapper>

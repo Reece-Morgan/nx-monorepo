@@ -50,9 +50,15 @@ const HeaderWrapper = styled.div`
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
+  const [favourites, setFavourites] = useState([]);
 
   const setSearchValues = (value: string) => {
     setSearchValue(value);
+  }
+
+  const addFavouriteMovie = (movie) => {
+    const favouriteList = [...favourites, movie];
+    setFavourites(favouriteList);
   }
 
   const getMovieRequest = async (searchValue) => {
@@ -83,7 +89,7 @@ const HomePage = () => {
           </HeaderWrapper>
         </Header>
         <Wrapper>
-          <MovieList movies={movies} />
+          <MovieList movies={movies} onClick={addFavouriteMovie}/>
         </Wrapper>
       </Container>
     </PageWrapper>
