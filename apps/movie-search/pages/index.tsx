@@ -30,6 +30,23 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
 `;
 
+const Header = styled.header`
+    width: 100vw;
+    height: auto;
+    background-color: ${colourValues.black};
+    color: ${colourValues.white};
+    margin-bottom: 10px;
+`;
+
+const HeaderWrapper = styled.div`
+  max-width: 1270px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding 10px;
+`;
+
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
@@ -59,10 +76,12 @@ const HomePage = () => {
   return (
     <PageWrapper>
       <Container>
-        <div>
-          <MovieListHeading />
-          <SearchBox value={searchValue} onChange={setSearchValues} />
-        </div>
+        <Header>
+          <HeaderWrapper>
+            <MovieListHeading />
+            <SearchBox value={searchValue} onChange={setSearchValues} />
+          </HeaderWrapper>
+        </Header>
         <Wrapper>
           <MovieList movies={movies} />
         </Wrapper>
