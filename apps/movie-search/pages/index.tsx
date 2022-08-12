@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
+import { AddFavourite } from '../src/components/add-favourite';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
+import { RemoveFavourite } from '../src/components/remove-favourite';
 import { SearchBox } from '../src/components/search-box';
 
 const PageWrapper = styled.div`
@@ -13,8 +15,6 @@ const PageWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  min-height: auto;
-  height: 100vh;
   min-height: 100vh;
   position: relative;
 `;
@@ -24,8 +24,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  max-width: 1270px;
-  margin: 0 auto;
   padding: 0 20px;
   flex-wrap: wrap;
 `;
@@ -36,6 +34,9 @@ const Header = styled.header`
   background-color: ${colourValues.black};
   color: ${colourValues.white};
   margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const HeaderWrapper = styled.div`
@@ -52,9 +53,6 @@ const MovieWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  max-width: 1270px;
-  margin: 0 auto;
-  padding: 0 20px;
   flex-wrap: wrap;
 `;
 
@@ -76,14 +74,29 @@ const HomePage = () => {
 
   const addFavouriteMovie = (movie) => {
     const favouriteList = [...favourites, movie];
+
+    const checkFavourites = favourites.filter(
+      (favourite) => favourite.imdbID === movie.imdbID
+    );
+
+    if (checkFavourites.length === 1) {
+      return;
+    }
+
+    setFavourites(favouriteList);
+  }
+
+  const removeFavouriteMovie = (movie) => {
+    const favouriteList = favourites.filter(
+      (favourite) => favourite.imdbID !== movie.imdbID
+    );
+
     setFavourites(favouriteList);
   }
 
   const getMovieRequest = async (searchValue) => {
     const apiKey = '5fd15d12';
     const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
-
-    console.log('Search Value: ' + searchValue);
 
     const data = await fetch(url);
     const response = await data.json();
@@ -107,16 +120,22 @@ const HomePage = () => {
           </HeaderWrapper>
         </Header>
         <Wrapper>
+          {movies.length === 0 && (
+            <>
+              <p>Use the search bar to look up any movie, TV show or video game</p>
+              <p>Click Add to Favourites to keep track of all your favourites!</p>
+            </>
+          )}
           {favourites && favourites.length > 0 && (
             <MovieWrapper>
               <Title>Favourites</Title>
-              <MovieList movies={favourites} onClick={addFavouriteMovie}/>
+              <MovieList movies={favourites} favourites={<RemoveFavourite />} onClick={removeFavouriteMovie}/>
             </MovieWrapper>
           )}
           {movies && movies.length > 0 && (
             <MovieWrapper>
               <Title>Search Results</Title>
-              <MovieList movies={movies} onClick={addFavouriteMovie}/>
+              <MovieList movies={movies} favourites={<AddFavourite />} onClick={addFavouriteMovie}/>
             </MovieWrapper>
           )}
         </Wrapper>

@@ -10,6 +10,7 @@ interface Props {
         Type: string;
         Poster: string;
     }[];
+    favourites: React.ReactNode;
     onClick: (movie) => void;
 }
 
@@ -60,14 +61,14 @@ const Image = styled.img`
     cursor: auto;
 `;
 
-export const MovieList = ({ movies, onClick }: Props) => {
+export const MovieList = ({ movies, favourites, onClick }: Props) => {
     return (
         <Wrapper>
             {movies && movies.map((movie, i) => (
                 <MovieWrapper key={i}>
                     <Image src={movie.Poster} alt='Movie Poster' />
                     <Overlay onClick={() => onClick(movie)}>
-                        <AddFavourite />
+                        {favourites}
                     </Overlay>
                 </MovieWrapper>
             ))}
