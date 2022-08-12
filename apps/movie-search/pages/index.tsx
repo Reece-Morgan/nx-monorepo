@@ -124,6 +124,12 @@ const HomePage = () => {
           </HeaderWrapper>
         </Header>
         <Wrapper>
+          {movies.length === 0 && (
+            <>
+              <p>Use the search bar to look up any movie, TV show or video game</p>
+              <p>Click Add to Favourites to keep track of all your favourites!</p>
+            </>
+          )}
           {favourites && favourites.length > 0 && (
             <MovieWrapper>
               <Title>Favourites</Title>
