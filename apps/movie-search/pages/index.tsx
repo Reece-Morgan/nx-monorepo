@@ -78,6 +78,15 @@ const HomePage = () => {
 
   const addFavouriteMovie = (movie) => {
     const favouriteList = [...favourites, movie];
+
+    const checkFavourites = favourites.filter(
+      (favourite) => favourite.imdbID === movie.imdbID
+    );
+
+    if (checkFavourites.length === 1) {
+      return;
+    }
+
     setFavourites(favouriteList);
   }
 
@@ -92,8 +101,6 @@ const HomePage = () => {
   const getMovieRequest = async (searchValue) => {
     const apiKey = '5fd15d12';
     const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
-
-    console.log('Search Value: ' + searchValue);
 
     const data = await fetch(url);
     const response = await data.json();
