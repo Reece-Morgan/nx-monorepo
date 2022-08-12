@@ -9,10 +9,8 @@ interface Props {
     onClick: () => void;
 }
 
-// TODO: remove max-width and min-height
 const Wrapper = styled.div<{ display: string }>`
     max-width: 400px; 
-    min-height: 600px;
     background-color: ${colourValues.white};
     position: relative;
     margin: 0 auto;
@@ -24,7 +22,7 @@ const Wrapper = styled.div<{ display: string }>`
 const Header = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -37,7 +35,9 @@ const Title = styled.h1`
 const Span = styled.span`
     font-size: 1em;
     font-weight: 600;
-    padding: 0 5px;
+    margin : 0 15px 0 0;
+    position: absolute;
+    right: 0px;
     cursor: pointer;
     @media (min-width: ${breakpointValues.xs}) {
         font-size: 1.5em;
@@ -61,7 +61,6 @@ export const Popup = ({ display, title, content, onClick }: Props) => {
         <>
             <Wrapper display={display}>
                 <Header>
-                    <span></span>
                     <Title>{title}</Title>
                     <Span onClick={onClick}>X</Span>
                 </Header>
