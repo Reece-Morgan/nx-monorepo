@@ -25,6 +25,20 @@ const Input = styled.input`
     }
 `;
 
+const Button = styled.button`
+    background-color: ${colourValues.white};
+    color: ${colourValues.black};
+    border: 2px solid ${colourValues.white};
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+
+    :hover {
+        background-color: ${colourValues.black};
+        color: ${colourValues.white};
+    }
+`;
+
 export const SearchBox = ({ value, onChange }: Props) => {
     return (
         <Wrapper>
@@ -33,6 +47,7 @@ export const SearchBox = ({ value, onChange }: Props) => {
                 onChange={(event) => onChange(event.target.value)}
                 placeholder='Start typing to search...'
             />
+            <Button>Advanced Search</Button>
         </Wrapper>
     )
 }
