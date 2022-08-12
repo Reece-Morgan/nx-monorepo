@@ -57,10 +57,21 @@ const MovieWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 1em;
-    @media (min-width: ${breakpointValues.xs}) {
-        font-size: 1.5em;
-    }
+  font-size: 1em;
+  @media (min-width: ${breakpointValues.xs}) {
+      font-size: 1.5em;
+  }
+`;
+
+const Text = styled.p`
+  font-size: 1em;
+  @media (min-width: ${breakpointValues.xs}) {
+      font-size: 1.5em;
+  }
+`;
+
+const Error = styled(Text)`
+    color: ${colourValues.error};
 `;
 
 const HomePage = () => {
@@ -97,7 +108,7 @@ const HomePage = () => {
   }
 
   const saveToLocalStorage = (items) => {
-    localStorage.setItem('rm-movie-favourites', JSON.stringify(items));
+    localStorage.setItem('rm-portfolio-movie-favourites', JSON.stringify(items));
   }
 
   const getMovieRequest = async (searchValue) => {
@@ -118,7 +129,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const userFavourites = JSON.parse(
-      localStorage.getItem('rm-movie-favourites')
+      localStorage.getItem('rm-portfolio-movie-favourites')
     );
 
     if (userFavourites === null) {
@@ -138,10 +149,11 @@ const HomePage = () => {
           </HeaderWrapper>
         </Header>
         <Wrapper>
-          {movies.length === 0 && (
+          {movies.length === 0 && favourites.length === 0 && (
             <>
-              <p>Use the search bar to look up any movie, TV show or video game</p>
-              <p>Click Add to Favourites to keep track of all your favourites!</p>
+            <Text>Use the search bar to look up any movie, TV show or video game</Text>
+            <Text>Click Add to Favourites to keep track of all your favourites!</Text>
+            <Error>Please note: favourites are stored in Local Storage</Error>
             </>
           )}
           {favourites && favourites.length > 0 && (
