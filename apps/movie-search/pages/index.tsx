@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
+import { AddFavourite } from '../src/components/add-favourite';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
+import { RemoveFavourite } from '../src/components/remove-favourite';
 import { SearchBox } from '../src/components/search-box';
 
 const PageWrapper = styled.div`
@@ -79,6 +81,14 @@ const HomePage = () => {
     setFavourites(favouriteList);
   }
 
+  const removeFavouriteMovie = (movie) => {
+    const favouriteList = favourites.filter(
+      (favourite) => favourite.imdbID !== movie.imdbID
+    );
+
+    setFavourites(favouriteList);
+  }
+
   const getMovieRequest = async (searchValue) => {
     const apiKey = '5fd15d12';
     const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
@@ -110,13 +120,13 @@ const HomePage = () => {
           {favourites && favourites.length > 0 && (
             <MovieWrapper>
               <Title>Favourites</Title>
-              <MovieList movies={favourites} onClick={addFavouriteMovie}/>
+              <MovieList movies={favourites} favourites={<RemoveFavourite />} onClick={removeFavouriteMovie}/>
             </MovieWrapper>
           )}
           {movies && movies.length > 0 && (
             <MovieWrapper>
               <Title>Search Results</Title>
-              <MovieList movies={movies} onClick={addFavouriteMovie}/>
+              <MovieList movies={movies} favourites={<AddFavourite />} onClick={addFavouriteMovie}/>
             </MovieWrapper>
           )}
         </Wrapper>
