@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { AddFavourite } from '../src/components/add-favourite';
+import { AdvancedSearch } from '../src/components/forms/advanced-search';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
 import { Popup } from '../src/components/popup';
@@ -170,7 +171,7 @@ const HomePage = () => {
             </MovieWrapper>
           )}
         </Wrapper>
-        <Popup display={popupDisplay} onClick={togglePopup}/>
+        <Popup display={popupDisplay} title='Advanced Search' content={<AdvancedSearch />} onClick={togglePopup}/>
       </Container>
     </PageWrapper>
   )
