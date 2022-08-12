@@ -84,6 +84,7 @@ const HomePage = () => {
     }
 
     setFavourites(favouriteList);
+    saveToLocalStorage(favouriteList);
   }
 
   const removeFavouriteMovie = (movie) => {
@@ -92,6 +93,11 @@ const HomePage = () => {
     );
 
     setFavourites(favouriteList);
+    saveToLocalStorage(favouriteList);
+  }
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('rm-movie-favourites', JSON.stringify(items));
   }
 
   const getMovieRequest = async (searchValue) => {
@@ -109,6 +115,18 @@ const HomePage = () => {
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
+
+  useEffect(() => {
+    const userFavourites = JSON.parse(
+      localStorage.getItem('rm-movie-favourites')
+    );
+
+    if (userFavourites === null) {
+      return;
+    }
+
+    setFavourites(userFavourites);
+  }, []);
 
   return (
     <PageWrapper>
