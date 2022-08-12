@@ -15,8 +15,6 @@ const PageWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  min-height: auto;
-  height: 100vh;
   min-height: 100vh;
   position: relative;
 `;
@@ -36,6 +34,9 @@ const Header = styled.header`
   background-color: ${colourValues.black};
   color: ${colourValues.white};
   margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const HeaderWrapper = styled.div`
