@@ -148,7 +148,6 @@ export const AdvancedSearch =() => {
                     placeholder='PG'
                     ref={register()}
                 />
-                <ErrorMsg>{errors.title && 'Please enter a rating'}</ErrorMsg>
                 <Span>* Required</Span>
                 <ButtonWrapper>
                     <Button>Search</Button>
