@@ -26,8 +26,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  max-width: 1270px;
-  margin: 0 auto;
   padding: 0 20px;
   flex-wrap: wrap;
 `;
@@ -54,9 +52,6 @@ const MovieWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  max-width: 1270px;
-  margin: 0 auto;
-  padding: 0 20px;
   flex-wrap: wrap;
 `;
 
