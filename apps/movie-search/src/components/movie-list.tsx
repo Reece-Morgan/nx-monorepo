@@ -10,8 +10,20 @@ interface Props {
         Type: string;
         Poster: string;
     }[];
-    onClick: (movie: string) => void;
+    onClick: (movie) => void;
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  max-width: 1270px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 0 20px;
+  flex-wrap: wrap;
+`;
 
 const Overlay = styled.div`
     position: absolute;
@@ -27,7 +39,7 @@ const Overlay = styled.div`
     color: ${colourValues.white};
 `;
 
-const Wrapper = styled.div`
+const MovieWrapper = styled.div`
     position: relative;
 	transition: transform 0.2s;
 
@@ -50,15 +62,15 @@ const Image = styled.img`
 
 export const MovieList = ({ movies, onClick }: Props) => {
     return (
-        <>
+        <Wrapper>
             {movies && movies.map((movie, i) => (
-                <Wrapper key={i}>
+                <MovieWrapper key={i}>
                     <Image src={movie.Poster} alt='Movie Poster' />
-                    <Overlay onClick={() => onClick(movie.Title)}>
+                    <Overlay onClick={() => onClick(movie)}>
                         <AddFavourite />
                     </Overlay>
-                </Wrapper>
+                </MovieWrapper>
             ))}
-        </>
+        </Wrapper>
     )
 }
