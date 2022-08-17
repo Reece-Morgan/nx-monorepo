@@ -81,11 +81,6 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState([]);
-  const [popupDisplay, setPopupDisplay] = useState<'none' | 'block'>('none');
-
-  const togglePopup = () => {
-    setPopupDisplay(popupDisplay === 'none' ? 'block' : 'none');
-  }
 
   const setSearchValues = (value: string) => {
     setSearchValue(value);
