@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { BasicSearch } from "./forms/basic-search";
 
 interface Props {
-    onClick: () => void;
+    setMovies: (value) => void;
+    togglePopup: () => void;
 }
 
 const Wrapper = styled.div`
@@ -27,11 +28,11 @@ const Button = styled.button`
     }
 `;
 
-export const AdvancedSearchBox = ({ onClick }: Props) => {
+export const AdvancedSearchBox = ({ setMovies, togglePopup }: Props) => {
     return (
         <Wrapper>
-            <BasicSearch />
-            <Button onClick={onClick}>Advanced Search</Button>
+            <BasicSearch setMovies={setMovies}/>
+            <Button onClick={togglePopup}>Advanced Search</Button>
         </Wrapper>
     )
 }

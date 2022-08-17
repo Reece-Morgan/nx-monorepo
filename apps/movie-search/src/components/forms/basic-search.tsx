@@ -4,6 +4,10 @@ import styled from "styled-components"
 import { useForm } from 'react-hook-form';
 
 interface Props {
+    setMovies: (value) => void;
+}
+
+interface FormProps {
     title: string;
 }
 
@@ -50,11 +54,19 @@ const Button = styled.button`
     }
 `;
 
-export const BasicSearch =() => {
-    const { register, handleSubmit } = useForm<Props>();
+export const BasicSearch = ({ setMovies }: Props) => {
+    const { register, handleSubmit } = useForm<FormProps>();
 
-    const onSubmit = handleSubmit(data => {
-        console.log('Form Data: ' + JSON.stringify(data));
+    const onSubmit = handleSubmit(async data => {
+        const apiKey = '5fd15d12';
+        const url = `http://www.omdbapi.com/?s=${data.title}&type=movie&apiKey=${apiKey}`;
+
+        const res = await fetch(url);
+        const response = await res.json();
+
+        if (response.Search) {
+            setMovies(response.Search);
+        }
     });
 
     return (

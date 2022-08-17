@@ -81,7 +81,6 @@ font-size: 0.75em;
 
 const SearchAdvanced = () => {
   const [movies, setMovies] = useState([]);
-	const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState([]);
   const [popupDisplay, setPopupDisplay] = useState<'none' | 'block'>('none');
 
@@ -89,8 +88,8 @@ const SearchAdvanced = () => {
     setPopupDisplay(popupDisplay === 'none' ? 'block' : 'none');
   }
 
-  const setSearchValues = (value: string) => {
-    setSearchValue(value);
+  const setSearchValue = (value) => {
+    setMovies(value);
   }
 
   const addFavouriteMovie = (movie) => {
@@ -121,22 +120,6 @@ const SearchAdvanced = () => {
     localStorage.setItem('rm-portfolio-movie-favourites', JSON.stringify(items));
   }
 
-  const getMovieRequest = async (searchValue) => {
-    const apiKey = '5fd15d12';
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
-
-    const data = await fetch(url);
-    const response = await data.json();
-
-    if (response.Search) {
-      setMovies(response.Search);
-    }
-  };
-
-  useEffect(() => {
-    getMovieRequest(searchValue);
-  }, [searchValue]);
-
   useEffect(() => {
     const userFavourites = JSON.parse(
       localStorage.getItem('rm-portfolio-movie-favourites')
@@ -155,7 +138,7 @@ const SearchAdvanced = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <AdvancedSearchBox onClick={togglePopup} />
+            <AdvancedSearchBox setMovies={setSearchValue} togglePopup={togglePopup} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
