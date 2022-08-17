@@ -58,8 +58,9 @@ const Image = styled.img`
     height: 450px;
     width: 300px;
     padding: 10px;
-    cursor: auto;
 `;
+
+const Link = styled.a``;
 
 export const MovieList = ({ movies, favourites, onClick }: Props) => {
     const url = 'https://www.imdb.com/title/';
@@ -67,9 +68,9 @@ export const MovieList = ({ movies, favourites, onClick }: Props) => {
         <Wrapper>
             {movies && movies.map((movie, i) => (
                 <MovieWrapper key={i}>
-                    <a href={url + movie.imdbID} target='_blank' rel='noreferrer'>
+                    <Link href={url + movie.imdbID} target='_blank' rel='noreferrer'>
                         <Image src={movie.Poster} alt='Movie Poster' />
-                    </a>
+                    </Link>
                     <Overlay onClick={() => onClick(movie)}>
                         {favourites}
                     </Overlay>
