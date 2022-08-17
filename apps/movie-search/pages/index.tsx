@@ -3,10 +3,8 @@ import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { AddFavourite } from '../src/components/add-favourite';
-import { AdvancedSearch } from '../src/components/forms/advanced-search';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
-import { Popup } from '../src/components/popup';
 import { RemoveFavourite } from '../src/components/remove-favourite';
 import { SearchBox } from '../src/components/search-box';
 
@@ -123,7 +121,7 @@ const HomePage = () => {
 
   const getMovieRequest = async (searchValue) => {
     const apiKey = '5fd15d12';
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apiKey=${apiKey}`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&type=movie&apiKey=${apiKey}`;
 
     const data = await fetch(url);
     const response = await data.json();
@@ -155,7 +153,7 @@ const HomePage = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <SearchBox value={searchValue} onChange={setSearchValues} onClick={togglePopup} />
+            <SearchBox value={searchValue} onChange={setSearchValues} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
@@ -179,7 +177,6 @@ const HomePage = () => {
             </MovieWrapper>
           )}
         </Wrapper>
-        <Popup display={popupDisplay} title='Advanced Search' content={<AdvancedSearch />} onClick={togglePopup}/>
       </Container>
     </PageWrapper>
   )
