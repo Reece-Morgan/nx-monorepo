@@ -159,8 +159,8 @@ const HomePage = () => {
         <Wrapper>
           {movies.length === 0 && favourites.length === 0 && (
             <>
-              <Text>Use the search bar to look up any movie, TV show or video game</Text>
-              <Text>Click Add to Favourites to keep track of all your favourites!</Text>
+              <Text>Use the search bar to look up any movie you can think of</Text>
+              <Text>Click Add to Favourites to keep track of all your favourite movies!</Text>
               <SmallText>To try the Advanced Search, click <a href='/search/advanced'>here</a>.</SmallText>
             </>
           )}
