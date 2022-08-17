@@ -35,7 +35,7 @@ const Overlay = styled.div`
 	bottom: 0;
 	font-size: 20px;
 	padding: 20px;
-	margin: 15px 10px;
+	margin: 10px;
 	text-align: center;
     color: ${colourValues.white};
 `;
@@ -55,9 +55,13 @@ const MovieWrapper = styled.div`
 `;
 
 const Image = styled.img`
-    height: 450px;
-    width: 300px;
-    padding: 10px;
+    height: 430px;
+    width: 280px;
+    min-height: 430px;
+    min-width: 280px;
+    display: block;
+    margin: 10px;
+    border: 1px solid black;
 `;
 
 const Link = styled.a``;
