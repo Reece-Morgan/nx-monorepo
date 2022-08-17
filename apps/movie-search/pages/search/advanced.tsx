@@ -8,7 +8,7 @@ import { MovieList } from '../../src/components/movie-list';
 import { MovieListHeading } from '../../src/components/movie-list-heading';
 import { Popup } from '../../src/components/popup';
 import { RemoveFavourite } from '../../src/components/remove-favourite';
-import { SearchBox } from '../../src/components/search-box';
+import { AdvancedSearchBox } from '../../src/components/advanced-search-box';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -155,7 +155,7 @@ const SearchAdvanced = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <SearchBox value={searchValue} onChange={setSearchValues} onClick={togglePopup} />
+            <AdvancedSearchBox value={searchValue} onChange={setSearchValues} onClick={togglePopup} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
