@@ -72,6 +72,13 @@ const Text = styled.p`
   }
 `;
 
+const SmallText = styled.p`
+font-size: 0.75em;
+@media (min-width: ${breakpointValues.xs}) {
+  font-size: 1em;
+}
+`;
+
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
@@ -156,6 +163,7 @@ const HomePage = () => {
             <>
               <Text>Use the search bar to look up any movie, TV show or video game</Text>
               <Text>Click Add to Favourites to keep track of all your favourites!</Text>
+              <SmallText>To try the Advanced Search, click <a href='/search/advanced'>here</a>.</SmallText>
             </>
           )}
           {favourites && favourites.length > 0 && (
