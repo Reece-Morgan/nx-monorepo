@@ -116,7 +116,7 @@ export const projectData =  [
     {
         imageUrl: '/images/projects/alba_cruises.png',
         altText: 'Alba Cruises',
-        description: `Alba Cruises was built in HTML/PHP during my studies at college. I am currently rebuilding it in NextJS to have it as a portfolio piece.`,
+        description: `Alba Cruises was built in Angular during my studies at college. It is now used purely as a portfolio piece.`,
         url: 'https://albacruises.reecemorgan.co.uk',
         urlText: 'View Project'
     },
