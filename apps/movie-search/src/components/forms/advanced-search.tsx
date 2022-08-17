@@ -87,14 +87,23 @@ const Button = styled.button`
     }
 `;
 
-const AltButton = styled(Button)`
+const AltButton = styled.input`
     background-color: ${colourValues.white};
     color: ${colourValues.black};
     border: 2px solid ${colourValues.black};
+    border-radius: 10px;
+    width: 75%;
+    margin: 5px auto;
+    cursor: pointer;
+    padding: 5px;
 
     :hover {
         background-color: ${colourValues.black};
         color: ${colourValues.white};
+    }
+
+    @media (min-width: ${breakpointValues.xs}) {
+        width: 40%;
     }
 `;
 
@@ -181,7 +190,7 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
                 <Span>* Required</Span>
                 <ButtonWrapper>
                     <Button>Search</Button>
-                    <AltButton>Clear</AltButton>
+                    <AltButton type="reset" value="Clear" />
                 </ButtonWrapper>
             </Form>
         </Wrapper>    
