@@ -73,10 +73,11 @@ const Text = styled.p`
 `;
 
 const SmallText = styled.p`
-font-size: 0.75em;
-@media (min-width: ${breakpointValues.xs}) {
-  font-size: 1em;
-}
+  font-size: 0.75em;
+  padding: 10px;
+  @media (min-width: ${breakpointValues.xs}) {
+    font-size: 1em;
+  }
 `;
 
 const SearchAdvanced = () => {
@@ -146,7 +147,6 @@ const SearchAdvanced = () => {
             <>
               <Text>Use the search bar to look up any movie, TV show or video game</Text>
               <Text>Click Add to Favourites to keep track of all your favourites!</Text>
-              <SmallText>To try the Basic Search, click <a href='/'>here</a>.</SmallText>
             </>
           )}
           {favourites && favourites.length > 0 && (
@@ -161,6 +161,7 @@ const SearchAdvanced = () => {
               <MovieList movies={movies} favourites={<AddFavourite />} onClick={addFavouriteMovie}/>
             </MovieWrapper>
           )}
+          <SmallText>To try the Basic Search, click <a href='/'>here</a>.</SmallText>
         </Wrapper>
         <Popup display={popupDisplay} title='Advanced Search' closePopup={togglePopup} setMovies={setSearchValue}/>
       </Container>
