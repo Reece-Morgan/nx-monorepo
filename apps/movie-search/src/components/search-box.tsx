@@ -1,12 +1,10 @@
 import breakpointValues from "apps/movie-search/settings/breakpoints";
 import colourValues from "apps/movie-search/settings/colours";
 import styled from "styled-components";
-import { Popup } from "./popup";
 
 interface Props {
     value: string;
     onChange: (value: string) => void;
-    onClick: () => void;
 }
 
 const Wrapper = styled.div`
@@ -27,21 +25,7 @@ const Input = styled.input`
     }
 `;
 
-const Button = styled.button`
-    background-color: ${colourValues.white};
-    color: ${colourValues.black};
-    border: 2px solid ${colourValues.white};
-    border-radius: 10px;
-    width: 100%;
-    cursor: pointer;
-
-    :hover {
-        background-color: ${colourValues.black};
-        color: ${colourValues.white};
-    }
-`;
-
-export const SearchBox = ({ value, onChange, onClick }: Props) => {
+export const SearchBox = ({ value, onChange }: Props) => {
     return (
         <Wrapper>
             <Input 
@@ -49,7 +33,6 @@ export const SearchBox = ({ value, onChange, onClick }: Props) => {
                 onChange={(event) => onChange(event.target.value)}
                 placeholder='Start typing to search...'
             />
-            <Button onClick={onClick}>Advanced Search</Button>
         </Wrapper>
     )
 }
