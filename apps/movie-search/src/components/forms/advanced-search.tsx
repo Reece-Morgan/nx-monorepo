@@ -4,6 +4,11 @@ import styled from "styled-components"
 import { useForm } from 'react-hook-form';
 
 interface Props {
+    setMovies: (value) => void;
+    closePopup: () => void;
+}
+
+interface FormProps {
     title: string;
     year: number;
     type: string;
@@ -86,11 +91,21 @@ const Span = styled.span`
     font-size: 0.75em;
 `;
 
-export const AdvancedSearch =() => {
-    const { register, handleSubmit, errors } = useForm<Props>();
+export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
+    const { register, handleSubmit, errors } = useForm<FormProps>();
 
-    const onSubmit = handleSubmit(data => {
-        console.log('Form Data: ' + JSON.stringify(data));
+    const onSubmit = handleSubmit(async data => {
+        const apiKey = '5fd15d12';
+        const url = data.rating !== "" ? 
+            `http://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&rating=${data.rating}&apiKey=${apiKey}` : 
+            `http://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&apiKey=${apiKey}`;
+
+        const res = await fetch(url);
+        const response = await res.json();
+
+        if (response.Search) {
+            setMovies(response.Search);
+        }
     });
 
     return (
@@ -150,8 +165,8 @@ export const AdvancedSearch =() => {
                 />
                 <Span>* Required</Span>
                 <ButtonWrapper>
-                    <Button>Search</Button>
-                    <AltButton>Clear</AltButton>
+                    <Button onClick={closePopup}>Search</Button>
+                    <AltButton onClick={closePopup}>Clear</AltButton>
                 </ButtonWrapper>
             </Form>
         </Wrapper>    

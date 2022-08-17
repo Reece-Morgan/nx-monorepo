@@ -162,7 +162,7 @@ const SearchAdvanced = () => {
             </MovieWrapper>
           )}
         </Wrapper>
-        <Popup display={popupDisplay} title='Advanced Search' content={<AdvancedSearch />} onClick={togglePopup}/>
+        <Popup display={popupDisplay} title='Advanced Search' closePopup={togglePopup} setMovies={setSearchValue}/>
       </Container>
     </PageWrapper>
   )

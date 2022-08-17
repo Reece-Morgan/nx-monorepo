@@ -1,18 +1,24 @@
 import breakpointValues from "apps/movie-search/settings/breakpoints";
 import colourValues from "apps/movie-search/settings/colours";
 import styled from "styled-components"
+import { AdvancedSearch } from "./forms/advanced-search";
 
 interface Props {
     display: string;
     title: string;
-    content: React.ReactNode;
-    onClick: () => void;
+    closePopup: () => void;
+    setMovies: (value) => void;
 }
 
 const Wrapper = styled.div<{ display: string }>`
     max-width: 400px; 
     background-color: ${colourValues.white};
-    position: relative;
+    position: absolute;
+    top: calc(50vh - 210px);;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 420px;
     margin: 0 auto;
     border-radius: 15px;
     z-index: 21;
@@ -56,17 +62,17 @@ const Overlay = styled.div<{ display: string }>`
     display: ${(props) => props.display ? props.display : 'none'};
 `;
 
-export const Popup = ({ display, title, content, onClick }: Props) => {
+export const Popup = ({ display, title, closePopup, setMovies }: Props) => {
     return (
         <>
             <Wrapper display={display}>
                 <Header>
                     <Title>{title}</Title>
-                    <Span onClick={onClick}>X</Span>
+                    <Span onClick={closePopup}>X</Span>
                 </Header>
-                {content}
+                <AdvancedSearch setMovies={setMovies} closePopup={closePopup}/>
             </Wrapper>
-            <Overlay display={display} onClick={onClick}/>
+            <Overlay display={display} onClick={closePopup}/>
         </>
     )
 }
