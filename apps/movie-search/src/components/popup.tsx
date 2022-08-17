@@ -18,7 +18,7 @@ const Wrapper = styled.div<{ display: string }>`
     left: 0;
     bottom: 0;
     right: 0;
-    max-height: 420px;
+    max-height: 450px;
     margin: 0 auto;
     border-radius: 15px;
     z-index: 21;
