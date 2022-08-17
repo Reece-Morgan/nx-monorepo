@@ -35,7 +35,7 @@ const Overlay = styled.div`
 	bottom: 0;
 	font-size: 20px;
 	padding: 20px;
-	margin: 15px 10px;
+	margin: 10px;
 	text-align: center;
     color: ${colourValues.white};
 `;
@@ -55,18 +55,26 @@ const MovieWrapper = styled.div`
 `;
 
 const Image = styled.img`
-    height: 450px;
-    width: 300px;
-    padding: 10px;
-    cursor: auto;
+    height: 430px;
+    width: 280px;
+    min-height: 430px;
+    min-width: 280px;
+    display: block;
+    margin: 10px;
+    border: 1px solid black;
 `;
 
+const Link = styled.a``;
+
 export const MovieList = ({ movies, favourites, onClick }: Props) => {
+    const url = 'https://www.imdb.com/title/';
     return (
         <Wrapper>
             {movies && movies.map((movie, i) => (
                 <MovieWrapper key={i}>
-                    <Image src={movie.Poster} alt='Movie Poster' />
+                    <Link href={url + movie.imdbID} target='_blank' rel='noreferrer'>
+                        <Image src={movie.Poster} alt={movie.Title} />
+                    </Link>
                     <Overlay onClick={() => onClick(movie)}>
                         {favourites}
                     </Overlay>
