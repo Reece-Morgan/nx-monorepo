@@ -73,7 +73,7 @@ export const MovieList = ({ movies, favourites, onClick }: Props) => {
             {movies && movies.map((movie, i) => (
                 <MovieWrapper key={i}>
                     <Link href={url + movie.imdbID} target='_blank' rel='noreferrer'>
-                        <Image src={movie.Poster} alt='Movie Poster' />
+                        <Image src={movie.Poster} alt={movie.Title} />
                     </Link>
                     <Overlay onClick={() => onClick(movie)}>
                         {favourites}
