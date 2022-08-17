@@ -155,7 +155,7 @@ const SearchAdvanced = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <AdvancedSearchBox value={searchValue} onChange={setSearchValues} onClick={togglePopup} />
+            <AdvancedSearchBox onClick={togglePopup} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
