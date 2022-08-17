@@ -107,17 +107,26 @@ export const timeLineData = [
 
 export const projectData =  [
     {
-        imageUrl: '/images/projects/allus-interactive.png',
+        imageUrl: '/images/projects/allus_interactive.png',
         altText: 'Allus Interactive',
-        description: 'I built this website to showcase my work as an Indie Game Developer. I recently updgraed this site from Angular to NextJS.',
+        description: `I built this website to showcase my work as an Indie Game Developer. I recently rebuilt this site in NextJS.`,
         url: 'https://www.allusinteractive.com',
         urlText: 'View Website'
     },
     {
-        imageUrl: '/images/projects/alba-cruises.png',
+        imageUrl: '/images/projects/alba_cruises.png',
         altText: 'Alba Cruises',
-        description: 'Alba Cruises was built in HTML/PHP during my studies at college. I am currently rebuilding it in NextJS to have it as a portfolio piece.',
+        description: `Alba Cruises was built in HTML/PHP during my studies at college. I am currently rebuilding it in NextJS to have it as a portfolio piece.`,
         url: 'https://albacruises.reecemorgan.co.uk',
+        urlText: 'View Project'
+    },
+    {
+        imageUrl: '/images/projects/movie_search.png',
+        altText: 'Movie Search',
+        description: `
+            This site uses the OMDb API to display different media based on a user's search parameters. 
+            It is a basic portfolio piece that demonstrates some understanding of react state and hooks.`,
+        url: 'https://moviesearch.reecemorgan.co.uk',
         urlText: 'View Project'
     },
 ];
