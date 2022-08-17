@@ -59,7 +59,7 @@ export const BasicSearch = ({ setMovies }: Props) => {
 
     const onSubmit = handleSubmit(async data => {
         const apiKey = '5fd15d12';
-        const url = `http://www.omdbapi.com/?s=${data.title}&type=movie&apiKey=${apiKey}`;
+        const url = `https://www.omdbapi.com/?s=${data.title}&type=movie&apiKey=${apiKey}`;
 
         const res = await fetch(url);
         const response = await res.json();

@@ -117,8 +117,8 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
     const onSubmit = handleSubmit(async data => {
         const apiKey = '5fd15d12';
         const url = data.rating !== "" ? 
-            `http://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&rating=${data.rating}&apiKey=${apiKey}` : 
-            `http://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&apiKey=${apiKey}`;
+            `https://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&rating=${data.rating}&apiKey=${apiKey}` : 
+            `https://www.omdbapi.com/?s=${data.title}&year=${data.year}&type=${data.type}&apiKey=${apiKey}`;
 
         const res = await fetch(url);
         const response = await res.json();
