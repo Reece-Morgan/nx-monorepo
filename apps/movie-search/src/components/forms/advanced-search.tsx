@@ -38,12 +38,23 @@ const Input = styled.input`
     }
 `;
 
+const Select = styled.select`
+    padding: 5px 0;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid ${colourValues.black};
+    border-radius: 5px;
+    box-sizing: border-box;
+    @media (min-width: ${breakpointValues.xs}) {
+        padding: 5px 20px;
+    }
+`;
+
 const ErrorMsg = styled.p`
     font-size: 1em;
     color: ${colourValues.error};
     margin: 0;
     text-align: left;
-    padding: 5px 0 0 0;
 `;
 
 const ButtonWrapper = styled.div`
@@ -105,6 +116,7 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
 
         if (response.Search) {
             setMovies(response.Search);
+            closePopup();
         }
     });
 
@@ -142,18 +154,21 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
                 />
                 <ErrorMsg>{errors.year && 'Please enter a valid year'}</ErrorMsg>
                 <Label htmlFor='type'>Media Type:*</Label>   {/* TODO - change input to dropdown/enum */}
-                <Input 
-                    type='text' 
+                <Select 
                     id='type' 
                     name='type' 
-                    placeholder='Movie'
+                    placeholder='Movie, Game, Series etc.'
                     ref={register({
                         required: {
                             value: true,
                             message: 'This is required',
                         },
                     })}
-                />
+                >
+                    <option value="movie">Movie</option>
+                    <option value="Series">TV Show</option>
+                    <option value="Game">Video Game</option>
+                </Select>
                 <ErrorMsg>{errors.type && 'Please choose a media type'}</ErrorMsg>
                 <Label htmlFor='rating'>Rating:</Label>
                 <Input 
@@ -165,8 +180,8 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
                 />
                 <Span>* Required</Span>
                 <ButtonWrapper>
-                    <Button onClick={closePopup}>Search</Button>
-                    <AltButton onClick={closePopup}>Clear</AltButton>
+                    <Button>Search</Button>
+                    <AltButton>Clear</AltButton>
                 </ButtonWrapper>
             </Form>
         </Wrapper>    
