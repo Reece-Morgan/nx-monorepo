@@ -1,6 +1,6 @@
 
 
-# [Allus Interactive](https://www.allusinteractive.com/)
+# NX Monorepo
 
 This project was generated using [Nx](https://nx.dev).
 
