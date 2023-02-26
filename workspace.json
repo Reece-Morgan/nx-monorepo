@@ -10,6 +10,8 @@
     "movie-search": "apps/movie-search",
     "movie-search-e2e": "apps/movie-search-e2e",
     "portfolio": "apps/portfolio",
-    "portfolio-e2e": "apps/portfolio-e2e"
+    "portfolio-e2e": "apps/portfolio-e2e",
+    "video-game-app": "apps/video-game-app",
+    "video-game-app-e2e": "apps/video-game-app-e2e"
   }
 }
