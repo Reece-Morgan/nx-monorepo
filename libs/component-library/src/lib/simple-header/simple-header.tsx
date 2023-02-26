@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
-import { useState } from 'react';
 
 interface Props {
   bgColour: string;
@@ -17,6 +16,8 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 `;
 
 const LogoLink = styled.a`
@@ -32,7 +33,7 @@ const HeaderLogo = styled.div<{imageUrl: string;}>`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 60px;
+  height: 40px;
   margin: 5px;
 `;
 
@@ -40,14 +41,6 @@ export const SimpleHeader = ({
   bgColour,
   imageUrl,
 }: Props): JSX.Element => {
-  const [MenuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = (): void => {
-    setMenuOpen(!MenuOpen);
-    const overflow = MenuOpen ? 'auto' : 'hidden';
-    document.body.style.overflow = overflow;
-  };
-
   return (
     <HeaderContainer colour={bgColour}>
       <FlexContainer>
