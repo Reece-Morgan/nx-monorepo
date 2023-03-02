@@ -36,7 +36,7 @@
     "@nrwl/eslint-plugin-nx": "14.1.8",
     "@nrwl/jest": "14.1.8",
     "@nrwl/linter": "14.1.8",
-    "@nrwl/nx-cloud": "latest",
+    "@nrwl/nx-cloud": "13.1.6",
     "@nrwl/react": "14.1.8",
     "@nrwl/web": "14.1.8",
     "@nrwl/workspace": "14.1.8",
