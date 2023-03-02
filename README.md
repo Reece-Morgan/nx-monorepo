@@ -2,32 +2,16 @@
 
 # NX Monorepo
 
-This project was generated using [Nx](https://nx.dev).
+This project was generated using [Nx](https://nx.dev) and has been written mostly in [Typesript](https://www.typescriptlang.org/docs/)
 
-It has been developed using [Nextjs](https://nextjs.org/) and [Typesript](https://www.typescriptlang.org/docs/), along with:
+The apps have been developed using either [Nextjs](https://nextjs.org/) or [Sveltekit](https://kit.svelte.dev/docs/introduction), along with:
 - [Styled-Components](https://styled-components.com/), 
 - [Storybook](https://storybook.js.org/),
 - [GraphQL](https://graphql.org/)
 - [Hygraph](https://hygraph.com/)
 - [React-Slick](https://react-slick.neostack.com/) and
 - [Apollo Client](https://www.apollographql.com/docs/react/)
-<!--
-## Generate an application
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@allus-interactive/mylib`.
--->
 ## Development server
 
 Run `nx serve <app-name>` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
