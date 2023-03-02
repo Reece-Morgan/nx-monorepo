@@ -37,3 +37,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# VS Code config
+.vscode
+
+# yarn files after upgrading from 1.22 to 3.2.0
+.yarn
