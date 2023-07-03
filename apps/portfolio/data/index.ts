@@ -121,17 +121,20 @@ export const projectData =  [
     {
         imageUrl: '/images/projects/allus_interactive.png',
         altText: 'Allus Interactive',
-        description: `I built this website to showcase my work as an Indie Game Developer. I recently rebuilt this site in NextJS.`,
+        description: `
+            I built this website to showcase my work as an Indie Game Developer. This site is built using 
+            NextJS, Typescript and the Hygraph CMS.`,
         url: 'https://www.allusinteractive.com',
         urlText: 'View Website'
     },
-    {
-        imageUrl: '/images/projects/alba_cruises.png',
-        altText: 'Alba Cruises',
-        description: `Alba Cruises was built in Angular during my studies at college. It is now used purely as a portfolio piece.`,
-        url: 'https://albacruises.reecemorgan.co.uk',
-        urlText: 'View Project'
-    },
+    // TODO: re-introduce Alba Cruises when Vercel Deployment issues can be sorted
+    // {
+    //     imageUrl: '/images/projects/alba_cruises.png',
+    //     altText: 'Alba Cruises',
+    //     description: `Alba Cruises was built in Angular during my studies at college. It is now used purely as a portfolio piece.`,
+    //     url: 'https://albacruises.reecemorgan.co.uk',
+    //     urlText: 'View Project'
+    // },
     {
         imageUrl: '/images/projects/movie_search.png',
         altText: 'Movie Search',
@@ -141,4 +144,13 @@ export const projectData =  [
         url: 'https://moviesearch.reecemorgan.co.uk',
         urlText: 'View Project'
     },
+    {
+        imageUrl: '/images/projects/pokedex_app.png',
+        altText: 'Pokedex App',
+        description: `
+            This site is a basic portfolio piece built using sveltekit. I have implemented the PokeAPI to 
+            display different pokemon based on the generation they are viewing.`,
+        url: 'https://pokedex.reecemorgan.co.uk',
+        urlText: 'View Project'
+    }
 ];
