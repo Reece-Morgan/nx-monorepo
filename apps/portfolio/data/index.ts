@@ -106,7 +106,7 @@ export const timeLineData = [
     },
     {
         title: 'The Football Pools',
-        subtitle: 'Software Engineer',
+        subtitle: 'Senior Software Engineer',
         description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the front end team,
         and the wider technology team within the company. I continue to work with the front end team on the maintenance of the company website, along with the development of new features. 
         This is using NextJS and Typescript. I am also in continous contact with other teams, such as the creative team, to continue to deliver the optimal user experience. As part of my new 
