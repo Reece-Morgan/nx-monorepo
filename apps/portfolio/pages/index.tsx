@@ -36,7 +36,7 @@ const HomePage = () => {
         textColour={colourValues.white}
         hoverColour={colourValues.hover}
         hasLinks={false}
-        copyrightText='&copy; Reece Morgan 2022'
+        copyrightText='&copy; Reece Morgan 2023'
         socialMediaLinks={socialMediaData}
       />
     </PageWrapper>

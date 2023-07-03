@@ -9,7 +9,8 @@ export const socialMediaData = [
     { imageUrl: "/images/icons/twitter.svg", altText: "Twitter", url: "https://twitter.com/reecemorgandev" },
     { imageUrl: "/images/icons/instagram.svg", altText: "Instagram", url: "https://www.instagram.com/reecemorgandev/" },
     { imageUrl: "/images/icons/linkedin.svg", altText: "LinkedIn", url: "https://www.linkedin.com/in/reece-morgan-dev/" },
-    { imageUrl: "/images/icons/github.svg", altText: "Github",  url: "https://github.com/AllusInteractive"},
+    { imageUrl: "/images/icons/github.svg", altText: "Github", url: "https://github.com/Reece-Morgan" },
+    { imageUrl: "/images/icons/sketchfab.svg", altText: "Sketchfab", url: "https://sketchfab.com/reecemorgan" },
 ];
 
 export const timeLineData = [
@@ -76,7 +77,7 @@ export const timeLineData = [
         description: `
             In early 2018 there was a presentation at college from a Producer at The Football Pools, who had recently opened an office in Elgin, Moray and were looking to 
             expand their staff. I applied and was offered the position of a Graduate Developer. I worked solely within the Front End team. My main duties and responsiblities 
-            here included maintenance of our current site, and the development of new sites using new technologies we, as a company, were exploring. It was then that I started 
+            here included maintenance of the current site, and the development of new sites using new technologies we, as a company, were exploring. It was then that I started 
             working with Angular in a professional capacity for a while, before moving on and spending a few months learning React.`,
         date: 'June 2018 - Sept 2020',
         colour: '#000d68',
@@ -100,7 +101,18 @@ export const timeLineData = [
         this system for over a year. My role eventually expanded to include maintenance of several subsites, built with a variety of technologies, from .Net Core, Razor Pages/C#
         and Angular. In 2021 I resumed my training with React, and I now maintain and develop new features using NextJS. I have also kept my previous duties, maintaining the other 
         sites with C#, Angular and now React.`,
-        date: 'Sept 2020 - Present',
+        date: 'Sept 2020 - June 2023',
+        colour: '#000d68',
+    },
+    {
+        title: 'The Football Pools',
+        subtitle: 'Senior Software Engineer',
+        description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the front end team,
+        and the wider technology team within the company. I continue to work with the front end team on the maintenance of the company website, along with the development of new features. 
+        This is using NextJS and Typescript. I am also in continous contact with other teams, such as the creative team, to continue to deliver the optimal user experience. As part of my new 
+        responsibilities, I assist and guide the junior and mid-level developers within the front end team, as well as delegating tasks for them to perform. I am also now vocal in planning 
+        sessions for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front and back end teams.`,
+        date: 'June 2023 - Present',
         colour: '#000d68',
     },
 ]
@@ -109,17 +121,20 @@ export const projectData =  [
     {
         imageUrl: '/images/projects/allus_interactive.png',
         altText: 'Allus Interactive',
-        description: `I built this website to showcase my work as an Indie Game Developer. I recently rebuilt this site in NextJS.`,
+        description: `
+            I built this website to showcase my work as an Indie Game Developer. This site is built using 
+            NextJS, Typescript and the Hygraph CMS.`,
         url: 'https://www.allusinteractive.com',
         urlText: 'View Website'
     },
-    {
-        imageUrl: '/images/projects/alba_cruises.png',
-        altText: 'Alba Cruises',
-        description: `Alba Cruises was built in Angular during my studies at college. It is now used purely as a portfolio piece.`,
-        url: 'https://albacruises.reecemorgan.co.uk',
-        urlText: 'View Project'
-    },
+    // TODO: re-introduce Alba Cruises when Vercel Deployment issues can be sorted
+    // {
+    //     imageUrl: '/images/projects/alba_cruises.png',
+    //     altText: 'Alba Cruises',
+    //     description: `Alba Cruises was built in Angular during my studies at college. It is now used purely as a portfolio piece.`,
+    //     url: 'https://albacruises.reecemorgan.co.uk',
+    //     urlText: 'View Project'
+    // },
     {
         imageUrl: '/images/projects/movie_search.png',
         altText: 'Movie Search',
@@ -129,4 +144,13 @@ export const projectData =  [
         url: 'https://moviesearch.reecemorgan.co.uk',
         urlText: 'View Project'
     },
+    {
+        imageUrl: '/images/projects/pokedex_app.png',
+        altText: 'Pokedex App',
+        description: `
+            This site is a basic portfolio piece built using sveltekit. I have implemented the PokeAPI to 
+            display different pokemon based on the generation they are viewing.`,
+        url: 'https://pokedex.reecemorgan.co.uk',
+        urlText: 'View Project'
+    }
 ];
