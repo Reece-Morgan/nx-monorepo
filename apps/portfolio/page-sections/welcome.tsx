@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
+import breakpointValues from '../settings/breakpoints';
 
 const Container = styled.div`
   background-color: ${colourValues.primary};
@@ -14,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   max-width: 1270px;
   margin: 0 auto;
@@ -28,11 +30,28 @@ const Message = styled.h1`
 `;
 
 const SubMessage = styled(Message)`
-  font-size: 7.5vw;
+  font-size: 6vw;
+  @media (min-width: ${breakpointValues.lg}) {
+  font-size: 5vw;
+  }
 `;
 
 const Bold = styled.span`
   font-weight: 800;
+`;
+
+const Avatar = styled.img`
+  border-radius: 50%;
+  width: 50vw;
+  height: 50vw;
+  @media (min-width: ${breakpointValues.tablet}) and (max-width: ${breakpointValues.lg}) {
+    width: 25vw;
+    height: 25vw;
+  }
+  @media (min-width: ${breakpointValues.lg}) {
+    width: 15vw;
+    height: 15vw;
+  }
 `;
 
 export const Welcome = () => {
@@ -40,6 +59,7 @@ export const Welcome = () => {
         <Container id='welcome'>
           <Wrapper>
             <Message>Hi, I&#39;m <Bold>Reece</Bold>.</Message>
+            <Avatar src='/images/svg/avatar.svg' alt='Avatar' />
             <SubMessage>I&#39;m a <Bold>Front End<br/>Developer</Bold>.</SubMessage>
           </Wrapper>
         </Container>
