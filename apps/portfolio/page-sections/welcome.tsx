@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colourValues from '../settings/colours';
 import breakpointValues from '../settings/breakpoints';
+import { NeonAnimation } from '../settings/animations';
 
 const Container = styled.div`
   background-color: ${colourValues.primary};
@@ -27,6 +28,7 @@ const Message = styled.h1`
   font-size: 10vw;
   margin: 0;
   font-family: 'Kanit', 'Verdana', sans-serif;
+  animation: ${NeonAnimation} 1.5s ease infinite;
 `;
 
 const SubMessage = styled(Message)`
