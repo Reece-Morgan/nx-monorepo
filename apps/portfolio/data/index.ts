@@ -97,21 +97,20 @@ export const timeLineData = [
         title: 'The Football Pools',
         subtitle: 'Software Engineer',
         description: `In September 2020 I was promoted from a Graduate Developer to a Software Engineer. I remained within the front end team, but my role shifted slightly, 
-        away from React and towards the maintenance and day-to-day running of one of our biggest sites, via a CMS called Custodian. This CMS uses HTML and CSS, and I worked with
-        this system for over a year. My role eventually expanded to include maintenance of several subsites, built with a variety of technologies, from .Net Core, Razor Pages/C#
-        and Angular. In 2021 I resumed my training with React, and I now maintain and develop new features using NextJS. I have also kept my previous duties, maintaining the other 
-        sites with C#, Angular and now React.`,
+        away from React and towards the maintenance and day-to-day running of one of the companies biggest sites, via a CMS called Custodian. This CMS uses HTML and CSS, and I worked with
+        this system for over a year. My role eventually expanded to include maintenance of several subsites, built with a variety of technologies, including .Net Core, Razor Pages/C#
+        and Angular. In 2021 I resumed my training with React, whilst maintaining and developing new features using NextJS. I also kept my previous duties, maintaining the other 
+        sites with C# and Angular. I was also in continous contact with other teams, such as the creative and backend teams, to continue to deliver the optimal user experience.`,
         date: 'Sept 2020 - June 2023',
         colour: '#000d68',
     },
     {
         title: 'The Football Pools',
         subtitle: 'Senior Software Engineer',
-        description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the front end team,
-        and the wider technology team within the company. I continue to work with the front end team on the maintenance of the company website, along with the development of new features. 
-        This is using NextJS and Typescript. I am also in continous contact with other teams, such as the creative team, to continue to deliver the optimal user experience. As part of my new 
-        responsibilities, I assist and guide the junior and mid-level developers within the front end team, as well as delegating tasks for them to perform. I am also now vocal in planning 
-        sessions for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front and back end teams.`,
+        description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the team,
+        and the wider technology team within the company. Whilst keeping my previous responsibilities, as part of my new role I now work closely with the technical lead in the day to day 
+        planning and operations within the fronte end team, whilst also occasionally taking on their role and responsibilities in their absence. I am also now vocal in planning sessions 
+        for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front end, back end and creative teams.`,
         date: 'June 2023 - Present',
         colour: '#000d68',
     },
