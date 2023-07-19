@@ -8,6 +8,7 @@ const PageWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 `;
 
 const Anchor = styled.div`
