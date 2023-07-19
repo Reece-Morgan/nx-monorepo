@@ -24,11 +24,12 @@ const Wrapper = styled.div`
   padding: 0 20px;
 `;
 
+// TODO: add animation back in and review colours in animations.ts
 const Message = styled.h1`
   font-size: 10vw;
   margin: 0;
   font-family: 'Kanit', 'Verdana', sans-serif;
-  animation: ${NeonAnimation} 1.5s ease infinite;
+  // animation: ${NeonAnimation} 1.5s ease infinite;
 `;
 
 const SubMessage = styled(Message)`
