@@ -4,7 +4,10 @@ import breakpointValues from '../settings/breakpoints';
 import { NeonAnimation } from '../settings/animations';
 
 const Container = styled.div`
-  background-color: ${colourValues.primary};
+  background: url('/images/backgrounds/keyboard.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: ${colourValues.white};
   min-height: auto;
   height: 100vh;

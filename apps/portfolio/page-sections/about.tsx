@@ -3,7 +3,10 @@ import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 
 const Container = styled.div`
-  background-color: ${colourValues.secondary};
+  background: url('/images/backgrounds/water.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: ${colourValues.white};
   position: relative;
 `;
@@ -47,27 +50,26 @@ export const About = () => {
               I am a Front End Developer based in Moray, Scotland. I enjoy designing websites and building them with React and TypeScript.
             </p>
             <p>
-              I started out my journey as a Front End Developer building basic hobby sites using plain HTML, CSS and Javascript. I made the 
-              jump to using Angular in late 2018/early 2019. I spent a few years working with this framework, before moving on to React and 
+              I started out my journey as a Front End Developer building basic hobby sites using plain HTML, CSS and Javascript. I began 
+              working with Angular in 2019. I spent a few years working with this framework, before moving on to React and 
               Typescript. I have been developing my React skills and building sites with NextJS and Typescript since the summer of 2021.
+              I am currently employed by <a href="https://www.thepools.com" target='_blank' rel='noreferrer'>The Football Pools</a> as a Senior Software Engineer, working in the Front End Team.
             </p>
             <p>
               I am passionate about writing clean, efficient code and I&#39;m also very interested in exploring new technologies.
             </p>
             <Subtitle>Experience</Subtitle>
             <p>
-              I have 5+ years working as a professional front end developer, and a further 6+ years prior to this as a hobbyist/student. Below 
+              I have 6 years professional expierience working as a front end developer, and a further 6 years prior to this as a hobbyist/student. Below 
               is a breakdown of how long I have been working with different languages and frameworks, in both a personal and professional capacity.
             </p>
             <ul>
               <li>HTML, CSS and JS - 10+ years</li>
-              <li>Angular - 3 years</li>
-              <li>React/NextJS - 2+ years</li>
+              <li>Angular - 2 years</li>
+              <li>React - 3+ years</li>
+              <li>NextJS - 3+ years</li>
+              <li>Typescript - 3+ years</li>
             </ul>
-            <p>
-              I also have experience with different Content Managment Systems (CMS). Mostly my experience is with Squidex (as part of my job as a 
-              Software Engineer) but I have also explored Builder.io and have started integrating Hygraph into one of my personal projects.
-            </p>
           </Wrapper>
           <Anchor id='projects' />
         </Container>

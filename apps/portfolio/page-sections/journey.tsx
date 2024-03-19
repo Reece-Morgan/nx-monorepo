@@ -5,7 +5,10 @@ import { timeLineData } from '../data';
 import { Timeline } from '@allus-interactive/component-library';
 
 const Container = styled.div`
-  background-color: ${colourValues.secondary};
+  background: url('/images/backgrounds/texture.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: ${colourValues.white};
   position: relative;
 `;

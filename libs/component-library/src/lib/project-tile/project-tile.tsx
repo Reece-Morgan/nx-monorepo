@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
+import { ProjectTileData } from './types/types';
 
 interface Props {
-    imageUrl: string;
-    altText: string;
-    description: string;
-    url: string;
-    urlText: string;
+    project: ProjectTileData;
 }
 
 const Wrapper = styled.div`
@@ -24,6 +21,7 @@ const Figure = styled.figure`
 const Image = styled.img`
     width: 100%;
     height: 100%;
+    border: 1px solid #fff;
 `;
 
 const FigCaption = styled.figcaption`
@@ -65,14 +63,14 @@ const Link = styled.a`
     border-radius: 20px;
 `;
 
-export const ProjectTile = ({ imageUrl, altText, description, url, urlText }: Props) => {
+export const ProjectTile = ({ project }: Props) => {
     return (
         <Wrapper>
             <Figure>
-                <Image src={imageUrl} alt={altText} />
+                <Image src={project.imageUrl} alt={project.altText} />
                 <FigCaption>
-                    <Description>{description}</Description>
-                    <Link href={url} target='_blank' rel='noreferrer'>{urlText}</Link>
+                    <Description>{project.description}</Description>
+                    <Link href={project.url} target='_blank' rel='noreferrer'>{project.urlText}</Link>
                 </FigCaption>
             </Figure>
         </Wrapper>

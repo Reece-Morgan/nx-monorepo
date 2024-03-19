@@ -4,7 +4,7 @@ const breakpointValues = {
   sm: '600px',
   tablet: '768px',
   md: '960px',
-  lg: '1200px',
+  lg: '1270px',
   xl: '1920px'
 };
 
