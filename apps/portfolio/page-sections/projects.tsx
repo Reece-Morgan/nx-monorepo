@@ -51,11 +51,7 @@ export const Projects = () => {
               {projectData && projectData.map((project, i) => (
                 <ProjectTile
                   key={i}
-                  imageUrl={project.imageUrl}
-                  altText={project.altText}
-                  description={project.description}
-                  url={project.url}
-                  urlText={project.urlText}
+                  project={project}
                 />
               ))}
             </TileWrapper>
