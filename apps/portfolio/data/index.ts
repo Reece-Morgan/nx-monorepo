@@ -151,5 +151,14 @@ export const projectData =  [
             display different pokemon based on the generation they are viewing.`,
         url: 'https://pokedex.reecemorgan.co.uk',
         urlText: 'View Project'
+    },
+    {
+        imageUrl: '/images/projects/advent_of_code.png',
+        altText: 'Advent of Code',
+        description: `
+            Advent of Code is an advent calendar of small programming puzzles for a variety of skill sets and 
+            skill levels that can be solved in any programming language. This site tracks my progress and solutions.`,
+        url: 'https://aoc.reecemorgan.co.uk',
+        urlText: 'View Advent of code'
     }
 ];
