@@ -1,24 +1,26 @@
 import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
 import { ImageFlipTileData } from './types/types';
+import { useState } from 'react';
 
 interface Props {
     project: ImageFlipTileData;
 }
 
 export const ImageFlipTile = ({ project }: Props) => {
+    const [isImageFlipped, setIsImageFlipped] = useState<boolean>(false);
     return (
         <Container>
-            <Card>
+            <Card isFlipped={isImageFlipped}>
                 <Front>
                     <Figure>
-                        <Image src={project.imageUrl} alt={project.altText} />
+                        <Image src={project.imageUrl} alt={project.altText} onClick={() => setIsImageFlipped(true)} />
                     </Figure>
                 </Front>
                 <Back>
                     <Figure>
                         <Image src={project.imageUrl} alt={project.altText} />
-                        <FigCaption>
+                        <FigCaption onClick={() => setIsImageFlipped(false)}>
                             <Description>{project.description}</Description>
                             <Link href={project.url} target='_blank' rel='noreferrer'>{project.urlText}</Link>
                         </FigCaption>
@@ -40,11 +42,11 @@ const Container = styled.div`
     @media (max-width: ${breakpointValues.tablet})
     {
         width: 100%;
-        height: 25vw;
+        height: 50vw;
     }
 `;
 
-const Card = styled.div`
+const Card = styled.div<{ isFlipped: boolean }>`
   transition: 0.6s;
   transform-style: preserve-3d;
   position: relative;
@@ -52,6 +54,12 @@ const Card = styled.div`
   ${Container}:hover & {
     transform: rotateY(180deg);
   }
+
+  ${(props) => props.isFlipped ? `
+        transform: rotateY(180deg);
+    ` : `
+        transform: rotateY(0deg);
+    `}
 `;
 
 const CardFace = styled.div`
