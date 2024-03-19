@@ -19,7 +19,7 @@ export const ImageFlipTile = ({ project }: Props) => {
                 </Front>
                 <Back>
                     <Figure>
-                        <Image src={project.imageUrl} alt={project.altText} />
+                        <Image src={project.siteUrl} alt={project.altText} />
                         <FigCaption onClick={() => setIsImageFlipped(false)}>
                             <Description>{project.description}</Description>
                             <Link href={project.url} target='_blank' rel='noreferrer'>{project.urlText}</Link>
