@@ -59,7 +59,7 @@ export const timeLineData = [
             designing a website from scratch. From basic UI design with sketches and wireframes, to building the site itself. I also spent 
             time with Adobe Illustrator and Photoshop, and was able to develop some basic skills there.`,
         date: 'Sept 2016 - June 2017',
-        colour: '#e91e63',
+        colour: '#55068a',
     },
     {
         title: 'HND Interactive Media',
@@ -69,7 +69,7 @@ export const timeLineData = [
             very proficent, and I started looking for a new challenge. In other areas of this course, I continued to use Illustrator and Photoshop,
             and was introduced to 3D animation and Video Editing techniques.`,
         date: 'Sept 2017 - June 2018',
-        colour: '#e91e63',
+        colour: '#55068a',
     },
     {
         title: 'The Football Pools',
@@ -91,7 +91,7 @@ export const timeLineData = [
             in NextJS as part of my Portfolio. I also continued my work in Illustrator and Photoshop, along with 3D animation and video editing techniques
             in Adobe Premiere Pro.`,
         date: 'Sept 2018 - June 2019',
-        colour: '#e91e63',
+        colour: '#55068a',
     },
     {
         title: 'The Football Pools',
@@ -109,7 +109,7 @@ export const timeLineData = [
         subtitle: 'Senior Software Engineer',
         description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the team,
         and the wider technology team within the company. Whilst keeping my previous responsibilities, as part of my new role I now work closely with the technical lead in the day to day 
-        planning and operations within the fronte end team, whilst also occasionally taking on their role and responsibilities in their absence. I am also now vocal in planning sessions 
+        planning and operations within the front end team, whilst also occasionally taking on their role and responsibilities in their absence. I am also now vocal in planning sessions 
         for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front end, back end and creative teams.`,
         date: 'June 2023 - Present',
         colour: '#000d68',
