@@ -5,7 +5,10 @@ import { projectData } from '../data';
 import { ProjectTile } from '@allus-interactive/component-library';
 
 const Container = styled.div`
-  background-color: ${colourValues.primary};
+  background: url('/images/backgrounds/code.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: ${colourValues.white};
   position: relative;
 `;
@@ -20,6 +23,8 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 2em;
   font-family: 'Kanit', 'Verdana', sans-serif;
+  padding: 0 20px;
+  text-align: right;
   @media (min-width: ${breakpointValues.tablet}) {
     font-size: 3vw;
   }
