@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { projectData } from '../data';
-import { ProjectTile } from '@allus-interactive/component-library';
+import { ImageFlipTile } from '@allus-interactive/component-library';
 
 const Container = styled.div`
   background: url('/images/backgrounds/code.jpg');
@@ -43,6 +43,7 @@ const TileWrapper = styled.div`
   flex-wrap: wrap;
   max-width: 1270px;
   margin: 0 auto;
+  justify-content: space-between;
 `;
 
 export const Projects = () => {
@@ -54,10 +55,7 @@ export const Projects = () => {
             <Anchor id='journey' />
             <TileWrapper>
               {projectData && projectData.map((project, i) => (
-                <ProjectTile
-                  key={i}
-                  project={project}
-                />
+                <ImageFlipTile key={i} project={project} />
               ))}
             </TileWrapper>
         </Container>
