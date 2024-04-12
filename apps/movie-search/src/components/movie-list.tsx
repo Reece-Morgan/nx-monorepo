@@ -1,11 +1,17 @@
 import colourValues from 'apps/movie-search/settings/colours';
 import styled from 'styled-components';
 import { Movie } from '../types/types';
+import { AddFavourite } from './add-favourite';
+import { useAppSelector } from '../redux/store';
+import { RemoveFavourite } from './remove-favourite';
+import { useDispatch } from 'react-redux';
+import {
+  addMovieToFavourites,
+  removeMovieFromFavourites,
+} from '../redux/favourites/favourites';
 
 interface Props {
   movies: Movie[];
-  favourites: React.ReactNode;
-  onClick: (movie) => void;
 }
 
 const Wrapper = styled.div`
@@ -60,17 +66,39 @@ const Image = styled.img`
 
 const Link = styled.a``;
 
-export const MovieList = ({ movies, favourites, onClick }: Props) => {
-  const url = 'https://www.imdb.com/title/';
+export const MovieList = ({ movies }: Props) => {
+  const dispatch = useDispatch();
+  const { movies: favourites } = useAppSelector((state) => state.Favourites);
+
+  const addOrRemoveFavourite = (movie) => {
+    if (favourites.some((favourite) => favourite.imdbID === movie.imdbID)) {
+      dispatch(removeMovieFromFavourites(movie));
+    } else {
+      dispatch(addMovieToFavourites(movie));
+    }
+  };
+
   return (
     <Wrapper>
       {movies &&
         movies.map((movie, i) => (
           <MovieWrapper key={i}>
-            <Link href={url + movie.imdbID} target="_blank" rel="noreferrer">
+            <Link
+              href={'https://www.imdb.com/title/' + movie.imdbID}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image src={movie.Poster} alt={movie.Title} />
             </Link>
-            <Overlay onClick={() => onClick(movie)}>{favourites}</Overlay>
+            <Overlay onClick={() => addOrRemoveFavourite(movie)}>
+              {favourites.some(
+                (favourite) => favourite.imdbID === movie.imdbID
+              ) ? (
+                <RemoveFavourite />
+              ) : (
+                <AddFavourite />
+              )}
+            </Overlay>
           </MovieWrapper>
         ))}
     </Wrapper>

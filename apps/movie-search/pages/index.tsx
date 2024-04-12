@@ -2,18 +2,12 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
-import { AddFavourite } from '../src/components/add-favourite';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
 import { Popup } from '../src/components/popup';
-import { RemoveFavourite } from '../src/components/remove-favourite';
 import { AdvancedSearchBox } from '../src/components/advanced-search-box';
-import { useDispatch } from 'react-redux';
-import {
-  addMovieToFavourites,
-  removeMovieFromFavourites,
-} from '../src/redux/favourites/favourites';
-import { useAppSelector } from '../src/redux/store';
+import Link from 'next/link';
+import { Movie } from '../src/types/types';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -63,13 +57,6 @@ const MovieWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Title = styled.h1`
-  font-size: 1em;
-  @media (min-width: ${breakpointValues.xs}) {
-    font-size: 1.5em;
-  }
-`;
-
 const Text = styled.p`
   font-size: 1em;
   @media (min-width: ${breakpointValues.xs}) {
@@ -78,10 +65,8 @@ const Text = styled.p`
 `;
 
 const SearchAdvanced = () => {
-  const dispatch = useDispatch();
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [popupDisplay, setPopupDisplay] = useState<'none' | 'block'>('none');
-  const { movies: favourites } = useAppSelector((state) => state.Favourites);
 
   const togglePopup = () => {
     setPopupDisplay(popupDisplay === 'none' ? 'block' : 'none');
@@ -89,14 +74,6 @@ const SearchAdvanced = () => {
 
   const setSearchValue = (value) => {
     setMovies(value);
-  };
-
-  const addFavouriteMovie = (movie) => {
-    dispatch(addMovieToFavourites(movie));
-  };
-
-  const removeFavouriteMovie = (movie) => {
-    dispatch(removeMovieFromFavourites(movie));
   };
 
   return (
@@ -112,34 +89,16 @@ const SearchAdvanced = () => {
           </HeaderWrapper>
         </Header>
         <Wrapper>
-          {movies.length === 0 && favourites.length === 0 && (
-            <>
-              <Text>
-                Use the search bar to look up any movie, TV show or video game
-              </Text>
-              <Text>
-                Click Add to Favourites to keep track of all your favourites!
-              </Text>
-            </>
-          )}
-          {favourites && favourites.length > 0 && (
-            <MovieWrapper>
-              <Title>Favourites</Title>
-              <MovieList
-                movies={favourites}
-                favourites={<RemoveFavourite />}
-                onClick={removeFavouriteMovie}
-              />
-            </MovieWrapper>
-          )}
+          <Text>
+            Use the search bar to look up any movie, TV show or video game
+          </Text>
+          <Text>Click Add to Favourites to save your favourite media!</Text>
+          <Text>
+            View your favourites <Link href="/favourites">here</Link>
+          </Text>
           {movies && movies.length > 0 && (
             <MovieWrapper>
-              <Title>Search Results</Title>
-              <MovieList
-                movies={movies}
-                favourites={<AddFavourite />}
-                onClick={addFavouriteMovie}
-              />
+              <MovieList movies={movies} />
             </MovieWrapper>
           )}
         </Wrapper>
