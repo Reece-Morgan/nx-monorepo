@@ -21,3 +21,13 @@ export const getMovies = async (req: NextApiRequest, res: NextApiResponse, searc
 
   return response;
 };
+
+export const getAdvancedSearch = async (req: NextApiRequest, res: NextApiResponse, search: string) => {
+  const data = await fetch(
+    `https://www.omdbapi.com/?s=${search}&apiKey=${apiKey}`
+  );
+
+  const response = await data.json();
+
+  return response;
+};
