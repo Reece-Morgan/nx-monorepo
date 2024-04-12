@@ -55,7 +55,7 @@ export const timeLineData = [
         title: 'HNC Interactive Media',
         subtitle: 'Student',
         description: `
-            During this year I was able to spend more time developing my web dev skills, along with learning some new ones, particuarly around 
+            During this year I was able to spend more time developing my web dev skills, along with learning some new ones, particularly around 
             designing a website from scratch. From basic UI design with sketches and wireframes, to building the site itself. I also spent 
             time with Adobe Illustrator and Photoshop, and was able to develop some basic skills there.`,
         date: 'Sept 2016 - June 2017',
@@ -66,7 +66,7 @@ export const timeLineData = [
         subtitle: 'Student',
         description: `
             The second year of IM took the knowledge and skills from the HNC and built on them further. By this time my HTML and CSS skills were 
-            very proficent, and I started looking for a new challenge. In other areas of this course, I continued to use Illustrator and Photoshop,
+            very proficient, and I started looking for a new challenge. In other areas of this course, I continued to use Illustrator and Photoshop,
             and was introduced to 3D animation and Video Editing techniques.`,
         date: 'Sept 2017 - June 2018',
         colour: '#55068a',
@@ -141,8 +141,8 @@ export const projectData =  [
         siteUrl: '/images/projects/movie_search_site.png',
         altText: 'Movie Search',
         description: `
-            This site uses the OMDb API to display different media based on a user's search parameters. 
-            It is a basic portfolio piece that demonstrates some understanding of react state and hooks.`,
+            This site uses the OMDb API to display media based on search parameters. This portfolio piece 
+            demonstrates my understanding of Redux state management, api routes and react state and hooks.`,
         url: 'https://moviesearch.reecemorgan.co.uk',
         urlText: 'View Project'
     },
