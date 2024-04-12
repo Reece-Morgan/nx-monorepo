@@ -118,10 +118,11 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
   const onSubmit = handleSubmit(async (data) => {
     const searchData = `${data.title}&year=${data.year}&type=${data.type}`;
 
-    const response = await callApiRoute('getMovies?search=' + searchData);
+    const response = await callApiRoute('getMoviesOrShows?search=' + searchData);
 
     if (response && response.Search) {
       setMovies(response.Search);
+      closePopup();
     }
   });
 
@@ -171,8 +172,8 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
           })}
         >
           <option value="movie">Movie</option>
-          <option value="Series">TV Show</option>
-          <option value="Game">Video Game</option>
+          <option value="series">TV Show</option>
+          <option value="game">Video Game</option>
         </Select>
         <ErrorMsg>{errors.type && 'Please choose a media type'}</ErrorMsg>
         <Span>* Required</Span>

@@ -24,7 +24,7 @@ export const getMovies = async (req: NextApiRequest, res: NextApiResponse, searc
 
 export const getAdvancedSearch = async (req: NextApiRequest, res: NextApiResponse, search: string) => {
   const data = await fetch(
-    `https://www.omdbapi.com/?s=${search}&type=movie&apiKey=${apiKey}`
+    `https://www.omdbapi.com/?s=${search}&apiKey=${apiKey}`
   );
 
   const response = await data.json();

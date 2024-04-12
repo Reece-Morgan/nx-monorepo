@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   width: 100vw;
+  min-height: 93px;
   height: auto;
   background-color: ${colourValues.black};
   color: ${colourValues.white};
@@ -41,6 +42,7 @@ const Header = styled.header`
 
 const HeaderWrapper = styled.div`
   max-width: 1270px;
+  height: 93px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
