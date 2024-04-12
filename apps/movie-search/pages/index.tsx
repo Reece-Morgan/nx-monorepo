@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 import { AddFavourite } from '../src/components/add-favourite';
+import { AdvancedSearch } from '../src/components/forms/advanced-search';
 import { MovieList } from '../src/components/movie-list';
 import { MovieListHeading } from '../src/components/movie-list-heading';
+import { Popup } from '../src/components/popup';
 import { RemoveFavourite } from '../src/components/remove-favourite';
-import { SearchBox } from '../src/components/search-box';
+import { AdvancedSearchBox } from '../src/components/advanced-search-box';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -45,7 +47,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding 10px;
+  padding: 10px;
 `;
 
 const MovieWrapper = styled.div`
@@ -78,13 +80,17 @@ const SmallText = styled.p`
   }
 `;
 
-const HomePage = () => {
+const SearchAdvanced = () => {
   const [movies, setMovies] = useState([]);
-	const [searchValue, setSearchValue] = useState('');
   const [favourites, setFavourites] = useState([]);
+  const [popupDisplay, setPopupDisplay] = useState<'none' | 'block'>('none');
 
-  const setSearchValues = (value: string) => {
-    setSearchValue(value);
+  const togglePopup = () => {
+    setPopupDisplay(popupDisplay === 'none' ? 'block' : 'none');
+  }
+
+  const setSearchValue = (value) => {
+    setMovies(value);
   }
 
   const addFavouriteMovie = (movie) => {
@@ -115,22 +121,6 @@ const HomePage = () => {
     localStorage.setItem('rm-portfolio-movie-favourites', JSON.stringify(items));
   }
 
-  const getMovieRequest = async (searchValue) => {
-    const apiKey = '5fd15d12';
-    const url = `https://www.omdbapi.com/?s=${searchValue}&type=movie&apiKey=${apiKey}`;
-
-    const data = await fetch(url);
-    const response = await data.json();
-
-    if (response.Search) {
-      setMovies(response.Search);
-    }
-  };
-
-  useEffect(() => {
-    getMovieRequest(searchValue);
-  }, [searchValue]);
-
   useEffect(() => {
     const userFavourites = JSON.parse(
       localStorage.getItem('rm-portfolio-movie-favourites')
@@ -149,14 +139,14 @@ const HomePage = () => {
         <Header>
           <HeaderWrapper>
             <MovieListHeading />
-            <SearchBox value={searchValue} onChange={setSearchValues} />
+            <AdvancedSearchBox setMovies={setSearchValue} togglePopup={togglePopup} />
           </HeaderWrapper>
         </Header>
         <Wrapper>
           {movies.length === 0 && favourites.length === 0 && (
             <>
-              <Text>Use the search bar to look up any movie you can think of</Text>
-              <Text>Click Add to Favourites to keep track of all your favourite movies!</Text>
+              <Text>Use the search bar to look up any movie, TV show or video game</Text>
+              <Text>Click Add to Favourites to keep track of all your favourites!</Text>
             </>
           )}
           {favourites && favourites.length > 0 && (
@@ -171,11 +161,11 @@ const HomePage = () => {
               <MovieList movies={movies} favourites={<AddFavourite />} onClick={addFavouriteMovie}/>
             </MovieWrapper>
           )}
-          <SmallText>To try the Advanced Search, click <a href='/search/advanced'>here</a>.</SmallText>
         </Wrapper>
+        <Popup display={popupDisplay} title='Advanced Search' closePopup={togglePopup} setMovies={setSearchValue}/>
       </Container>
     </PageWrapper>
   )
 }
 
-export default HomePage;
+export default SearchAdvanced;
