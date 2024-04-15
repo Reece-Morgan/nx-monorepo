@@ -21,7 +21,7 @@
     "node-fetch": "^3.2.8",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-hook-form": "^4.10.1",
+    "react-hook-form": "^7.51.3",
     "react-is": "18.1.0",
     "react-redux": "^9.1.0",
     "react-slick": "^0.29.0",
