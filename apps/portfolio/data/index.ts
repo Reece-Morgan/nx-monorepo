@@ -2,6 +2,7 @@ export const stickyNavData = [
     { url: '#about', text: 'About' },
     { url: '#projects', text: 'Projects' },
     { url: '#journey', text: 'My Journey' },
+    { url: '#contact', text: 'Contact Me' },
 ];
 
 export const socialMediaData = [
