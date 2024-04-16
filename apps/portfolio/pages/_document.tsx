@@ -20,7 +20,7 @@ export default class CustomDocument extends Document<{
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           {this.props.styleTags}
           <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />   

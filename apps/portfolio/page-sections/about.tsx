@@ -26,7 +26,7 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.h3`
+const Subtitle = styled.h2`
   font-size: 1em;
   font-family: 'Kanit', 'Verdana', sans-serif;
   @media (min-width: ${breakpointValues.tablet}) {
