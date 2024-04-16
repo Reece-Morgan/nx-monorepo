@@ -3,17 +3,25 @@ import { sendEmail } from '../../utils/send-email';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import breakpointValues from '../../settings/breakpoints';
+import { useState } from 'react';
 
 export const ContactForm = () => {
   const { register, handleSubmit } = useForm<FormData>();
+  const [emailSent, setEmailSent] = useState<boolean>(false);
+  const [emailError, setEmailError] = useState<boolean>(false);
 
-  function onSubmit(data: FormData) {
-    sendEmail(data);
-  }
+  const onSubmit = async (data: FormData) => {
+    const res = await sendEmail(data);
+    if (res === 'success') {
+      setEmailSent(true);
+    } else {
+      setEmailError(true);
+    }
+  };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormWrapper className="mb-5">
+      <FormWrapper>
         <Label htmlFor="name">Full Name:</Label>
         <Input
           type="text"
@@ -21,7 +29,7 @@ export const ContactForm = () => {
           {...register('name', { required: true })}
         />
       </FormWrapper>
-      <FormWrapper className="mb-5">
+      <FormWrapper>
         <Label htmlFor="email">Email Address:</Label>
         <Input
           type="email"
@@ -29,7 +37,7 @@ export const ContactForm = () => {
           {...register('email', { required: true })}
         />
       </FormWrapper>
-      <FormWrapper className="mb-5">
+      <FormWrapper>
         <Label htmlFor="message">Message:</Label>
         <TextArea
           rows={4}
@@ -37,9 +45,21 @@ export const ContactForm = () => {
           {...register('message', { required: true })}
         ></TextArea>
       </FormWrapper>
-      <ButtonWrapper>
-        <Button>Submit</Button>
-      </ButtonWrapper>
+      {emailSent ? (
+        <SuccessMsg>Your message has been sent successfully!</SuccessMsg>
+      ) : (
+        <>
+          {emailError ? (
+            <ErrorMsg>
+              There was an issue sending this message. Please try again later
+            </ErrorMsg>
+          ) : (
+            <ButtonWrapper>
+              <Button>Submit</Button>
+            </ButtonWrapper>
+          )}
+        </>
+      )}
     </Form>
   );
 };
@@ -106,3 +126,14 @@ const Button = styled.button`
     border: 2px solid #036308;
   }
 `;
+
+const Message = styled.p`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 50px;
+`;
+
+const SuccessMsg = styled(Message)``;
+
+const ErrorMsg = styled(Message)``;
