@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colourValues from '../settings/colours';
 import { Footer, StickyNav } from '@allus-interactive/component-library';
 import { stickyNavData, socialMediaData } from '../data';
-import { About, Journey, Projects, Welcome } from '../page-sections';
+import { About, Contact, Journey, Projects, Welcome } from '../page-sections';
 
 const PageWrapper = styled.div`
   width: 100%;
@@ -32,6 +32,7 @@ const HomePage = () => {
       <About />
       <Projects />
       <Journey />
+      <Contact />
       <Footer
         bgColour={colourValues.primary}
         textColour={colourValues.white}

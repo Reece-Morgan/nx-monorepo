@@ -113,7 +113,7 @@ const Span = styled.span`
 `;
 
 export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
-  const { register, handleSubmit, errors } = useForm<FormProps>();
+  const { register, handleSubmit } = useForm<FormProps>();
 
   const onSubmit = handleSubmit(async (data) => {
     const searchData = `${data.title}&year=${data.year}&type=${data.type}`;
@@ -135,14 +135,8 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
           id="title"
           name="title"
           placeholder="Star Wars"
-          ref={register({
-            required: {
-              value: true,
-              message: 'This is required',
-            },
-          })}
+          {...register('title', { required: true })}
         />
-        <ErrorMsg>{errors.title && 'Please enter a title'}</ErrorMsg>
         <Label htmlFor="year">Year:*</Label>
         <Input
           type="numeric"
@@ -150,32 +144,19 @@ export const AdvancedSearch = ({ setMovies, closePopup }: Props) => {
           id="year"
           name="year"
           placeholder="1977"
-          ref={register({
-            required: {
-              value: true,
-              message: 'This is required',
-            },
-            pattern: { value: /[0-9]{4}/, message: '' },
-          })}
+          {...register('year', { required: true, pattern: { value: /[0-9]{4}/, message: '' } })}
         />
-        <ErrorMsg>{errors.year && 'Please enter a valid year'}</ErrorMsg>
         <Label htmlFor="type">Media Type:*</Label>
         <Select
           id="type"
           name="type"
           placeholder="Movie, Game, Series etc."
-          ref={register({
-            required: {
-              value: true,
-              message: 'This is required',
-            },
-          })}
+          {...register('type', { required: true })}
         >
           <option value="movie">Movie</option>
           <option value="series">TV Show</option>
           <option value="game">Video Game</option>
         </Select>
-        <ErrorMsg>{errors.type && 'Please choose a media type'}</ErrorMsg>
         <Span>* Required</Span>
         <ButtonWrapper>
           <Button>Search</Button>

@@ -78,7 +78,7 @@ export const BasicSearch = ({ setMovies }: Props) => {
           id="title"
           name="title"
           placeholder="Search..."
-          ref={register()}
+          {...register('title')}
         />
         <Button>Search</Button>
       </Form>
