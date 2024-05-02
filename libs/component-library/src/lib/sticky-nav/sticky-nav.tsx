@@ -1,56 +1,66 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import Link from 'next/link';
 
 interface Props {
-    bgColour: string;
-    linkColour: string;
-    hoverColour: string;
-    links: {
-        url: string;
-        text: string;
-    }[];
+  bgColour: string;
+  linkColour: string;
+  hoverColour: string;
+  links: {
+    url: string;
+    text: string;
+  }[];
 }
 
 const NavContainer = styled.nav<{ colour: string }>`
-    width: 100%;
-    height: 50px;
-    background-color: ${(props) => props.colour};
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  width: 100%;
+  height: 50px;
+  background-color: ${(props) => props.colour};
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const LinkContainer = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
 `;
 
-const StyledLink = styled.a<{ colour: string, hover: string }>`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: ${(props) => props.colour};
-    margin: 0 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    :hover {
-        color: ${(props) => props.hover};
-    }
+const StyledLink = styled.a<{ colour: string; hover: string }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: ${(props) => props.colour};
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  min-width: fit-content;
+  :hover {
+    color: ${(props) => props.hover};
+  }
 `;
 
-export const StickyNav = ( {bgColour, linkColour, hoverColour, links}: Props ) => {
-    return (
-        <NavContainer colour={bgColour}>
-            <LinkContainer>
-                {links && links.map((link, i) => (
-                    <Link key={i} href={link.url} passHref>
-                        <StyledLink colour={linkColour} hover={hoverColour}>{link.text}</StyledLink>
-                    </Link>
-                ))}
-            </LinkContainer>
-        </NavContainer>
-    )
+export const StickyNav = ({
+  bgColour,
+  linkColour,
+  hoverColour,
+  links,
+}: Props) => {
+  return (
+    <NavContainer colour={bgColour}>
+      <LinkContainer>
+        {links &&
+          links.map((link, i) => (
+            <Link key={i} href={link.url} passHref>
+              <StyledLink colour={linkColour} hover={hoverColour}>
+                {link.text}
+              </StyledLink>
+            </Link>
+          ))}
+      </LinkContainer>
+    </NavContainer>
+  );
 };
