@@ -3,7 +3,7 @@ import breakpointValues from '../settings/breakpoints';
 import colourValues from '../settings/colours';
 
 const Container = styled.div`
-  background: url('/images/backgrounds/water.jpg');
+  background: url('/images/backgrounds/water.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
