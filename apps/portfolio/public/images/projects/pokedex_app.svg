@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 540 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,0,-931.1)">
+        <g id="Pokedex" transform="matrix(1,0,0,1,0,931.1)">
+            <rect x="0" y="0" width="540" height="270" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="0" y="0" width="540" height="270"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <rect x="0" y="0" width="540" height="270" style="fill:rgb(58,58,60);stroke:black;stroke-width:1px;"/>
+                <g transform="matrix(1,0,0,1,-22.3513,35.1669)">
+                    <text x="129.794px" y="86.182px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:83.333px;fill:url(#_Linear2);">Pokédex</text>
+                    <text x="217.807px" y="172.241px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:83.333px;fill:url(#_Linear3);">App</text>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(317.261,0,0,162.598,136.223,107.503)"><stop offset="0" style="stop-color:rgb(253,29,29);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(162,63,227);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(317.261,0,0,162.598,136.223,107.503)"><stop offset="0" style="stop-color:rgb(253,29,29);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(162,63,227);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>

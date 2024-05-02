@@ -100,7 +100,7 @@ const FigCaption = styled.figcaption`
     height: 100%;
     opacity: 1;
     transition: .45s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
