@@ -119,8 +119,8 @@ export const timeLineData = [
 
 export const projectData =  [
     {
-        imageUrl: '/images/projects/allus_interactive.png',
-        siteUrl: '/images/projects/allus_interactive_site.png',
+        imageUrl: '/images/projects/allus_interactive.svg',
+        siteUrl: '/images/projects/allus_interactive_site.svg',
         altText: 'Allus Interactive',
         description: `
             I built this website to showcase my work as an Indie Game Developer. This site is built using 
@@ -138,8 +138,8 @@ export const projectData =  [
     //     urlText: 'View Project'
     // },
     {
-        imageUrl: '/images/projects/movie_search.png',
-        siteUrl: '/images/projects/movie_search_site.png',
+        imageUrl: '/images/projects/movie_search.svg',
+        siteUrl: '/images/projects/movie_search_site.svg',
         altText: 'Movie Search',
         description: `
             This site uses the OMDb API to display media based on search parameters. This portfolio piece 
@@ -148,8 +148,8 @@ export const projectData =  [
         urlText: 'View Project'
     },
     {
-        imageUrl: '/images/projects/pokedex_app.png',
-        siteUrl: '/images/projects/pokedex_app_site.png',
+        imageUrl: '/images/projects/pokedex_app.svg',
+        siteUrl: '/images/projects/pokedex_app_site.svg',
         altText: 'Pokedex App',
         description: `
             This site is a basic portfolio piece built using sveltekit. I have implemented the PokeAPI to 
@@ -158,8 +158,8 @@ export const projectData =  [
         urlText: 'View Project'
     },
     {
-        imageUrl: '/images/projects/advent_of_code.png',
-        siteUrl: '/images/projects/advent_of_code_site.png',
+        imageUrl: '/images/projects/advent_of_code.svg',
+        siteUrl: '/images/projects/advent_of_code_site.svg',
         altText: 'Advent of Code',
         description: `
             Advent of Code is an advent calendar of small programming puzzles for a variety of skill sets and 

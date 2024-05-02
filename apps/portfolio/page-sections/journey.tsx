@@ -5,7 +5,7 @@ import { timeLineData } from '../data';
 import { Timeline } from '@allus-interactive/component-library';
 
 const Container = styled.div`
-  background: url('/images/backgrounds/texture.jpg');
+  background: url('/images/backgrounds/texture.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

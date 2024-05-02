@@ -5,7 +5,7 @@ import { projectData } from '../data';
 import { ImageFlipTile } from '@allus-interactive/component-library';
 
 const Container = styled.div`
-  background: url('/images/backgrounds/code.jpg');
+  background: url('/images/backgrounds/code.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -4,7 +4,7 @@ import breakpointValues from '../settings/breakpoints';
 import { NeonAnimation } from '../settings/animations';
 
 const Container = styled.div`
-  background: url('/images/backgrounds/keyboard.jpg');
+  background: url('/images/backgrounds/keyboard.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
