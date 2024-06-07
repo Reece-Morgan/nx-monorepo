@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 
 // TODO: add animation back in and review colours in animations.ts
 const Message = styled.h1`
-  font-size: 10vw;
+  font-size: 8vw;
   margin: 0;
   font-family: 'Kanit', 'Verdana', sans-serif;
   // animation: ${NeonAnimation} 1.5s ease infinite;
