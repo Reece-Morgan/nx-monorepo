@@ -111,9 +111,18 @@ export const timeLineData = [
         description: `In June 2023 I was promoted to a Senior Software Engineer within the front end team. With this promotion, I took on more responsibility within the team,
         and the wider technology team within the company. Whilst keeping my previous responsibilities, as part of my new role I now work closely with the technical lead in the day to day 
         planning and operations within the front end team, whilst also occasionally taking on their role and responsibilities in their absence. I am also now vocal in planning sessions 
-        for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front end, back end and creative teams.`,
-        date: 'June 2023 - Present',
+        for new features on the website. This can include giving estimations on how long a piece of work may take and collaborating on work with the front end, back end and creative teams.
+        My time at The Pools came to an end in May 24 when the technology team was restructured and my role no longer existed.`,
+        date: 'June 2023 - May 2024',
         colour: '#000d68',
+    },
+    {
+        title: 'Insights',
+        subtitle: 'React Engineer',
+        description: `My current role is now working as a React Engineer with Insights. Working as part of a cross-team squad rather than a dedicated FE team, this is a little different to my previous role. 
+        However, I am very excited about my new role here and I am looking forward immensely to what this opportunity has in store.`,
+        date: 'October 2024 - Present',
+        colour: '#0082b7',
     },
 ]
 
