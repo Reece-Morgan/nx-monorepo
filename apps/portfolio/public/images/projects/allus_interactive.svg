@@ -8,7 +8,7 @@
                 <rect x="0" y="0" width="540" height="270"/>
             </clipPath>
             <g clip-path="url(#_clip1)">
-                <rect x="0" y="0" width="540" height="270" style="fill:rgb(31,31,31);stroke:rgb(31,31,31);stroke-width:1px;"/>
+                <rect x="0" y="0" width="540" height="270" style="fill:rgb(33,53,71);stroke:rgb(31,31,31);stroke-width:1px;"/>
                 <g transform="matrix(1,0,0,1,-22.3513,35.1669)">
                     <text x="192.274px" y="86.182px" style="font-family:'Aldrich-Regular', 'Aldrich';font-size:83.333px;fill:rgb(195,16,20);">Allus</text>
                     <text x="55.27px" y="173.503px" style="font-family:'Aldrich-Regular', 'Aldrich';font-size:83.333px;fill:rgb(195,16,20);">Interactive</text>

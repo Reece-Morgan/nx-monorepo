@@ -133,8 +133,8 @@ export const projectData =  [
         altText: 'Allus Interactive',
         description: `
             I built this website to showcase my work as an Indie Game Developer. This site is built using 
-            NextJS, Typescript and the Hygraph CMS.`,
-        url: 'https://www.allusinteractive.com',
+            React, Vite and Typescript.`,
+        url: 'https://allusinteractive.vercel.app/',
         urlText: 'View Website'
     },
     // TODO: re-introduce Alba Cruises when Vercel Deployment issues can be sorted
